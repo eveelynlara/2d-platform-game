@@ -887,22 +887,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="648" spriteFrame="2">
-            <EntityName>single_piece.ent</EntityName>
-            <Position x="4646" y="288" z="0" angle="0" />
-            <Entity>
-                <FileName>single_piece.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="649" spriteFrame="2">
-            <EntityName>single_piece.ent</EntityName>
-            <Position x="4810" y="192" z="0" angle="0" />
-            <Entity>
-                <FileName>single_piece.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="1882" spriteFrame="0">
             <EntityName>tile03.ent</EntityName>
             <Position x="4608" y="32" z="0" angle="0" />
@@ -919,78 +903,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="624" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5570" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="610" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5190" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="611" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5280" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="612" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5472" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="621" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5280" y="256" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="622" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5472" y="256" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="720" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5188" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="722" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5376" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="724" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5568" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="1884" spriteFrame="0">
             <EntityName>tile03.ent</EntityName>
             <Position x="5120" y="32" z="0" angle="0" />
@@ -1004,62 +916,6 @@
             <Position x="5376" y="32" z="0" angle="0" />
             <Entity>
                 <FileName>tile03.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="627" spriteFrame="6">
-            <EntityName>tile.ent</EntityName>
-            <Position x="5888" y="320" z="0" angle="0" />
-            <Entity>
-                <FileName>tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="628" spriteFrame="6">
-            <EntityName>tile.ent</EntityName>
-            <Position x="5952" y="320" z="0" angle="0" />
-            <Entity>
-                <FileName>tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="629" spriteFrame="6">
-            <EntityName>tile.ent</EntityName>
-            <Position x="6144" y="192" z="0" angle="0" />
-            <Entity>
-                <FileName>tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="630" spriteFrame="6">
-            <EntityName>tile.ent</EntityName>
-            <Position x="6208" y="192" z="0" angle="0" />
-            <Entity>
-                <FileName>tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="737" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6700" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="738" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6700" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="739" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6700" y="416" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
@@ -1092,62 +948,6 @@
             <Position x="7104" y="320" z="0" angle="0" />
             <Entity>
                 <FileName>collision_box_128x.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="745" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6816" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="746" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6816" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="747" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="6816" y="416" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="748" spriteFrame="0">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="7008" y="480" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="749" spriteFrame="0">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="7008" y="448" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="750" spriteFrame="0">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="7008" y="416" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="751" spriteFrame="4">
-            <EntityName>transition_tile.ent</EntityName>
-            <Position x="6944" y="416" z="0" angle="0" />
-            <Entity>
-                <FileName>transition_tile.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
@@ -1404,30 +1204,6 @@
             <Position x="4224" y="512" z="0" angle="0" />
             <Entity>
                 <FileName>tile02.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="719" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5188" y="512" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="721" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5380" y="512" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="723" spriteFrame="2">
-            <EntityName>wide_tile.ent</EntityName>
-            <Position x="5568" y="512" z="0" angle="0" />
-            <Entity>
-                <FileName>wide_tile.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
