@@ -1,9 +1,27 @@
-﻿#include "../2d-platform-game/SEF/SEF.angelscript"
+﻿#include "SEF/SEF.angelscript"
+
+#include "src/StartScreenState.angelscript"
+#include "src/StartScreenLayer.angelscript"
+#include "src/OptionsLayer.angelscript"
+#include "src/GameState.angelscript"
+
+#include "src/character/Character.angelscript"
+#include "src/character/CharacterController.angelscript"
+#include "src/character/MainCharacterController.angelscript"
+#include "src/character/MainCharacterMovementKeys.angelscript"
+#include "src/character/MoveVelocity.angelscript"
+
+
+#include "src/Curtain.angelscript"
+#include "src/CameraController.angelscript"
 
 void main()
 {
-	LoadScene("empty", "", "");
+	sef::init(720.0f /*virtual height*/, 0xFF222222, @customInitialState);
+	sef::options::frameworkPath = "";
+}
 
-	// Prefer setting window properties in the app.enml file
-	// SetWindowProperties("Ethanon Engine", 1024, 768, true, true, PF32BIT);
+sef::BaseState@ customInitialState()
+{
+	return StartScreenState();
 }

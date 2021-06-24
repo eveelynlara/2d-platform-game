@@ -1,0 +1,10 @@
+default
+{
+	title = SEF sample;
+	richLighting = true;
+
+	width = 1280;
+	height = 720;
+	windowed = true;
+	vsync = true;
+}

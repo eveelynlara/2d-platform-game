@@ -1,0 +1,89 @@
+layer
+{
+	darkenBg = 0.0;
+}
+
+title
+{
+	type = sprite;
+	fileName = sprites/game-logo.png;
+
+	posX = 0.5;
+	posY = 0.36;
+	originX = 0.5;
+	originY = 0.5;
+	scale = 1.0;
+
+	appearEffect = zoom-out;
+	appearDelay = 400;
+	appearEffectDuration = 1700;
+
+	dismissEffect = zoom-in;
+	dismissDelay = 0;
+	dismissEffectDuration = 650;
+
+	hitSoundEffect = soundfx/click.mp3;
+	releaseSoundEffect = soundfx/button.mp3;
+}
+
+start
+{
+	type = frame-button;
+	fileName = ui-sprites/button-frame.png;
+
+	posX = 0.5;
+	posY = 0.7;
+	originX = 0.5;
+	originY = 0.5;
+
+	frameSizeX = 300;
+	frameSizeY = 100;
+
+	text = Start game;
+	textFont = Verdana24_shadow.fnt;
+
+	appearEffect = zoom-out;
+	appearDelay = 1000;
+	appearEffectDuration = 600;
+
+	hitSoundEffect = soundfx/click.mp3;
+	releaseSoundEffect = soundfx/button.mp3;
+
+	dismissEffect = zoom-in;
+	dismissDelay = 0;
+	dismissEffectDuration = 500;
+
+	iterable = true;
+}
+
+options
+{
+	type = frame-button;
+	fileName = ui-sprites/button-frame.png;
+
+	posX = 0.947;
+	posY = 0.947;
+	originX = 1.0;
+	originY = 1.0;
+
+	borderScale = 0.7;
+
+	frameSizeX = 170;
+	frameSizeY = 80;
+
+	text = Options;
+	textFont = Verdana24_shadow.fnt;
+
+	appearEffect = slide-right;
+	appearEffectDuration = 800;
+	appearDelay = 1200;
+
+	hitSoundEffect = soundfx/click.mp3;
+	releaseSoundEffect = soundfx/button.mp3;
+
+	dismissEffect = slide-right;
+	dismissEffectDuration = 500;
+	dismissDelay = 0;
+
+	iterable = true;
+}

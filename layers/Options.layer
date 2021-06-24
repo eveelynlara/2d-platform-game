@@ -1,0 +1,72 @@
+layer
+{
+	darkenBg = 0.9;
+}
+
+optionsTitle
+{
+	type = frame-text;
+	fileName = ui-sprites/button-frame.png;
+
+	posX = 0.5;
+	posY = 0.12;
+	originX = 0.5;
+	originY = 0.5;
+
+	frameSizeX = 350;
+	frameSizeY = 120;
+
+	text = Options;
+	textFont = Verdana64_shadow.fnt;
+
+	appearEffect = slide-up;
+	appearDelay = 0;
+	appearEffectDuration = 600;
+
+	dismissEffect = slide-up;
+	dismissDelay = 0;
+	dismissEffectDuration = 500;
+}
+
+back
+{
+	type = sprite-button;
+	fileName = sprites/back-button.png;
+
+	posX = 0.053;
+	posY = 0.053;
+	originX = 0.0;
+	originY = 0.0;
+
+	appearEffect = slide-left;
+	appearDelay = 500;
+	appearEffectDuration = 600;
+
+	dismissEffect = slide-left;
+	dismissDelay = 0;
+	dismissEffectDuration = 500;
+
+	hitSoundEffect = soundfx/click.mp3;
+	releaseSoundEffect = soundfx/button.mp3;
+}
+
+text
+{
+	type = text;
+
+	posX = 0.5;
+	posY = 0.5;
+	originX = 0.5;
+	originY = 0.5;
+
+	text = Add your options' buttons and switches here;
+	textFont = Verdana24_shadow.fnt;
+
+	appearEffect = zoom-in;
+	appearEffectDuration = 500;
+	appearDelay = 1000;
+
+	dismissEffect = zoom-out;
+	dismissEffectDuration = 500;
+	dismissDelay = 0;
+}
