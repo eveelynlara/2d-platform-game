@@ -10,6 +10,7 @@
 #include "src/character/MainCharacterController.angelscript"
 #include "src/character/MainCharacterMovementKeys.angelscript"
 #include "src/character/MoveVelocity.angelscript"
+#include "src/character/PlayAnim.angelscript"
 
 
 #include "src/Curtain.angelscript"

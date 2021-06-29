@@ -3,8 +3,7 @@ class Character
 	private ETHEntity@ m_entity;
 	ETHPhysicsController@ physicsController;
 	MoveVelocity@ moveVelocity = MoveVelocity();
-
-	private sef::FrameTimer m_frameTimer;
+	PlayAnim@ playAnim = PlayAnim();
 
 	Character(const string &in entityName, const vector2 pos)
 	{
@@ -14,6 +13,13 @@ class Character
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		@physicsController = m_entity.GetPhysicsController();
 		moveVelocity.SetPhysicsController(@physicsController);
+		playAnim.SetCharacterToBeAnimated(@this);
+	}
+
+	void update ()
+	{
+		moveVelocity.update();
+		playAnim.update();
 	}
 
 	vector2 GetPositionXY()
@@ -21,8 +27,13 @@ class Character
 		return m_entity.GetPositionXY();
 	}
 
-	void update ()
+	ETHEntity@ GetEntity()
 	{
-		moveVelocity.update();
+		return @m_entity;
+	}
+
+	MoveVelocity@ GetMoveVelocityController()
+	{
+		return @moveVelocity;
 	}
 }	

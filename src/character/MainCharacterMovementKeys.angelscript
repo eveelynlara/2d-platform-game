@@ -1,5 +1,5 @@
-class MainCharacterMovementKeys {
-
+class MainCharacterMovementKeys 
+{
 	MainCharacterMovementKeys(MoveVelocity@ moveVelocity)
 	{
 		@this.moveVelocity = @moveVelocity;
@@ -8,10 +8,16 @@ class MainCharacterMovementKeys {
 	ETHInput@ input = GetInputHandle();
 	MoveVelocity@ moveVelocity;
 	float m_jumpImpulse = 18.0f;
+	int m_lastMovementDir = 1;
 
 	void update()
 	{
-		float movementX = 0 ;
+		HandleMovement();
+	}
+
+	void HandleMovement()
+	{
+		int movementX = 0;
 		float jumpImpulse = 0.0f;
 
 		if (input.KeyDown(K_LEFT))
@@ -26,7 +32,16 @@ class MainCharacterMovementKeys {
 		{
 			jumpImpulse =-m_jumpImpulse;
 		}
+		if (movementX != 0)
+		{
+			m_lastMovementDir = movementX;
+		}
 		const vector2 movementXY = vector2(movementX, jumpImpulse);
 		moveVelocity.SetVelocity(movementXY);
+	}
+
+	int GetLastMovementDir()
+	{
+		return m_lastMovementDir;
 	}
 }

@@ -4,11 +4,7 @@ class MoveVelocity
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
 	private sef::FrameTimer m_frameTimer;
-	private MainCharacterMovementKeys@ moveKeys = MainCharacterMovementKeys(@this);;
-
-	private uint m_directionLine = 2;
-	private float m_lastDirectionX = 1;
-	private uint m_frameColumn = 0;
+	private MainCharacterMovementKeys@ moveKeys = MainCharacterMovementKeys(@this);
 
 	void SetVelocity(const vector2 moveVelocity)
 	{
@@ -18,6 +14,11 @@ class MoveVelocity
 	void SetPhysicsController(ETHPhysicsController@ rigidbody2D)
 	{
 		@this.rigidbody2D = @rigidbody2D;
+	}
+
+	MainCharacterMovementKeys@ GetMainCharacterMovementKeys()
+	{
+		return @moveKeys;
 	}
 
 	void update()
