@@ -2,7 +2,7 @@
 {
 	private float m_movementSpeed = 0.0f;
 	private float m_jumpImpulse = 0.0f;
-	private float m_lastMovementDir;
+	private float lastMovementDir;
 	private ETHInput@ input = GetInputHandle();
 
 	void update(Character@ thisCharacter)
@@ -17,13 +17,13 @@
 		if (input.KeyDown(K_LEFT))
 		{
 			m_movementSpeed = -mainCharSpeed;
-			m_lastMovementDir = -1;
+			lastMovementDir = -1;
 		}
 
 		if (input.KeyDown(K_RIGHT))
 		{
 			m_movementSpeed = mainCharSpeed;
-			m_lastMovementDir = 1;
+			lastMovementDir = 1;
 		}
 
 		if (input.GetKeyState(K_UP) == KS_HIT)

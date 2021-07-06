@@ -11,6 +11,16 @@ class MoveVelocity
 		this.moveVelocity = moveVelocity;
 	}
 
+	vector2 GetVelocity()
+	{
+		return moveVelocity;
+	}
+
+	vector2 GetSpeed()
+	{
+		return rigidbody2D.GetLinearVelocity();
+	}
+
 	void SetPhysicsController(ETHPhysicsController@ rigidbody2D)
 	{
 		@this.rigidbody2D = @rigidbody2D;

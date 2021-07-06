@@ -5,10 +5,10 @@ class MainCharacterMovementKeys
 		@this.moveVelocity = @moveVelocity;
 	}
 
-	ETHInput@ input = GetInputHandle();
-	MoveVelocity@ moveVelocity;
-	float m_jumpImpulse = 18.0f;
-	int m_lastMovementDir = 1;
+	private ETHInput@ input = GetInputHandle();
+	private MoveVelocity@ moveVelocity;
+	private float m_jumpImpulse = 18.0f;
+	private int lastMovementDir = 1;
 
 	void update()
 	{
@@ -34,7 +34,7 @@ class MainCharacterMovementKeys
 		}
 		if (movementX != 0)
 		{
-			m_lastMovementDir = movementX;
+			lastMovementDir = movementX;
 		}
 		const vector2 movementXY = vector2(movementX, jumpImpulse);
 		moveVelocity.SetVelocity(movementXY);
@@ -42,6 +42,6 @@ class MainCharacterMovementKeys
 
 	int GetLastMovementDir()
 	{
-		return m_lastMovementDir;
+		return lastMovementDir;
 	}
 }
