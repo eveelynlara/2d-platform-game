@@ -1,10 +1,18 @@
 class MoveVelocity
 {
+	private Character@ characterToBeMoved;
 	private vector2 moveVelocity;
+	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
 	private sef::FrameTimer m_frameTimer;
 	private MainCharacterMovementKeys@ moveKeys = MainCharacterMovementKeys(@this);
+
+	void SetCharacterToBeMoved(Character@ character)
+	{
+		@characterToBeMoved = @character;
+		SetPhysicsController();
+	}
 
 	void SetVelocity(const vector2 moveVelocity)
 	{
@@ -21,9 +29,9 @@ class MoveVelocity
 		return rigidbody2D.GetLinearVelocity();
 	}
 
-	void SetPhysicsController(ETHPhysicsController@ rigidbody2D)
+	void SetPhysicsController()
 	{
-		@this.rigidbody2D = @rigidbody2D;
+		@rigidbody2D = characterToBeMoved.GetEntity().GetPhysicsController();
 	}
 
 	MainCharacterMovementKeys@ GetMainCharacterMovementKeys()
@@ -36,10 +44,17 @@ class MoveVelocity
 		moveKeys.update();
 		vector2 currentVelocity = rigidbody2D.GetLinearVelocity();
 		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * moveVelocity.x, currentVelocity.y));
-		
-		if(moveVelocity.y < 0)
+		bool isJumping = (moveVelocity.y < 0);
+		bool isTouchingGround = characterToBeMoved.isTouchingGround();
+
+		if(isJumping && jumpsInTheAir < 1)
 		{
 			rigidbody2D.SetLinearVelocity(vector2(currentVelocity.x, moveVelocity.y));
+			jumpsInTheAir++;
+		}
+		else if (isTouchingGround)
+		{
+			jumpsInTheAir = 0;
 		}
 	}
 }

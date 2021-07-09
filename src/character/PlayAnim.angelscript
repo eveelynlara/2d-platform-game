@@ -1,6 +1,6 @@
 class PlayAnim 
 {
-	private Character@ character;
+	private Character@ characterToBeAnimated;
 	private ETHEntity@ entity;
 	private MoveVelocity@ moveVelocity;
 	private MainCharacterMovementKeys@ mainCharacterMovementKeys;
@@ -10,7 +10,7 @@ class PlayAnim
 
 	void SetCharacterToBeAnimated(Character@ character)
 	{
-		@this.character = @character;
+		@characterToBeAnimated = @character;
 		SetEntity();
 		SetMoveVelocity();
 		SetMovementKeys();
@@ -18,12 +18,12 @@ class PlayAnim
 
 	void SetEntity()
 	{
-		@entity = @character.GetEntity();
+		@entity = @characterToBeAnimated.GetEntity();
 	}
 
 	void SetMoveVelocity()
 	{
-		@moveVelocity = @character.GetMoveVelocity();
+		@moveVelocity = @characterToBeAnimated.GetMoveVelocity();
 	}
 
 	void SetMovementKeys()
@@ -38,7 +38,7 @@ class PlayAnim
 		float movementVelocityX = moveVelocity.GetVelocity().x;
 		float movementVelocityY = moveVelocity.GetVelocity().y;
 		int lastMovementDir = mainCharacterMovementKeys.GetLastMovementDir();
-		bool isTouchingGround = character.isTouchingGround();
+		bool isTouchingGround = characterToBeAnimated.isTouchingGround();
 
 		if(movementVelocityX != 0)
 		{
