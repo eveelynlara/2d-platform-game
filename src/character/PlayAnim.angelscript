@@ -7,6 +7,8 @@ class PlayAnim
 	private int frameRow = 2;
 	private int frameColumn = 0;
 	private sef::FrameTimer frameTimer;
+	private int secondIndexRow = 2;
+	private bool flipHorizontally = false;
 
 	void SetCharacterToBeAnimated(Character@ character)
 	{
@@ -39,23 +41,18 @@ class PlayAnim
 		float movementVelocityY = moveVelocity.GetVelocity().y;
 		int lastMovementDir = mainCharacterMovementKeys.GetLastMovementDir();
 		bool isTouchingGround = characterToBeAnimated.isTouchingGround();
+		frameColumn = 0;
 
 		if(movementVelocityX != 0)
 		{
-			frameRow = lastMovementDir > 0 ? 2 : 1;
+			frameRow = secondIndexRow;
+			flipHorizontally = lastMovementDir < 0 ? true : false;
+			entity.SetFlipX(flipHorizontally);
 
 			if(isTouchingGround)
 			{
 				frameColumn = frameTimer.set(0, 3, 150);
 			}
-			else
-			{
-				frameColumn = 0;	
-			}
-		}
-		else
-		{
-			frameColumn = 0;
 		}
 	}
 }
