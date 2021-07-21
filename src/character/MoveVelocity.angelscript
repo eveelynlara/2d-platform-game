@@ -1,27 +1,30 @@
 class MoveVelocity
 {
-	private Character@ characterToBeMoved;
-	private vector2 moveVelocity;
+	private ETHEntity@ m_entity;
 	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-	private sef::FrameTimer m_frameTimer;
-	private MainCharacterMovementKeys@ moveKeys = MainCharacterMovementKeys(@this);
+	private Movement@ movement;
 
-	void SetCharacterToBeMoved(Character@ character)
+	MoveVelocity(const string &in entityName, const vector2 pos, int movementType = 0)
 	{
-		@characterToBeMoved = @character;
+		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.0f /*scale*/);
 		SetPhysicsController();
+		print("Construtor passou aqui");
+		//@movement = movementType == 0 ? MovementByKeys() : MovementBubbleGum(); 
+		if(movementType == 0)
+		{
+			@movement = MovementByKeys();
+		}
+		else
+		{
+			@movement = MovementBubbleGum();
+		}
 	}
 
-	void SetVelocity(const vector2 moveVelocity)
+	ETHEntity@ GetEntity()
 	{
-		this.moveVelocity = moveVelocity;
-	}
-
-	vector2 GetVelocity()
-	{
-		return moveVelocity;
+		return @m_entity;
 	}
 
 	vector2 GetSpeed()
@@ -31,30 +34,47 @@ class MoveVelocity
 
 	void SetPhysicsController()
 	{
-		@rigidbody2D = characterToBeMoved.GetEntity().GetPhysicsController();
+		@rigidbody2D = m_entity.GetPhysicsController();
 	}
 
-	MainCharacterMovementKeys@ GetMainCharacterMovementKeys()
+	Movement@ GetMovement()
 	{
-		return @moveKeys;
+		return @movement;
+	}
+
+	int GetLastMovementDir()
+	{
+		return movement.GetLastMovementDir();
+	}
+
+	bool isTouchingGround()
+	{
+		// if the last time a ground touch had been detected was over a few
+		// milliseconds ago, we assume it is no longer touching the ground 
+		bool isTouchingGround = ((GetTime() - m_entity.GetUInt("touchingGroundTime")) < 120);
+		return isTouchingGround;
 	}
 
 	void update()
 	{
-		moveKeys.update();
-		vector2 currentVelocity = rigidbody2D.GetLinearVelocity();
-		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * moveVelocity.x, currentVelocity.y));
-		bool isJumping = (moveVelocity.y < 0);
-		bool isTouchingGround = characterToBeMoved.isTouchingGround();
+		movement.update();
+		bool isJumping = (movement.GetDirection().y < 0);
+		float newVelocityY;
 
-		if(isJumping && jumpsInTheAir < 1)
-		{
-			rigidbody2D.SetLinearVelocity(vector2(currentVelocity.x, moveVelocity.y));
+		if(isJumping && jumpsInTheAir < 1){
+			newVelocityY = movement.GetDirection().y;
 			jumpsInTheAir++;
 		}
-		else if (isTouchingGround)
+		else
 		{
-			jumpsInTheAir = 0;
+			newVelocityY = rigidbody2D.GetLinearVelocity().y;
+			
+			if (isTouchingGround())
+			{
+				jumpsInTheAir = 0;
+			}
 		}
+		
+		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * movement.GetDirection().x, newVelocityY));
 	}
 }

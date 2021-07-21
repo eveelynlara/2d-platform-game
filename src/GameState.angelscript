@@ -4,6 +4,7 @@ class GameState : sef::BaseState
 
 	CameraController m_cameraController;
 	private Character@ m_character;
+	private CharactersManager m_charactersManager;
 
 	ETHEntity@ m_spaceShip;
 
@@ -16,7 +17,9 @@ class GameState : sef::BaseState
 	void onCreated() override
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
-		@m_character = Character("witch.ent", screenMiddle);
+		@m_character = Character("witch.ent", screenMiddle, 0);
+		m_character.GetPlayAnim().GetMoveVelocity().GetEntity().SetInt("hp", 100);
+		m_charactersManager.addCharacter(@m_character);
 
 		BaseState::onCreated();
 
@@ -72,7 +75,7 @@ class GameState : sef::BaseState
 	void onUpdate() override
 	{
 		BaseState::onUpdate();
-		m_character.update();
+		m_charactersManager.update();
 		m_cameraController.setDest(m_character.GetPositionXY());
 
 		// check back request

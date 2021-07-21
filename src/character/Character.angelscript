@@ -1,47 +1,42 @@
 class Character
 {
-	private ETHEntity@ m_entity;
-	private ETHPhysicsController@ physicsController;
-	private MoveVelocity@ moveVelocity = MoveVelocity();
-	private PlayAnim@ playAnim = PlayAnim();
+	private PlayAnim@ playAnim;
 
-	Character(const string &in entityName, const vector2 pos)
+	Character(const string &in entityName, const vector2 pos, int movementType = 0)
 	{
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
-		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.0f /*scale*/);
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		moveVelocity.SetCharacterToBeMoved(@this);
-		playAnim.SetCharacterToBeAnimated(@this);
+		@playAnim = PlayAnim(entityName, pos, movementType);
 	}
 
 	void update ()
 	{
-		moveVelocity.update();
 		playAnim.update();
 	}
 
 	vector2 GetPositionXY()
 	{
-		return m_entity.GetPositionXY();
+		return playAnim.GetMoveVelocity().GetEntity().GetPositionXY();
 	}
 
-	ETHEntity@ GetEntity()
+	PlayAnim@ GetPlayAnim()
 	{
-		return @m_entity;
+		return @playAnim;
 	}
 
-	MoveVelocity@ GetMoveVelocity()
+	bool IsDead() const
 	{
-		return @moveVelocity;
+		return (playAnim.GetMoveVelocity().GetEntity().GetInt("hp") <= 0);
 	}
 
-	bool isTouchingGround()
+	void DestroyCharacterEntity()
 	{
-		// if the last time a ground touch had been detected was over a few
-		// milliseconds ago, we assume it is no longer touching the ground 
-		bool isTouchingGround = ((GetTime() - m_entity.GetUInt("touchingGroundTime")) < 120);
-		return isTouchingGround;
+		if(playAnim.GetMoveVelocity().GetEntity()
+			.GetInt("hp") <= 0)
+		{
+			DeleteEntity(playAnim.GetMoveVelocity().GetEntity());
+		}
 	}
 }	
 

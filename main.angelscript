@@ -6,9 +6,10 @@
 #include "src/GameState.angelscript"
 
 #include "src/character/Character.angelscript"
-#include "src/character/CharacterController.angelscript"
-#include "src/character/MainCharacterController.angelscript"
-#include "src/character/MainCharacterMovementKeys.angelscript"
+#include "src/character/CharactersManager.angelscript" 
+#include "src/character/Movement.angelscript"
+#include "src/character/MovementByKeys.angelscript"
+#include "src/character/MovementBubbleGum.angelscript" 
 #include "src/character/MoveVelocity.angelscript"
 #include "src/character/PlayAnim.angelscript"
 
