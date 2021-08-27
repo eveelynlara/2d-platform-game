@@ -8,7 +8,7 @@ class MoveVelocity
 
 	MoveVelocity(const string &in entityName, const vector2 pos, int movementType = 0)
 	{
-		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.0f /*scale*/);
+		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.2f /*scale*/);
 		SetPhysicsController();
 		print("Construtor passou aqui");
 		//@movement = movementType == 0 ? MovementByKeys() : MovementBubbleGum(); 
@@ -49,10 +49,7 @@ class MoveVelocity
 
 	bool isTouchingGround()
 	{
-		// if the last time a ground touch had been detected was over a few
-		// milliseconds ago, we assume it is no longer touching the ground 
-		bool isTouchingGround = ((GetTime() - m_entity.GetUInt("touchingGroundTime")) < 120);
-		return isTouchingGround;
+		return m_entity.GetUInt("touchingGround") == 1;
 	}
 
 	void update()

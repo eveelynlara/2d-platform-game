@@ -10,14 +10,14 @@ class GameState : sef::BaseState
 
 	GameState()
 	{
-		super("scenes/level1.esc", vector2(sef::getFixedHeight() / 2.0f) /*bucketSize*/);
+		super("scenes/platform01.esc", vector2(sef::getFixedHeight() / 2.0f) /*bucketSize*/);
 		sef::state::backgroundColor = 0xFF000000;
 	}
 
 	void onCreated() override
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
-		@m_character = Character("witch.ent", screenMiddle, 0);
+		@m_character = Character("warrior.ent", screenMiddle, 0);
 		m_character.GetPlayAnim().GetMoveVelocity().GetEntity().SetInt("hp", 100);
 		m_charactersManager.addCharacter(@m_character);
 
@@ -39,7 +39,7 @@ class GameState : sef::BaseState
 			vector2(0.5f, 0.053f) /*position*/,
 			vector2(0.5f, 0.0f) /*origin*/,
 			sef::StaticFont("Verdana24_shadow.fnt"),
-			"Hello World!",
+			"",
 			2.5f /*scale*/, 
 			true /*centered*/,
 			sef::uieffects::createBounceAppearEffect(200, 1.1f, 500 /*delay*/, 15 /*repeats*/),

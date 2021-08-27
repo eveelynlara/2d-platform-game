@@ -1,11 +1,14 @@
 class PlayAnim 
 {
 	private MoveVelocity@ moveVelocity;
-	private int frameRow = 2;
+	private int frameRow = 0;
 	private int frameColumn = 0;
-	private sef::FrameTimer frameTimer;
-	private int secondIndexRow = 2;
 	private bool flipHorizontally = false;
+	private sef::FrameTimer frameTimer;
+	private uint[] idleFrameMapping = {0, 1, 2, 3, 4, 5, 6};	
+	private uint[] walkingFrameMapping = {12, 13, 14, 15, 16, 17, 18, 19};
+	private uint[] risingJump = {36, 37, 38, 39};
+	private uint[] fallingJump = {48, 49, 50};
 
 	PlayAnim(const string &in entityName, const vector2 pos, int movementType)
 	{
@@ -26,22 +29,35 @@ class PlayAnim
 		float movementVelocityY = moveVelocity.GetMovement().GetDirection().y;
 		int lastMovementDir = moveVelocity.GetLastMovementDir();
 		bool isTouchingGround = moveVelocity.isTouchingGround();
-		frameColumn = 0;
+		uint frame;
 
-		if(movementVelocityX != 0)
+		if(moveVelocity.GetMovement().GetChangeDir())
 		{
-			frameRow = secondIndexRow;
-			
-			if(moveVelocity.GetMovement().GetChangeDir())
-			{
-				moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);		
-			}
+			moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);	
+		}
 
-			if(isTouchingGround)
+		if(isTouchingGround)
+		{
+			if(movementVelocityX != 0)
+			{	
+				frame = walkingFrameMapping[frameTimer.set(0, walkingFrameMapping.length() - 1, 80, true /*loop*/)];
+			}
+			else
 			{
-				frameColumn = frameTimer.set(0, 3, 150);
+				frame = idleFrameMapping[frameTimer.set(0, idleFrameMapping.length() - 1, 100, true /*loop*/)];
 			}
 		}
-		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
+		else
+		{
+			if(moveVelocity.GetSpeed().y < 0)
+			{
+				frame = risingJump[frameTimer.set(0, risingJump.length() - 1, 100, false /*loop*/)];
+			}
+			else
+			{
+				frame = fallingJump[frameTimer.set(0, fallingJump.length() - 1, 100, false /*loop*/)];
+			}
+		}
+		moveVelocity.GetEntity().SetFrame(frame);
 	}
 }

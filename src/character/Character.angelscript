@@ -40,6 +40,11 @@ class Character
 	}
 }	
 
+int calcIsTouchingGround(float otherY, float bodyY, float charBodyHeight)
+{
+	return otherY - bodyY < charBodyHeight * 1.2 ? 1 : 0;
+}
+
 void ETHPreSolveContactCallback_Character(
 	ETHEntity@ body,
 	ETHEntity@ other,
@@ -47,13 +52,19 @@ void ETHPreSolveContactCallback_Character(
 	vector2 contactPointB,
 	vector2 contactNormal)
 {
+	//quando inicia a colisao
 	const float charBodyHeight = body.GetCollisionBox().size.y * body.GetScale().y;
-	const float halfCharBodyHeight = charBodyHeight / 2.0f;
+	body.SetUInt("touchingGround", calcIsTouchingGround(other.GetPositionY(), body.GetPositionY(), charBodyHeight));
+}
 
-	// if the contact is near the bottom of the character's body,
-	// we can assume it's their feet so he might be touching ground
-	if (contactPointA.y > body.GetPositionY() + (halfCharBodyHeight * 0.8f))
-	{
-		body.SetUInt("touchingGroundTime", GetTime());
-	}
+void ETHEndContactCallback_Character(
+	ETHEntity@ body,
+	ETHEntity@ other,
+	vector2 contactPointA,
+	vector2 contactPointB,
+	vector2 contactNormal)
+{
+	//quando acaba a colisao
+	const float charBodyHeight = body.GetCollisionBox().size.y * body.GetScale().y;
+	body.SetUInt("touchingGround", calcIsTouchingGround(other.GetPositionY(), body.GetPositionY(), charBodyHeight));
 }
