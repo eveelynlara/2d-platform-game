@@ -2095,6 +2095,70 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="3148" spriteFrame="3">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="480" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3149" spriteFrame="1">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="416" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3150" spriteFrame="1">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="352" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3151" spriteFrame="0">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="288" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3152" spriteFrame="4">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="224" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3153" spriteFrame="3">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="160" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3154" spriteFrame="2">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="96" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3155" spriteFrame="4">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="32" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="1597" spriteFrame="0">
             <EntityName>beam_1R5C_tile.ent</EntityName>
             <Position x="672" y="608" z="0" angle="0" />
@@ -2244,6 +2308,78 @@
             <Position x="736" y="608" z="0" angle="0" />
             <Entity>
                 <FileName>transition_roof_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3142" spriteFrame="2">
+            <EntityName>beam_1R5C_tile.ent</EntityName>
+            <Position x="672" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3144" spriteFrame="0">
+            <EntityName>transition_bricks_right_4tiles.ent</EntityName>
+            <Position x="608" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>transition_bricks_right_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3145" spriteFrame="0">
+            <EntityName>transition_bricks_left_4tiles.ent</EntityName>
+            <Position x="736" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>transition_bricks_left_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3146" spriteFrame="0">
+            <EntityName>single_piece_dark.ent</EntityName>
+            <Position x="544" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_dark.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3147" spriteFrame="0">
+            <EntityName>single_piece_grey.ent</EntityName>
+            <Position x="864" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_grey.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3156" spriteFrame="0">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="800" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3157" spriteFrame="0">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="928" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3158" spriteFrame="0">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="992" y="672" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3159" spriteFrame="0">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
+            <Position x="992" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_1R5C_tile.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
