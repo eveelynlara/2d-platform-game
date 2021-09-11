@@ -10,7 +10,6 @@ class MoveVelocity
 	{
 		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.2f /*scale*/);
 		SetPhysicsController();
-		print("Construtor passou aqui");
 		//@movement = movementType == 0 ? MovementByKeys() : MovementBubbleGum(); 
 		if(movementType == 0)
 		{
@@ -47,13 +46,16 @@ class MoveVelocity
 		return movement.GetLastMovementDir();
 	}
 
-	bool isTouchingGround()
+	bool isTouchingOnlyGround()
 	{
-		return m_entity.GetUInt("touchingGround") == 1;
+		return (GetTime() - m_entity.GetUInt("touchingOnlyGroundTime")) < 120;
 	}
 
 	void update()
 	{
+		// never let character body sleep
+		rigidbody2D.SetAwake(true);
+
 		movement.update();
 		bool isJumping = (movement.GetDirection().y < 0);
 		float newVelocityY;
@@ -66,7 +68,7 @@ class MoveVelocity
 		{
 			newVelocityY = rigidbody2D.GetLinearVelocity().y;
 			
-			if (isTouchingGround())
+			if (isTouchingOnlyGround())
 			{
 				jumpsInTheAir = 0;
 			}

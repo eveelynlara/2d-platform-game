@@ -29,6 +29,4 @@ abstract class Movement
 	{
 		return vDirection;
 	}
-	
-	//fazer outros directions, DirectionX(), DirectionY()
 }

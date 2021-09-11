@@ -28,7 +28,7 @@ class PlayAnim
 		float movementVelocityX = moveVelocity.GetMovement().GetDirection().x;
 		float movementVelocityY = moveVelocity.GetMovement().GetDirection().y;
 		int lastMovementDir = moveVelocity.GetLastMovementDir();
-		bool isTouchingGround = moveVelocity.isTouchingGround();
+		bool isTouchingOnlyGround = moveVelocity.isTouchingOnlyGround();
 		uint frame;
 
 		if(moveVelocity.GetMovement().GetChangeDir())
@@ -36,7 +36,7 @@ class PlayAnim
 			moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);	
 		}
 
-		if(isTouchingGround)
+		if(isTouchingOnlyGround)
 		{
 			if(movementVelocityX != 0)
 			{	
