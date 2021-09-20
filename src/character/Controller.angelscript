@@ -1,4 +1,4 @@
-abstract class Movement 
+abstract class Controller 
 {
 	protected float m_jumpImpulse = 18.0f;
 	protected int lastMovementDir = 1;

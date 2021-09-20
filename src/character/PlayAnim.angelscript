@@ -10,13 +10,13 @@ class PlayAnim
 	private uint[] risingJump = {36, 37, 38, 39};
 	private uint[] fallingJump = {48, 49, 50};
 
-	PlayAnim(const string &in entityName, const vector2 pos, int movementType)
+	PlayAnim(const string &in entityName, const vector2 pos, int controllerType)
 	{
-		@moveVelocity = MoveVelocity(entityName, pos, movementType);
+		@moveVelocity = MoveVelocity(entityName, pos, controllerType);
 		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
 	}
 
-	MoveVelocity@ GetMoveVelocity()
+	MoveVelocity@ GetController()
 	{
 		return @moveVelocity;
 	}
@@ -25,13 +25,13 @@ class PlayAnim
 	{
 		moveVelocity.update(); 
 
-		float movementVelocityX = moveVelocity.GetMovement().GetDirection().x;
-		float movementVelocityY = moveVelocity.GetMovement().GetDirection().y;
+		float movementVelocityX = moveVelocity.GetController().GetDirection().x;
+		float movementVelocityY = moveVelocity.GetController().GetDirection().y;
 		int lastMovementDir = moveVelocity.GetLastMovementDir();
 		bool isTouchingOnlyGround = moveVelocity.isTouchingOnlyGround();
 		uint frame;
 
-		if(moveVelocity.GetMovement().GetChangeDir())
+		if(moveVelocity.GetController().GetChangeDir())
 		{
 			moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);	
 		}

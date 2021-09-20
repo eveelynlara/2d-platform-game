@@ -4,20 +4,20 @@ class MoveVelocity
 	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-	private Movement@ movement;
+	private Controller@ controller;
 
-	MoveVelocity(const string &in entityName, const vector2 pos, int movementType = 0)
+	MoveVelocity(const string &in entityName, const vector2 pos, int controllerType = 0)
 	{
 		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.2f /*scale*/);
 		SetPhysicsController();
-		//@movement = movementType == 0 ? MovementByKeys() : MovementBubbleGum(); 
-		if(movementType == 0)
+
+		if(controllerType == 0)
 		{
-			@movement = MovementByKeys();
+			@controller = MovementByKeysController();
 		}
 		else
 		{
-			@movement = MovementBubbleGum();
+			@controller = MovementBubbleGumController();
 		}
 	}
 
@@ -36,14 +36,14 @@ class MoveVelocity
 		@rigidbody2D = m_entity.GetPhysicsController();
 	}
 
-	Movement@ GetMovement()
+	Controller@ GetController()
 	{
-		return @movement;
+		return @controller;
 	}
 
 	int GetLastMovementDir()
 	{
-		return movement.GetLastMovementDir();
+		return controller.GetLastMovementDir();
 	}
 
 	bool isTouchingOnlyGround()
@@ -56,12 +56,12 @@ class MoveVelocity
 		// never let character body sleep
 		rigidbody2D.SetAwake(true);
 
-		movement.update();
-		bool isJumping = (movement.GetDirection().y < 0);
+		controller.update();
+		bool isJumping = (controller.GetDirection().y < 0);
 		float newVelocityY;
 
 		if(isJumping && jumpsInTheAir < 1){
-			newVelocityY = movement.GetDirection().y;
+			newVelocityY = controller.GetDirection().y;
 			jumpsInTheAir++;
 		}
 		else
@@ -74,6 +74,6 @@ class MoveVelocity
 			}
 		}
 		
-		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * movement.GetDirection().x, newVelocityY));
+		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * controller.GetDirection().x, newVelocityY));
 	}
 }

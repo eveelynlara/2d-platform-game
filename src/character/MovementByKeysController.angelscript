@@ -1,4 +1,4 @@
-class MovementByKeys : Movement
+class MovementByKeysController : Controller
 {
 	private ETHInput@ input = GetInputHandle();
 
@@ -6,6 +6,7 @@ class MovementByKeys : Movement
 		{
 			int movementX = 0;
 			float jumpImpulse = 0.0f;
+			int attack = 0;
 
 			if (input.KeyDown(K_LEFT))
 			{
@@ -18,6 +19,10 @@ class MovementByKeys : Movement
 			if (input.GetKeyState(K_UP) == KS_HIT)
 			{
 				jumpImpulse =-m_jumpImpulse;
+			}
+			if(input.GetKeyState(K_SPACE) == KS_HIT)
+			{
+				attack = 1;
 			}
 			if (movementX != 0)
 			{

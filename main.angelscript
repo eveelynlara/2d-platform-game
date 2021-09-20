@@ -7,9 +7,9 @@
 
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
-#include "src/character/Movement.angelscript"
-#include "src/character/MovementByKeys.angelscript"
-#include "src/character/MovementBubbleGum.angelscript" 
+#include "src/character/Controller.angelscript"
+#include "src/character/MovementByKeysController.angelscript"
+#include "src/character/MovementBubbleGumController.angelscript" 
 #include "src/character/MoveVelocity.angelscript"
 #include "src/character/PlayAnim.angelscript"
 
