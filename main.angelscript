@@ -5,6 +5,7 @@
 #include "src/OptionsLayer.angelscript"
 #include "src/GameState.angelscript"
 
+#include "src/character/Anim.angelscript"
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
 #include "src/character/Controller.angelscript"
@@ -12,7 +13,6 @@
 #include "src/character/MovementBubbleGumController.angelscript" 
 #include "src/character/MoveVelocity.angelscript"
 #include "src/character/PlayAnim.angelscript"
-
 
 #include "src/Curtain.angelscript"
 #include "src/CameraController.angelscript"

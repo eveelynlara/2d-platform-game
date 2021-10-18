@@ -8,7 +8,7 @@ class MoveVelocity
 
 	MoveVelocity(const string &in entityName, const vector2 pos, int controllerType = 0)
 	{
-		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.2f /*scale*/);
+		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.3f /*scale*/);
 		SetPhysicsController();
 
 		if(controllerType == 0)

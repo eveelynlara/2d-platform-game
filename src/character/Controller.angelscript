@@ -4,6 +4,7 @@ abstract class Controller
 	protected int lastMovementDir = 1;
 	protected vector2 vDirection;
 	protected bool changeDir = false;
+	protected int attack = 0;
 
 	void update()
 	{
@@ -23,6 +24,11 @@ abstract class Controller
 	int GetLastMovementDir()
 	{
 		return lastMovementDir;
+	}
+
+	int GetAttack()
+	{
+		return attack;
 	}
 
 	vector2 GetDirection()

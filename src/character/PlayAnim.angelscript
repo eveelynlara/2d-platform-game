@@ -4,11 +4,14 @@ class PlayAnim
 	private int frameRow = 0;
 	private int frameColumn = 0;
 	private bool flipHorizontally = false;
-	private sef::FrameTimer frameTimer;
-	private uint[] idleFrameMapping = {0, 1, 2, 3, 4, 5, 6};	
-	private uint[] walkingFrameMapping = {12, 13, 14, 15, 16, 17, 18, 19};
-	private uint[] risingJump = {36, 37, 38, 39};
-	private uint[] fallingJump = {48, 49, 50};
+
+	private Anim@ idleAnim = Anim("idle", {0, 1, 2, 3, 4, 5, 6}, 100, true, 0);
+	private Anim@ walkingAnim = Anim("walking", {12, 13, 14, 15, 16, 17, 18, 19}, 80, true, 0);
+	private Anim@ jumpingRisingAnim = Anim("jumpRising", {36, 37, 38, 39}, 100, false, 1.5);
+	private Anim@ jumpingFallingAnim = Anim("jumpFalling", {48, 49, 50}, 100, false, 1.5);
+	private Anim@ attackingGroundAnim = Anim("attackingGround", {24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35}, 100, false, 1);
+	private Anim@ currentPriorityAnim = @idleAnim;
+
 
 	PlayAnim(const string &in entityName, const vector2 pos, int controllerType)
 	{
@@ -28,36 +31,42 @@ class PlayAnim
 		float movementVelocityX = moveVelocity.GetController().GetDirection().x;
 		float movementVelocityY = moveVelocity.GetController().GetDirection().y;
 		int lastMovementDir = moveVelocity.GetLastMovementDir();
+		int attackButtonWasPressed = moveVelocity.GetController().GetAttack();
 		bool isTouchingOnlyGround = moveVelocity.isTouchingOnlyGround();
-		uint frame;
-
+		bool isAnimationFinished = false;
+		
 		if(moveVelocity.GetController().GetChangeDir())
 		{
 			moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);	
+		}
+
+		if(attackButtonWasPressed == 1)
+		{
+			moveVelocity.GetEntity().SetUInt("attacking", 1);
 		}
 
 		if(isTouchingOnlyGround)
 		{
 			if(movementVelocityX != 0)
 			{	
-				frame = walkingFrameMapping[frameTimer.set(0, walkingFrameMapping.length() - 1, 80, true /*loop*/)];
+				@currentPriorityAnim = @walkingAnim;
 			}
 			else
 			{
-				frame = idleFrameMapping[frameTimer.set(0, idleFrameMapping.length() - 1, 100, true /*loop*/)];
+				@currentPriorityAnim = @idleAnim;
 			}
 		}
 		else
 		{
 			if(moveVelocity.GetSpeed().y < 0)
 			{
-				frame = risingJump[frameTimer.set(0, risingJump.length() - 1, 100, false /*loop*/)];
+				@currentPriorityAnim = @jumpingRisingAnim;
 			}
 			else
 			{
-				frame = fallingJump[frameTimer.set(0, fallingJump.length() - 1, 100, false /*loop*/)];
+				@currentPriorityAnim = @jumpingFallingAnim;
 			}
 		}
-		moveVelocity.GetEntity().SetFrame(frame);
+		moveVelocity.GetEntity().SetFrame(currentPriorityAnim.GetAnimationFrame());
 	}
 }

@@ -4,9 +4,9 @@ class MovementByKeysController : Controller
 
 	void HandleMovement() override
 		{
+			attack = 0;
 			int movementX = 0;
 			float jumpImpulse = 0.0f;
-			int attack = 0;
 
 			if (input.KeyDown(K_LEFT))
 			{
