@@ -39,11 +39,6 @@ class Character
 		}
 	}
 	
-	int calcIsTouchingWall(vector2 normalForce)
-	{
-		return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
-	}
-
 	void ETHPreSolveContactCallback_Character(
 		ETHEntity@ body,
 		ETHEntity@ other,
@@ -64,6 +59,11 @@ class Character
 		}
 	}
 }	
+
+int calcIsTouchingWall(vector2 normalForce)
+{
+	return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
+}
 
 void ETHPreSolveContactCallback_Character(
 	ETHEntity@ body,

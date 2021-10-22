@@ -33,7 +33,6 @@ class PlayAnim
 		int lastMovementDir = moveVelocity.GetLastMovementDir();
 		int attackButtonWasPressed = moveVelocity.GetController().GetAttack();
 		bool isTouchingOnlyGround = moveVelocity.isTouchingOnlyGround();
-		bool isAnimationFinished = false;
 		
 		if(moveVelocity.GetController().GetChangeDir())
 		{
@@ -52,6 +51,7 @@ class PlayAnim
 			if(attackingGroundAnim.IsAnimationFisnished())
 			{
 				moveVelocity.GetEntity().SetUInt("attacking", 0);
+				attackingGroundAnim.SetIsAnimationFinished(false);
 			}
 		}
 		else

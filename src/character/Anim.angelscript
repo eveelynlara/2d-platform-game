@@ -8,6 +8,7 @@ class Anim
 	private sef::FrameTimer frameTimer;
 	private uint frame;
 	private bool loop;
+	private bool isFinished;
 
 	Anim(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
 	{
@@ -45,6 +46,12 @@ class Anim
 
 	bool IsAnimationFisnished()
 	{
-		return frameTimer.isFinished(); 
+		isFinished = frameTimer.isFinished();
+		return isFinished;
+	}
+
+	void SetIsAnimationFinished(bool isFinished)
+	{
+		this.isFinished = isFinished; 
 	}
 }
