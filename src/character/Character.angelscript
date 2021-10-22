@@ -10,7 +10,7 @@ class Character
 		@playAnim = PlayAnim(entityName, pos, movementType);
 	}
 
-	void update ()
+	void update()
 	{
 		playAnim.update();
 	}
@@ -38,6 +38,7 @@ class Character
 			DeleteEntity(playAnim.GetController().GetEntity());
 		}
 	}
+	
 	int calcIsTouchingWall(vector2 normalForce)
 	{
 		return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
@@ -63,11 +64,6 @@ class Character
 		}
 	}
 }	
-
-int calcIsTouchingWall(vector2 normalForce)
-{
-	return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
-}
 
 void ETHPreSolveContactCallback_Character(
 	ETHEntity@ body,

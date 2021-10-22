@@ -42,4 +42,9 @@ class Anim
 	{
 		return name;
 	}
+
+	bool IsAnimationFisnished()
+	{
+		return frameTimer.isFinished(); 
+	}
 }

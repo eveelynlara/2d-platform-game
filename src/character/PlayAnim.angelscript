@@ -10,7 +10,7 @@ class PlayAnim
 	private Anim@ jumpingRisingAnim = Anim("jumpRising", {36, 37, 38, 39}, 100, false, 1.5);
 	private Anim@ jumpingFallingAnim = Anim("jumpFalling", {48, 49, 50}, 100, false, 1.5);
 	private Anim@ attackingGroundAnim = Anim("attackingGround", {24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35}, 100, false, 1);
-	private Anim@ currentPriorityAnim = @idleAnim;
+	private Anim@ currentPriorityAnim;
 
 
 	PlayAnim(const string &in entityName, const vector2 pos, int controllerType)
@@ -45,28 +45,41 @@ class PlayAnim
 			moveVelocity.GetEntity().SetUInt("attacking", 1);
 		}
 
-		if(isTouchingOnlyGround)
+		if(moveVelocity.GetEntity().GetUInt("attacking") == 1)
 		{
-			if(movementVelocityX != 0)
-			{	
-				@currentPriorityAnim = @walkingAnim;
-			}
-			else
+			@currentPriorityAnim = @attackingGroundAnim;
+
+			if(attackingGroundAnim.IsAnimationFisnished())
 			{
-				@currentPriorityAnim = @idleAnim;
+				moveVelocity.GetEntity().SetUInt("attacking", 0);
 			}
 		}
 		else
 		{
-			if(moveVelocity.GetSpeed().y < 0)
+			if(isTouchingOnlyGround)
 			{
-				@currentPriorityAnim = @jumpingRisingAnim;
+				if(movementVelocityX != 0)
+				{	
+					@currentPriorityAnim = @walkingAnim;
+				}
+				else
+				{
+					@currentPriorityAnim = @idleAnim;
+				}
 			}
 			else
 			{
-				@currentPriorityAnim = @jumpingFallingAnim;
+				if(moveVelocity.GetSpeed().y < 0)
+				{
+					@currentPriorityAnim = @jumpingRisingAnim;
+				}
+				else
+				{
+					@currentPriorityAnim = @jumpingFallingAnim;
+				}
 			}
 		}
+
 		moveVelocity.GetEntity().SetFrame(currentPriorityAnim.GetAnimationFrame());
 	}
 }
