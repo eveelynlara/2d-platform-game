@@ -51,7 +51,7 @@ class PlayAnim
 			if(attackingGroundAnim.IsAnimationFisnished())
 			{
 				moveVelocity.GetEntity().SetUInt("attacking", 0);
-				attackingGroundAnim.SetIsAnimationFinished(false);
+				attackingGroundAnim.ResetAnimation();
 			}
 		}
 		else
