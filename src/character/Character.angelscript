@@ -1,6 +1,7 @@
 class Character
 {
 	private PlayAnim@ playAnim;
+	private TriggerDamage@ triggerDamage;
 
 	Character(const string &in entityName, const vector2 pos, int movementType = 0)
 	{
@@ -8,11 +9,13 @@ class Character
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		@playAnim = PlayAnim(entityName, pos, movementType);
+		@triggerDamage = TriggerDamage(DeathOnDamage());
 	}
 
 	void update()
 	{
 		playAnim.update();
+		isDamageable();
 	}
 
 	vector2 GetPositionXY()
@@ -30,10 +33,20 @@ class Character
 		return (playAnim.GetController().GetEntity().GetInt("hp") <= 0);
 	}
 
+	bool isDamageable()
+	{
+		if(@triggerDamage != null)
+		{
+			playAnim.GetController().GetEntity().SetInt("isDamageable", 1);
+			return true;
+		}
+		playAnim.GetController().GetEntity().SetInt("isDamageable", 0);
+		return false;
+	}
+
 	void DestroyCharacterEntity()
 	{
-		if(playAnim.GetController().GetEntity()
-			.GetInt("hp") <= 0)
+		if(playAnim.GetController().GetEntity().GetInt("hp") <= 0)
 		{
 			DeleteEntity(playAnim.GetController().GetEntity());
 		}

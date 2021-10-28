@@ -9,7 +9,7 @@ class PlayAnim
 	private Anim@ walkingAnim = Anim("walking", {12, 13, 14, 15, 16, 17, 18, 19}, 80, true, 0);
 	private Anim@ jumpingRisingAnim = Anim("jumpRising", {36, 37, 38, 39}, 100, false, 1.5);
 	private Anim@ jumpingFallingAnim = Anim("jumpFalling", {48, 49, 50}, 100, false, 1.5);
-	private Anim@ attackingGroundAnim = Anim("attackingGround", {24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35}, 100, false, 1);
+	private Anim@ attackingGroundAnim = Anim("attackingGround", {/*24, 25*/, 26, 27, 28, 29, 30/*, 31, 32, 33, 34, 35*/}, 30, false, 1);
 	private Anim@ currentPriorityAnim;
 
 

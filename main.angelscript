@@ -17,6 +17,10 @@
 #include "src/Curtain.angelscript"
 #include "src/CameraController.angelscript"
 
+#include "src/damage/DeathOnDamage.angelscript"
+#include "src/damage/TriggerDamage.angelscript"
+#include "src/damage/IDamageable.angelscript"
+
 void main()
 {
 	sef::init(720.0f /*virtual height*/, 0xFF222222, @customInitialState);
