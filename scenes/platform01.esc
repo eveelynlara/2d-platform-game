@@ -501,14 +501,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="1756" spriteFrame="1">
-            <EntityName>left_wall_3tiles.ent</EntityName>
-            <Position x="32" y="224" z="0" angle="0" />
-            <Entity>
-                <FileName>left_wall_3tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="1956" spriteFrame="4">
             <EntityName>beam_1R5C_tile.ent</EntityName>
             <Position x="96" y="96" z="0" angle="0" />
@@ -653,22 +645,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="2750" spriteFrame="2">
-            <EntityName>transition_roof_4tiles.ent</EntityName>
-            <Position x="32" y="160" z="0" angle="0" />
-            <Entity>
-                <FileName>transition_roof_4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="2751" spriteFrame="1">
-            <EntityName>transition_roof_4tiles.ent</EntityName>
-            <Position x="160" y="160" z="0" angle="0" />
-            <Entity>
-                <FileName>transition_roof_4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="2941" spriteFrame="2">
             <EntityName>transition_roof_4tiles.ent</EntityName>
             <Position x="416" y="160" z="0" angle="0" />
@@ -685,7 +661,7 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3189" spriteFrame="0">
+        <Entity id="3189" spriteFrame="1">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="160" y="224" z="0" angle="0" />
             <Entity>
@@ -717,31 +693,71 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3194" spriteFrame="3">
-            <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="416" y="224" z="0" angle="0" />
+        <Entity id="4193" spriteFrame="0">
+            <EntityName>transition_bricks_right_4tiles.ent</EntityName>
+            <Position x="160" y="160" z="0" angle="0" />
             <Entity>
-                <FileName>roof-4tiles.ent</FileName>
+                <FileName>transition_bricks_right_4tiles.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3401" spriteFrame="1">
-            <EntityName>roof-4tiles.ent</EntityName>
+        <Entity id="4196" spriteFrame="0">
+            <EntityName>transition_bricks_left_4tiles.ent</EntityName>
+            <Position x="32" y="160" z="0" angle="0" />
+            <Entity>
+                <FileName>transition_bricks_left_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4197" spriteFrame="2">
+            <EntityName>bricks_1R5C_tile.ent</EntityName>
             <Position x="96" y="160" z="0" angle="0" />
             <Entity>
-                <FileName>roof-4tiles.ent</FileName>
+                <FileName>bricks_1R5C_tile.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3790" spriteFrame="3">
+        <Entity id="4198" spriteFrame="1">
             <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="480" y="160" z="0" angle="0" />
+            <Position x="96" y="224" z="0" angle="0" />
             <Entity>
                 <FileName>roof-4tiles.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="1949" spriteFrame="1">
+        <Entity id="4199" spriteFrame="2">
+            <EntityName>transition_roof_4tiles.ent</EntityName>
+            <Position x="32" y="224" z="0" angle="0" />
+            <Entity>
+                <FileName>transition_roof_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4200" spriteFrame="0">
+            <EntityName>single_piece_grey.ent</EntityName>
+            <Position x="416" y="224" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_grey.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4201" spriteFrame="2">
+            <EntityName>roof-4tiles.ent</EntityName>
+            <Position x="480" y="224" z="0" angle="0" />
+            <Entity>
+                <FileName>roof-4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4203" spriteFrame="1">
+            <EntityName>left_wall_3tiles.ent</EntityName>
+            <Position x="480" y="160" z="0" angle="0" />
+            <Entity>
+                <FileName>left_wall_3tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1949" spriteFrame="2">
             <EntityName>right_wall_3tiles.ent</EntityName>
             <Position x="736" y="224" z="0" angle="0" />
             <Entity>
@@ -829,22 +845,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="1995" spriteFrame="0">
-            <EntityName>single_piece_dark.ent</EntityName>
-            <Position x="800" y="224" z="0" angle="0" />
-            <Entity>
-                <FileName>single_piece_dark.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="1996" spriteFrame="0">
-            <EntityName>single_piece_dark.ent</EntityName>
-            <Position x="864" y="224" z="0" angle="0" />
-            <Entity>
-                <FileName>single_piece_dark.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="2166" spriteFrame="2">
             <EntityName>transition_bricks_left_4tiles.ent</EntityName>
             <Position x="736" y="96" z="0" angle="0" />
@@ -909,22 +909,6 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3190" spriteFrame="0">
-            <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="736" y="288" z="0" angle="0" />
-            <Entity>
-                <FileName>roof-4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="3195" spriteFrame="3">
-            <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="928" y="288" z="0" angle="0" />
-            <Entity>
-                <FileName>roof-4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="3196" spriteFrame="1">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="544" y="96" z="0" angle="0" />
@@ -949,25 +933,25 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="3608" spriteFrame="1">
-            <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="800" y="288" z="0" angle="0" />
-            <Entity>
-                <FileName>roof-4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="3609" spriteFrame="1">
-            <EntityName>roof-4tiles.ent</EntityName>
-            <Position x="864" y="288" z="0" angle="0" />
-            <Entity>
-                <FileName>roof-4tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="3791" spriteFrame="0">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="672" y="160" z="0" angle="0" />
+            <Entity>
+                <FileName>roof-4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4001" spriteFrame="1">
+            <EntityName>roof-4tiles.ent</EntityName>
+            <Position x="864" y="224" z="0" angle="0" />
+            <Entity>
+                <FileName>roof-4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4002" spriteFrame="1">
+            <EntityName>roof-4tiles.ent</EntityName>
+            <Position x="800" y="224" z="0" angle="0" />
             <Entity>
                 <FileName>roof-4tiles.ent</FileName>
                 <CustomData />
@@ -2258,38 +2242,6 @@
         <Entity id="1732" spriteFrame="2">
             <EntityName>ground-3tiles.ent</EntityName>
             <Position x="992" y="608" z="0" angle="0" />
-            <Entity>
-                <FileName>ground-3tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="1998" spriteFrame="0">
-            <EntityName>ground-3tiles.ent</EntityName>
-            <Position x="576" y="544" z="0" angle="0" />
-            <Entity>
-                <FileName>ground-3tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="1999" spriteFrame="1">
-            <EntityName>ground-3tiles.ent</EntityName>
-            <Position x="640" y="544" z="0" angle="0" />
-            <Entity>
-                <FileName>ground-3tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="2000" spriteFrame="1">
-            <EntityName>ground-3tiles.ent</EntityName>
-            <Position x="704" y="544" z="0" angle="0" />
-            <Entity>
-                <FileName>ground-3tiles.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
-        <Entity id="2001" spriteFrame="2">
-            <EntityName>ground-3tiles.ent</EntityName>
-            <Position x="768" y="544" z="0" angle="0" />
             <Entity>
                 <FileName>ground-3tiles.ent</FileName>
                 <CustomData />
