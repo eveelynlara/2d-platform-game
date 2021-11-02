@@ -2,7 +2,7 @@
 <Ethanon>
     <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="2" restitution="0" gravityScale="6" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
         <SpriteCut x="12" y="7" />
-        <Sprite>warrior.png</Sprite>
+        <Sprite>Warrior-centered-2px-diff.png</Sprite>
         <Particles />
         <Collision>
             <Position x="-2" y="9" z="0" />
