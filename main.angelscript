@@ -18,8 +18,10 @@
 #include "src/CameraController.angelscript"
 
 #include "src/damage/DeathOnDamage.angelscript"
-#include "src/damage/TriggerDamage.angelscript"
 #include "src/damage/IDamageable.angelscript"
+
+#include "src/weapon/IWeapon.angelscript"
+#include "src/weapon/MeleeWeapon.angelscript"
 
 void main()
 {

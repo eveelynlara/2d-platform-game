@@ -18,7 +18,7 @@ class GameState : sef::BaseState
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 		@m_character = Character("warrior.ent", screenMiddle, 0);
-		m_character.GetPlayAnim().GetController().GetEntity().SetInt("hp", 100);
+		m_character.GetMoveVelocity().GetEntity().SetInt("hp", 100);
 		m_charactersManager.addCharacter(@m_character);
 
 		BaseState::onCreated();

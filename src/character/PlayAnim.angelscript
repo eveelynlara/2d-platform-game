@@ -13,21 +13,14 @@ class PlayAnim
 	private Anim@ currentPriorityAnim;
 
 
-	PlayAnim(const string &in entityName, const vector2 pos, int controllerType)
+	PlayAnim(MoveVelocity@ moveVelocity)
 	{
-		@moveVelocity = MoveVelocity(entityName, pos, controllerType);
-		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
-	}
-
-	MoveVelocity@ GetController()
-	{
-		return @moveVelocity;
+		@this.moveVelocity = @moveVelocity;
+		this.moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
 	}
 
 	void update()
 	{
-		moveVelocity.update(); 
-
 		float movementVelocityX = moveVelocity.GetController().GetDirection().x;
 		float movementVelocityY = moveVelocity.GetController().GetDirection().y;
 		int lastMovementDir = moveVelocity.GetLastMovementDir();

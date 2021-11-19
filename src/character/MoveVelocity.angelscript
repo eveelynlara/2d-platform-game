@@ -6,10 +6,13 @@ class MoveVelocity
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
 	private Controller@ controller;
 	private bool canMoveFast = true;
+	private PlayAnim@ playAnim;
 
 	MoveVelocity(const string &in entityName, const vector2 pos, int controllerType = 0)
 	{
 		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.3f /*scale*/);
+		@playAnim = PlayAnim(@this);
+		
 		SetPhysicsController();
 
 		if(controllerType == 0)
@@ -88,6 +91,8 @@ class MoveVelocity
 					jumpsInTheAir = 0;
 				}
 			}
+			//update animation
+			playAnim.update();
 
 			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * controller.GetDirection().x, newVelocityY));
 		}

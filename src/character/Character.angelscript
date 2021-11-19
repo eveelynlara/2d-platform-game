@@ -1,54 +1,42 @@
 class Character
 {
-	private PlayAnim@ playAnim;
-	private TriggerDamage@ triggerDamage;
+	private MoveVelocity@ moveVelocity;
+	//private PlayAnim@ playAnim;
+	private bool _isDamageable;
 
-	Character(const string &in entityName, const vector2 pos, int movementType = 0)
+	Character(const string &in entityName, const vector2 pos, int controllerType = 0)
 	{
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		@playAnim = PlayAnim(entityName, pos, movementType);
-		@triggerDamage = TriggerDamage(DeathOnDamage());
+		@moveVelocity = MoveVelocity(entityName,pos, controllerType);
 	}
 
 	void update()
 	{
-		playAnim.update();
-		isDamageable();
+		moveVelocity.update();
 	}
 
 	vector2 GetPositionXY()
 	{
-		return playAnim.GetController().GetEntity().GetPositionXY();
+		return moveVelocity.GetEntity().GetPositionXY();
 	}
 
-	PlayAnim@ GetPlayAnim()
+	MoveVelocity@ GetMoveVelocity()
 	{
-		return @playAnim;
+		return @moveVelocity;
 	}
 
 	bool IsDead() const
 	{
-		return (playAnim.GetController().GetEntity().GetInt("hp") <= 0);
-	}
-
-	bool isDamageable()
-	{
-		if(@triggerDamage != null)
-		{
-			playAnim.GetController().GetEntity().SetInt("isDamageable", 1);
-			return true;
-		}
-		playAnim.GetController().GetEntity().SetInt("isDamageable", 0);
-		return false;
+		return (moveVelocity.GetEntity().GetInt("hp") <= 0);
 	}
 
 	void DestroyCharacterEntity()
 	{
-		if(playAnim.GetController().GetEntity().GetInt("hp") <= 0)
+		if(moveVelocity.GetEntity().GetInt("hp") <= 0)
 		{
-			DeleteEntity(playAnim.GetController().GetEntity());
+			DeleteEntity(moveVelocity.GetEntity());
 		}
 	}
 }	
@@ -75,5 +63,20 @@ void ETHPreSolveContactCallback_Character(
 	if (contactPointA.y > halfCharBodyHeightWithTolerance && body.GetUInt("isTouchingWall") == 0)
 	{
 		body.SetUInt("touchingOnlyGroundTime", GetTime());
+	}
+}
+
+void ETHBeginContactCallback_Character(
+ETHEntity@ thisEntity,
+ETHEntity@ other,
+vector2 contactPointA,
+vector2 contactPointB,
+vector2 contactNormal)
+{
+	const int damage = 10;
+
+	if(thisEntity.GetInt("isDamageable") == 1)
+	{
+		
 	}
 }
