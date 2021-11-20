@@ -1,15 +1,13 @@
 class Character
 {
 	private MoveVelocity@ moveVelocity;
-	//private PlayAnim@ playAnim;
-	private bool _isDamageable;
 
 	Character(const string &in entityName, const vector2 pos, int controllerType = 0)
 	{
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		@moveVelocity = MoveVelocity(entityName,pos, controllerType);
+		@moveVelocity = MoveVelocity(entityName, pos, controllerType);
 	}
 
 	void update()
@@ -63,20 +61,5 @@ void ETHPreSolveContactCallback_Character(
 	if (contactPointA.y > halfCharBodyHeightWithTolerance && body.GetUInt("isTouchingWall") == 0)
 	{
 		body.SetUInt("touchingOnlyGroundTime", GetTime());
-	}
-}
-
-void ETHBeginContactCallback_Character(
-ETHEntity@ thisEntity,
-ETHEntity@ other,
-vector2 contactPointA,
-vector2 contactPointB,
-vector2 contactNormal)
-{
-	const int damage = 10;
-
-	if(thisEntity.GetInt("isDamageable") == 1)
-	{
-		
 	}
 }

@@ -4,19 +4,26 @@ class PlayAnim
 	private int frameRow = 0;
 	private int frameColumn = 0;
 	private bool flipHorizontally = false;
+	private bool isLoop = true;
 
-	private Anim@ idleAnim = Anim("idle", {0, 1, 2, 3, 4, 5, 6}, 100, true, 0);
-	private Anim@ walkingAnim = Anim("walking", {12, 13, 14, 15, 16, 17, 18, 19}, 80, true, 0);
-	private Anim@ jumpingRisingAnim = Anim("jumpRising", {36, 37, 38, 39}, 100, false, 1.5);
-	private Anim@ jumpingFallingAnim = Anim("jumpFalling", {48, 49, 50}, 100, false, 1.5);
-	private Anim@ attackingGroundAnim = Anim("attackingGround", {/*24, 25*/, 26, 27, 28, 29, 30/*, 31, 32, 33, 34, 35*/}, 30, false, 1);
+	private float stride_idle = 100;
+	private float stride_walk = 80;
+	private float stride_jumpRise = 100;
+	private float stride_jumpFall = 100;
+	private float stride_meleeAttack = 80;
+
+	private Anim@ idleAnim = Anim("idle", {0, 1, 2, 3, 4, 5, 6}, stride_idle, isLoop, 0);
+	private Anim@ walkingAnim = Anim("walking", {12, 13, 14, 15, 16, 17, 18, 19}, stride_walk, isLoop, 0);
+	private Anim@ jumpingRisingAnim = Anim("jumpRising", {36, 37, 38, 39}, stride_jumpRise, !isLoop, 1.5);
+	private Anim@ jumpingFallingAnim = Anim("jumpFalling", {48, 49, 50}, stride_jumpFall, !isLoop, 1.5);
+	private Anim@ attackingGroundAnim = Anim("attackingGround", {27, 28, 29, 30}, stride_meleeAttack, !isLoop, 1);
 	private Anim@ currentPriorityAnim;
 
 
 	PlayAnim(MoveVelocity@ moveVelocity)
 	{
 		@this.moveVelocity = @moveVelocity;
-		this.moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
+		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
 	}
 
 	void update()
@@ -72,7 +79,6 @@ class PlayAnim
 				}
 			}
 		}
-
 		moveVelocity.GetEntity().SetFrame(currentPriorityAnim.GetAnimationFrame());
 	}
 }

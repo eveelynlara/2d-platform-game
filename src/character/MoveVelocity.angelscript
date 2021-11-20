@@ -64,7 +64,7 @@ class MoveVelocity
 
 	void update()
 	{
-		// never let character body sleep
+		playAnim.update();
 		rigidbody2D.SetAwake(true);
 
 		controller.update();
@@ -91,8 +91,6 @@ class MoveVelocity
 					jumpsInTheAir = 0;
 				}
 			}
-			//update animation
-			playAnim.update();
 
 			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * controller.GetDirection().x, newVelocityY));
 		}
