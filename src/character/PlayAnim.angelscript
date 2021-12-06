@@ -1,6 +1,7 @@
 class PlayAnim 
 {
-	private MoveVelocity@ moveVelocity;
+	private MoveVelocityController@ moveVelocityController;
+	private ETHEntity@ m_entity;
 	private int frameRow = 0;
 	private int frameColumn = 0;
 	private bool flipHorizontally = false;
@@ -20,37 +21,38 @@ class PlayAnim
 	private Anim@ currentPriorityAnim;
 
 
-	PlayAnim(MoveVelocity@ moveVelocity)
+	PlayAnim(MoveVelocityController@ moveVelocityController)
 	{
-		@this.moveVelocity = @moveVelocity;
-		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
+		@this.moveVelocityController = @moveVelocityController;
+		@m_entity = @moveVelocityController.GetEntity();
+		m_entity.SetFrame(frameColumn, frameRow);
 	}
 
 	void update()
 	{
-		float movementVelocityX = moveVelocity.GetController().GetDirection().x;
-		float movementVelocityY = moveVelocity.GetController().GetDirection().y;
-		int lastMovementDir = moveVelocity.GetLastMovementDir();
-		int attackButtonWasPressed = moveVelocity.GetController().GetAttack();
-		bool isTouchingOnlyGround = moveVelocity.isTouchingOnlyGround();
+		float movementVelocityX = moveVelocityController.GetController().GetDirection().x;
+		float movementVelocityY = moveVelocityController.GetController().GetDirection().y;
+		int lastMovementDir = moveVelocityController.GetLastMovementDir();
+		int attackButtonWasPressed = moveVelocityController.GetController().GetAttack();
+		bool isTouchingOnlyGround = moveVelocityController.isTouchingOnlyGround();
 		
-		if(moveVelocity.GetController().GetChangeDir())
+		if(moveVelocityController.GetController().GetChangeDir())
 		{
-			moveVelocity.GetEntity().SetFlipX(lastMovementDir < 0);	
+			m_entity.SetFlipX(lastMovementDir < 0);	
 		}
 
 		if(attackButtonWasPressed == 1)
 		{
-			moveVelocity.GetEntity().SetUInt("attacking", 1);
+			m_entity.SetUInt("attacking", 1);
 		}
 
-		if(moveVelocity.GetEntity().GetUInt("attacking") == 1)
+		if(m_entity.GetUInt("attacking") == 1)
 		{
 			@currentPriorityAnim = @attackingGroundAnim;
 
 			if(attackingGroundAnim.IsAnimationFisnished())
 			{
-				moveVelocity.GetEntity().SetUInt("attacking", 0);
+				m_entity.SetUInt("attacking", 0);
 				attackingGroundAnim.ResetAnimation();
 			}
 		}
@@ -69,7 +71,7 @@ class PlayAnim
 			}
 			else
 			{
-				if(moveVelocity.GetSpeed().y < 0)
+				if(moveVelocityController.GetSpeed().y < 0)
 				{
 					@currentPriorityAnim = @jumpingRisingAnim;
 				}
@@ -79,6 +81,6 @@ class PlayAnim
 				}
 			}
 		}
-		moveVelocity.GetEntity().SetFrame(currentPriorityAnim.GetAnimationFrame());
+		m_entity.SetFrame(currentPriorityAnim.GetAnimationFrame());
 	}
 }

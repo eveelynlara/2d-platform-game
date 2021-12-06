@@ -11,7 +11,7 @@
 #include "src/character/Controller.angelscript"
 #include "src/character/MovementByKeysController.angelscript"
 #include "src/character/MovementBubbleGumController.angelscript" 
-#include "src/character/MoveVelocity.angelscript"
+#include "src/character/MoveVelocityController.angelscript"
 #include "src/character/PlayAnim.angelscript"
 
 #include "src/Curtain.angelscript"

@@ -1,4 +1,4 @@
-class MoveVelocity
+class MoveVelocityController
 {
 	private ETHEntity@ m_entity;
 	private int jumpsInTheAir = 0;
@@ -8,13 +8,26 @@ class MoveVelocity
 	private bool canMoveFast = true;
 	private PlayAnim@ playAnim;
 
-	MoveVelocity(const string &in entityName, const vector2 pos, int controllerType = 0)
+	MoveVelocityController(ETHEntity@ entity, int controllerType = 0)
 	{
-		AddEntity(entityName, vector3(pos, -2.0f), 0.0f /*rotation*/, m_entity, "Character", 1.3f /*scale*/);
-		@playAnim = PlayAnim(@this);
-		
-		SetPhysicsController();
+		SetEntity(@entity);
+		SetPhysicsController(@entity);
+		SetAnimationController();
+		SetMovementController(controllerType);
+	}
 
+	void SetEntity(ETHEntity@ entity)
+	{
+		@m_entity = @entity;
+	}
+
+	ETHEntity@ GetEntity()
+	{
+		return @m_entity;
+	}
+
+	void SetMovementController(const int controllerType)
+	{
 		if(controllerType == 0)
 		{
 			@controller = MovementByKeysController();
@@ -24,10 +37,9 @@ class MoveVelocity
 			@controller = MovementBubbleGumController();
 		}
 	}
-
-	ETHEntity@ GetEntity()
+	void SetAnimationController()
 	{
-		return @m_entity;
+		@playAnim = PlayAnim(@this);
 	}
 
 	vector2 GetSpeed()
@@ -35,9 +47,9 @@ class MoveVelocity
 		return rigidbody2D.GetLinearVelocity();
 	}
 
-	void SetPhysicsController()
+	void SetPhysicsController(ETHEntity@ entity)
 	{
-		@rigidbody2D = m_entity.GetPhysicsController();
+		@rigidbody2D = @m_entity.GetPhysicsController();
 	}
 
 	Controller@ GetController()
