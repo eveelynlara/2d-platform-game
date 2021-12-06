@@ -17,11 +17,12 @@
 #include "src/Curtain.angelscript"
 #include "src/CameraController.angelscript"
 
-#include "src/damage/DeathOnDamage.angelscript"
-#include "src/damage/IDamageable.angelscript"
+#include "src/weapons/IWeapon.angelscript"
+#include "src/weapons/StandardMeleeWeapon.angelscript"
 
-#include "src/weapon/IWeapon.angelscript"
-#include "src/weapon/MeleeWeapon.angelscript"
+#include "src/attack/IDamageable.angelscript"
+#include "src/attack/ITeamMember.angelscript"
+#include "src/attack/Team.angelscript"
 
 void main()
 {

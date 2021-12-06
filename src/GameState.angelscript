@@ -3,8 +3,14 @@ class GameState : sef::BaseState
 	sef::UISchedulerLayer@ m_hudLayer;
 
 	CameraController m_cameraController;
+
+	//Character variables
 	private Character@ m_character;
 	private CharactersManager m_charactersManager;
+
+	//Team variables
+	private Team@ m_mainCharacterTeam = Team("mainCharacterTeam");
+	private Team@ m_enemiesTeam = Team("enemiesTeam");
 
 	ETHEntity@ m_spaceShip;
 
@@ -18,8 +24,10 @@ class GameState : sef::BaseState
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 		@m_character = Character("warrior.ent", screenMiddle, 0);
-		m_character.GetMoveVelocity().GetEntity().SetInt("hp", 100);
+		m_character.GetEntity().SetInt("hp", 100);
+		
 		m_charactersManager.addCharacter(@m_character);
+		m_mainCharacterTeam.addTeamMember(@m_character);
 
 		BaseState::onCreated();
 

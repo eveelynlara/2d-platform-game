@@ -1,40 +1,71 @@
-class Character
+class Character : IDamageable, ITeamMember
 {
-	private MoveVelocity@ moveVelocity;
+	private ETHEntity@ characterEntity;
+	private MoveVelocityController@ moveVelocityController;
+	private Team@ currentTeam;
 
-	Character(const string &in entityName, const vector2 pos, int controllerType = 0)
+	Character(const string &in characterEntityName, const vector2 pos, int controllerType = 0)
 	{
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		@moveVelocity = MoveVelocity(entityName, pos, controllerType);
+		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character", 1.3f /*scale*/);
+		@moveVelocityController = MoveVelocityController(characterEntity, controllerType);
 	}
 
 	void update()
 	{
-		moveVelocity.update();
+		moveVelocityController.update();
+	}
+
+	void assignTeam(Team@ team)
+	{
+		@currentTeam = @team;
+	}
+
+	Team@ GetTeam()
+	{
+		return @currentTeam;
+	}
+
+	ETHEntity@ GetEntity()
+	{
+		return @characterEntity;
 	}
 
 	vector2 GetPositionXY()
 	{
-		return moveVelocity.GetEntity().GetPositionXY();
+		return characterEntity.GetPositionXY();
 	}
 
-	MoveVelocity@ GetMoveVelocity()
+	MoveVelocityController@ GetMoveVelocityController()
 	{
-		return @moveVelocity;
+		return @moveVelocityController;
 	}
 
 	bool IsDead() const
 	{
-		return (moveVelocity.GetEntity().GetInt("hp") <= 0);
+		return (characterEntity.GetInt("hp") <= 0);
 	}
 
 	void DestroyCharacterEntity()
 	{
-		if(moveVelocity.GetEntity().GetInt("hp") <= 0)
+		if(characterEntity.GetInt("hp") <= 0)
 		{
-			DeleteEntity(moveVelocity.GetEntity());
+			DeleteEntity(characterEntity);
+		}
+	}
+
+	bool CanBeDamagedBy(IDamageable@ other, IWeapon@ otherWeapon)
+	{
+		return !currentTeam.IsInTeam(cast<ITeamMember@>(other));
+	}
+
+	void TakeDamage(DamageParams@ damageParams)
+	{
+		if(CanBeDamagedBy(damageParams.Attacker, damageParams.Weapon))
+		{
+			//take damage
 		}
 	}
 }	
