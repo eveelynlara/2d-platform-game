@@ -32,6 +32,25 @@ void ETHCallback_basicSlashMeleeHitbox(ETHEntity@ thisEntity)
     }
 }
 
+void ETHPreSolveContactCallback_basicSlashMeleeHitbox(
+	ETHEntity@ thisEntity,
+	ETHEntity@ other,
+	vector2 contactPointA,
+	vector2 contactPointB,
+	vector2 contactNormal)
+{
+	Team@ damagedObjectTeam;
+	Team@ attackerTeam;
+
+	thisEntity.GetObject("currentTeam", @attackerTeam);
+	thisEntity.GetObject("currentTeam", @damagedObjectTeam);
+
+	if (damagedObjectTeam is attackerTeam)
+	{
+		DisableContact();
+	}
+}
+
 void ETHBeginContactCallback_basicSlashMeleeHitbox(
     ETHEntity@ thisEntity,
     ETHEntity@ other,
@@ -39,11 +58,16 @@ void ETHBeginContactCallback_basicSlashMeleeHitbox(
     vector2 contactPointB,
     vector2 contactNormal)
 {
-	// Character@ attacker;
-	// thisEntity.GetObject("attacker", @attacker);
+	ETHEntity@ attacker;
+	thisEntity.GetObject("attacker", @attacker);
 
-	// Team@ currentAttackerTeam;
-	// thisEntity.GetObject("currentTeam", @currentAttackerTeam);
-	
-	// print(currentAttackerTeam.GetTeamName());
+	Team@ attackerTeam;
+	Team@ damagedObjectTeam;
+	thisEntity.GetObject("currentTeam", @attackerTeam);
+	other.GetObject("currentTeam", @damagedObjectTeam);
+
+	if (damagedObjectTeam !is attackerTeam)
+	{
+		print(damagedObjectTeam.GetTeamName());;
+	}
 }
