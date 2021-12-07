@@ -30,11 +30,9 @@ class PlayAnim
 
 	void update()
 	{
-		float movementVelocityX = moveVelocityController.GetController().GetDirection().x;
-		float movementVelocityY = moveVelocityController.GetController().GetDirection().y;
+		
 		int lastMovementDir = moveVelocityController.GetLastMovementDir();
 		int attackButtonWasPressed = moveVelocityController.GetController().GetAttack();
-		bool isTouchingOnlyGround = moveVelocityController.isTouchingOnlyGround();
 		
 		if(moveVelocityController.GetController().GetChangeDir())
 		{
@@ -48,39 +46,53 @@ class PlayAnim
 
 		if(m_entity.GetUInt("attacking") == 1)
 		{
-			@currentPriorityAnim = @attackingGroundAnim;
+			ProcessAttackAnimation();
+		}
+		else
+		{
+			ProcessMovementAnimation();
+		}
+		
+		m_entity.SetFrame(currentPriorityAnim.GetAnimationFrame());
+	}
 
-			if(attackingGroundAnim.IsAnimationFisnished())
+	void ProcessAttackAnimation()
+	{
+		@currentPriorityAnim = @attackingGroundAnim;
+
+		if(attackingGroundAnim.IsAnimationFisnished())
+		{
+			m_entity.SetUInt("attacking", 0);
+			attackingGroundAnim.ResetAnimation();
+		}
+	}
+
+	void ProcessMovementAnimation()
+	{
+		float movementVelocityX = moveVelocityController.GetController().GetDirection().x;
+		bool isTouchingOnlyGround = moveVelocityController.isTouchingOnlyGround();
+
+		if(isTouchingOnlyGround)
+		{
+			if(movementVelocityX != 0)
+			{	
+				@currentPriorityAnim = @walkingAnim;
+			}
+			else
 			{
-				m_entity.SetUInt("attacking", 0);
-				attackingGroundAnim.ResetAnimation();
+				@currentPriorityAnim = @idleAnim;
 			}
 		}
 		else
 		{
-			if(isTouchingOnlyGround)
+			if(moveVelocityController.GetSpeed().y < 0)
 			{
-				if(movementVelocityX != 0)
-				{	
-					@currentPriorityAnim = @walkingAnim;
-				}
-				else
-				{
-					@currentPriorityAnim = @idleAnim;
-				}
+				@currentPriorityAnim = @jumpingRisingAnim;
 			}
 			else
 			{
-				if(moveVelocityController.GetSpeed().y < 0)
-				{
-					@currentPriorityAnim = @jumpingRisingAnim;
-				}
-				else
-				{
-					@currentPriorityAnim = @jumpingFallingAnim;
-				}
+				@currentPriorityAnim = @jumpingFallingAnim;
 			}
 		}
-		m_entity.SetFrame(currentPriorityAnim.GetAnimationFrame());
 	}
 }

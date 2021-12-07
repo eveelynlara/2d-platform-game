@@ -18,9 +18,10 @@ class Character : IDamageable, ITeamMember
 		moveVelocityController.update();
 	}
 
-	void assignTeam(Team@ team)
+	void SetTeam(Team@ team)
 	{
 		@currentTeam = @team;
+		characterEntity.SetObject("currentTeam", @currentTeam);
 	}
 
 	Team@ GetTeam()

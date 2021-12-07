@@ -8,7 +8,7 @@
 #include "src/character/Anim.angelscript"
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
-#include "src/character/Controller.angelscript"
+#include "src/character/MovementController.angelscript"
 #include "src/character/MovementByKeysController.angelscript"
 #include "src/character/MovementBubbleGumController.angelscript" 
 #include "src/character/MoveVelocityController.angelscript"
@@ -19,6 +19,7 @@
 
 #include "src/weapons/IWeapon.angelscript"
 #include "src/weapons/StandardMeleeWeapon.angelscript"
+#include "src/weapons/AddMeleeHitBoxEvent.angelscript" 
 
 #include "src/attack/IDamageable.angelscript"
 #include "src/attack/ITeamMember.angelscript"

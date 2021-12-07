@@ -11,7 +11,7 @@ class Team
     void addTeamMember(ITeamMember@ newMember)
     {
         members.insertLast(@newMember);
-        newMember.assignTeam(@this);
+        newMember.SetTeam(@this);
     }
     
     bool IsInTeam(ITeamMember@ member)

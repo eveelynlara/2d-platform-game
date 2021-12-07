@@ -4,7 +4,7 @@ class MoveVelocityController
 	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-	private Controller@ controller;
+	private MovementController@ movementController;
 	private bool canMoveFast = true;
 	private PlayAnim@ playAnim;
 
@@ -14,6 +14,16 @@ class MoveVelocityController
 		SetPhysicsController(@entity);
 		SetAnimationController();
 		SetMovementController(controllerType);
+	}
+
+	void update()
+	{
+		rigidbody2D.SetAwake(true);
+		playAnim.update();
+		movementController.update();
+		
+		ProcessAttack();
+		ProcessMovement();
 	}
 
 	void SetEntity(ETHEntity@ entity)
@@ -30,11 +40,11 @@ class MoveVelocityController
 	{
 		if(controllerType == 0)
 		{
-			@controller = MovementByKeysController();
+			@movementController = MovementByKeysController();
 		}
 		else
 		{
-			@controller = MovementBubbleGumController();
+			@movementController = MovementBubbleGumController();
 		}
 	}
 	void SetAnimationController()
@@ -52,14 +62,14 @@ class MoveVelocityController
 		@rigidbody2D = @m_entity.GetPhysicsController();
 	}
 
-	Controller@ GetController()
+	MovementController@ GetController()
 	{
-		return @controller;
+		return @movementController;
 	}
 
 	int GetLastMovementDir()
 	{
-		return controller.GetLastMovementDir();
+		return movementController.GetLastMovementDir();
 	}
 
 	bool isTouchingOnlyGround()
@@ -71,23 +81,28 @@ class MoveVelocityController
 	{
 		canMoveFast = false;
 		movementSpeed = sef::TimeManager.unitsPerSecond(150.0f);
-		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * controller.GetDirection().x, GetSpeed().y));		
+		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * movementController.GetDirection().x, GetSpeed().y));		
 	}
 
-	void update()
+	void ProcessAttack()
 	{
-		playAnim.update();
-		rigidbody2D.SetAwake(true);
+		if(GetController().GetAttack() == 1)
+		{
+			sef::util::scheduleEvent(30.0f, AddMeleeHitBoxEvent(@this));
+		}
 
-		controller.update();
-		bool isJumping = (controller.GetDirection().y < 0);
-		float newVelocityY = controller.GetDirection().y;
-		canMoveFast = true;
-
-		if(GetEntity().GetUInt("attacking") == 1)
+		if(m_entity.GetUInt("attacking") == 1)
 		{
 			SlowMovementSpeedDown();
 		}
+	}
+
+	void ProcessMovement()
+	{
+		bool isJumping = (movementController.GetDirection().y < 0);
+		float newVelocityY = movementController.GetDirection().y;
+		canMoveFast = true;
+
 		if(canMoveFast)
 		{
 			movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
@@ -104,7 +119,7 @@ class MoveVelocityController
 				}
 			}
 
-			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * controller.GetDirection().x, newVelocityY));
+			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * movementController.GetDirection().x, newVelocityY));
 		}
 	}
 }

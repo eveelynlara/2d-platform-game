@@ -1,5 +1,5 @@
 interface ITeamMember
 {
-    void assignTeam(Team@ team);
+    void SetTeam(Team@ team);
     Team@ GetTeam();
 }
