@@ -29,6 +29,15 @@ class GameState : sef::BaseState
 		m_charactersManager.addCharacter(@m_character);
 		m_mainCharacterTeam.addTeamMember(@m_character);
 
+		// /*other player in the scene - test*/
+		// Character@ m_character2;
+		// @m_character2 = Character("warrior.ent", screenMiddle, 1);
+		// m_character2.GetEntity().SetInt("hp", 100);
+		
+		// m_charactersManager.addCharacter(@m_character2);
+		// m_enemiesTeam.addTeamMember(@m_character2);
+		// /*----------------------------*/
+
 		BaseState::onCreated();
 
 		curtain::fadeIn(500, 0);

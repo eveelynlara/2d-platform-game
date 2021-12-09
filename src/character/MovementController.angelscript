@@ -26,7 +26,7 @@ abstract class MovementController
 		return lastMovementDir;
 	}
 
-	int GetAttack()
+	int GetAttackHit()
 	{
 		return attack;
 	}

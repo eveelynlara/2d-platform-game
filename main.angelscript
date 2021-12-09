@@ -18,8 +18,8 @@
 #include "src/CameraController.angelscript"
 
 #include "src/weapons/IWeapon.angelscript"
-#include "src/weapons/StandardMeleeWeapon.angelscript"
-#include "src/weapons/AddMeleeHitBoxEvent.angelscript" 
+#include "src/weapons/BasicSlashMeleeWeapon.angelscript"
+#include "src/weapons/ScheduleAttackEvent.angelscript" 
 
 #include "src/attack/IDamageable.angelscript"
 #include "src/attack/ITeamMember.angelscript"

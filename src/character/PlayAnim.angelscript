@@ -24,32 +24,21 @@ class PlayAnim
 	PlayAnim(MoveVelocityController@ moveVelocityController)
 	{
 		@this.moveVelocityController = @moveVelocityController;
-		@m_entity = @moveVelocityController.GetEntity();
+		@m_entity = @moveVelocityController.GetCharacter().GetEntity();
 		m_entity.SetFrame(frameColumn, frameRow);
 	}
 
 	void update()
 	{
-		
 		int lastMovementDir = moveVelocityController.GetLastMovementDir();
-		int attackButtonWasPressed = moveVelocityController.GetController().GetAttack();
 		
-		if(moveVelocityController.GetController().GetChangeDir())
-		{
-			m_entity.SetFlipX(lastMovementDir < 0);	
-		}
-
-		if(attackButtonWasPressed == 1)
-		{
-			m_entity.SetUInt("attacking", 1);
-		}
-
 		if(m_entity.GetUInt("attacking") == 1)
 		{
 			ProcessAttackAnimation();
 		}
 		else
 		{
+			m_entity.SetFlipX(lastMovementDir < 0);
 			ProcessMovementAnimation();
 		}
 		

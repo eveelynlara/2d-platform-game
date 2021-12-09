@@ -1,4 +1,6 @@
 interface IWeapon
 {
-	void Attack(IDamageable@ damagedObject);
+	void Attack();
+	IDamageable@ GetOwner();
+	void RunWeaponAttack();
 }

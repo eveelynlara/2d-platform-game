@@ -3,6 +3,7 @@ class Character : IDamageable, ITeamMember
 	private ETHEntity@ characterEntity;
 	private MoveVelocityController@ moveVelocityController;
 	private Team@ currentTeam;
+	private IWeapon@ currentEquippedWeapon;
 
 	Character(const string &in characterEntityName, const vector2 pos, int controllerType = 0)
 	{
@@ -10,7 +11,8 @@ class Character : IDamageable, ITeamMember
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character", 1.3f /*scale*/);
-		@moveVelocityController = MoveVelocityController(characterEntity, controllerType);
+		@moveVelocityController = MoveVelocityController(@this, controllerType);
+		SetWeapon(BasicSlashMeleeWeapon(@this));
 	}
 
 	void update()
@@ -27,6 +29,16 @@ class Character : IDamageable, ITeamMember
 	Team@ GetTeam()
 	{
 		return @currentTeam;
+	}
+
+	void SetWeapon(IWeapon@ weapon)
+	{
+		@currentEquippedWeapon = @weapon;
+	}
+
+	IWeapon@ GetEquippedWeapon()
+	{
+		return @currentEquippedWeapon;
 	}
 
 	ETHEntity@ GetEntity()
@@ -60,14 +72,6 @@ class Character : IDamageable, ITeamMember
 	bool CanBeDamagedBy(IDamageable@ other, IWeapon@ otherWeapon)
 	{
 		return !currentTeam.IsInTeam(cast<ITeamMember@>(other));
-	}
-
-	void TakeDamage(DamageParams@ damageParams)
-	{
-		if(CanBeDamagedBy(damageParams.Attacker, damageParams.Weapon))
-		{
-			//take damage
-		}
 	}
 }	
 
