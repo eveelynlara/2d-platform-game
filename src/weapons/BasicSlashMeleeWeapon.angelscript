@@ -35,14 +35,15 @@ class BasicSlashMeleeWeapon : IWeapon
 
 	void ApplyDamage(ETHEntity@ damagedObject)
 	{
-		ETHEntity@ damaged = @damagedObject;
+		ETHEntity@ damagedEntity = @damagedObject;
 		
 		Team@ damagedObjectTeam;
-		damaged.GetObject("currentTeam", @damagedObjectTeam);
+		damagedEntity.GetObject("currentTeam", @damagedObjectTeam);
 
 		if (damagedObjectTeam !is currentWeaponTeam)
 		{
-			print(damagedObjectTeam.GetTeamName());;
+			damagedEntity.AddToInt("hp", -10.0f);
+			print(damagedEntity.GetInt("hp"));;
 		}
 	}
 	

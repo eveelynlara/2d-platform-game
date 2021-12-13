@@ -24,7 +24,6 @@ class GameState : sef::BaseState
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 		@m_character = Character("warrior.ent", screenMiddle, 0);
-		m_character.GetEntity().SetInt("hp", 100);
 		
 		m_charactersManager.addCharacter(@m_character);
 		m_mainCharacterTeam.addTeamMember(@m_character);
@@ -32,7 +31,6 @@ class GameState : sef::BaseState
 		// /*other player in the scene - test*/
 		// Character@ m_character2;
 		// @m_character2 = Character("warrior.ent", screenMiddle, 1);
-		// m_character2.GetEntity().SetInt("hp", 100);
 		
 		// m_charactersManager.addCharacter(@m_character2);
 		// m_enemiesTeam.addTeamMember(@m_character2);
