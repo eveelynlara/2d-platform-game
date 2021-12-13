@@ -80,6 +80,16 @@ int calcIsTouchingWall(vector2 normalForce)
 	return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
 }
 
+void ETHConstructorCallback_Character(
+	ETHEntity@ body,
+	ETHEntity@ other,
+	vector2 contactPointA,
+	vector2 contactPointB,
+	vector2 contactNormal)
+{
+	body.SetInt("hp", 100);
+}
+
 void ETHPreSolveContactCallback_Character(
 	ETHEntity@ body,
 	ETHEntity@ other,
