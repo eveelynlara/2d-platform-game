@@ -4,13 +4,7 @@ class GameState : sef::BaseState
 
 	CameraController m_cameraController;
 
-	//Character variables
-	private Character@ m_character;
 	private CharactersManager m_charactersManager;
-
-	//Team variables
-	private Team@ m_mainCharacterTeam = Team("mainCharacterTeam");
-	private Team@ m_enemiesTeam = Team("enemiesTeam");
 
 	ETHEntity@ m_spaceShip;
 
@@ -22,20 +16,6 @@ class GameState : sef::BaseState
 
 	void onCreated() override
 	{
-		const vector2 screenMiddle(GetScreenSize() * 0.5f);
-		@m_character = Character("warrior.ent", screenMiddle, 0);
-		
-		m_charactersManager.addCharacter(@m_character);
-		m_mainCharacterTeam.addTeamMember(@m_character);
-
-		// /*other player in the scene - test*/
-		// Character@ m_character2;
-		// @m_character2 = Character("warrior.ent", screenMiddle, 1);
-		
-		// m_charactersManager.addCharacter(@m_character2);
-		// m_enemiesTeam.addTeamMember(@m_character2);
-		// /*----------------------------*/
-
 		BaseState::onCreated();
 
 		curtain::fadeIn(500, 0);
@@ -91,7 +71,7 @@ class GameState : sef::BaseState
 	{
 		BaseState::onUpdate();
 		m_charactersManager.update();
-		m_cameraController.setDest(m_character.GetPositionXY());
+		// m_cameraController.setDest(m_character.GetPositionXY());
 
 		// check back request
 		if (m_hudLayer.isButtonPressed("back") || sef::input::global.getBackState() == KS_HIT)
@@ -104,5 +84,10 @@ class GameState : sef::BaseState
 		{
 			sef::StateManager.setState(StartScreenState());
 		}
+	}
+
+	CharactersManager@ GetCharactersManager()
+	{
+		return @m_charactersManager;
 	}
 }

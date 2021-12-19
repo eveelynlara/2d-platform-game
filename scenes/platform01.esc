@@ -741,7 +741,15 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="4201" spriteFrame="2">
+        <Entity id="4203" spriteFrame="1">
+            <EntityName>left_wall_3tiles.ent</EntityName>
+            <Position x="480" y="160" z="0" angle="0" />
+            <Entity>
+                <FileName>left_wall_3tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4405" spriteFrame="3">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="480" y="224" z="0" angle="0" />
             <Entity>
@@ -749,12 +757,23 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="4203" spriteFrame="1">
-            <EntityName>left_wall_3tiles.ent</EntityName>
-            <Position x="480" y="160" z="0" angle="0" />
+        <Entity id="4608" spriteFrame="0">
+            <EntityName>spawner.ent</EntityName>
+            <Position x="176" y="496" z="0" angle="0" />
             <Entity>
-                <FileName>left_wall_3tiles.ent</FileName>
-                <CustomData />
+                <FileName>spawner.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>EntityType</Name>
+                        <Value>character</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>Team</Name>
+                        <Value>mainCharacterTeam</Value>
+                    </Variable>
+                </CustomData>
             </Entity>
         </Entity>
         <Entity id="1949" spriteFrame="2">
@@ -968,8 +987,19 @@
         <Entity id="873" spriteFrame="0">
             <EntityName>spawner.ent</EntityName>
             <Position x="1536" y="368" z="0" angle="0" />
-            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+            <Entity>
+                <FileName>spawner.ent</FileName>
                 <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>EntityType</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>Team</Name>
+                        <Value>none</Value>
+                    </Variable>
                     <Variable>
                         <Type>string</Type>
                         <Name>controller</Name>
@@ -1045,8 +1075,19 @@
         <Entity id="994" spriteFrame="0">
             <EntityName>spawner.ent</EntityName>
             <Position x="2160" y="400" z="0" angle="0" />
-            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+            <Entity>
+                <FileName>spawner.ent</FileName>
                 <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>EntityType</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>Team</Name>
+                        <Value>none</Value>
+                    </Variable>
                     <Variable>
                         <Type>string</Type>
                         <Name>controller</Name>

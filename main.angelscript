@@ -14,6 +14,8 @@
 #include "src/character/MoveVelocityController.angelscript"
 #include "src/character/PlayAnim.angelscript"
 
+#include "src/gameplay/spawner.angelscript"
+
 #include "src/Curtain.angelscript"
 #include "src/CameraController.angelscript"
 
