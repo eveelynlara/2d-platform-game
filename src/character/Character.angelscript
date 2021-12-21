@@ -10,7 +10,7 @@ class Character : IDamageable, ITeamMember
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character", 1.3f /*scale*/);
+		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character",  1.0f /*scale*/);
 		@moveVelocityController = MoveVelocityController(@this, controllerType);
 		SetWeapon(BasicSlashMeleeWeapon(@this));
 	}
