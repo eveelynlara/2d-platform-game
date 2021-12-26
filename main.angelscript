@@ -5,14 +5,18 @@
 #include "src/OptionsLayer.angelscript"
 #include "src/GameState.angelscript"
 
-#include "src/character/Anim.angelscript"
+#include "src/character/AnimationBaseState.angelscript"
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
-#include "src/character/MovementController.angelscript"
-#include "src/character/MovementByKeysController.angelscript"
+#include "src/character/IdleAnimationState.angelscript" 
+#include "src/character/JumpFallState.angelscript" 
+#include "src/character/JumpRiseState.angelscript" 
+#include "src/character/KeyInputController.angelscript"
 #include "src/character/MovementBubbleGumController.angelscript" 
-#include "src/character/MoveVelocityController.angelscript"
 #include "src/character/PlayAnim.angelscript"
+#include "src/character/PlayerController.angelscript"
+#include "src/character/PlayerInputController.angelscript"
+#include "src/character/WalkingAnimationState.angelscript"
 
 #include "src/gameplay/spawner.angelscript"
 

@@ -1,4 +1,4 @@
-class MovementByKeysController : MovementController
+class KeyInputController : PlayerInputController
 {
 	private ETHInput@ input = GetInputHandle();
 

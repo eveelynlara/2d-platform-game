@@ -1,4 +1,4 @@
-class MovementBubbleGumController : MovementController
+class MovementBubbleGumController : PlayerInputController
 {
 	private ETHInput@ input = GetInputHandle();
 

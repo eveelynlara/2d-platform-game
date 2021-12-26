@@ -1,7 +1,7 @@
 class Character : IDamageable, ITeamMember
 {
 	private ETHEntity@ characterEntity;
-	private MoveVelocityController@ moveVelocityController;
+	private PlayerController@ moveVelocityController;
 	private Team@ currentTeam;
 	private IWeapon@ currentEquippedWeapon;
 
@@ -11,7 +11,7 @@ class Character : IDamageable, ITeamMember
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character",  1.0f /*scale*/);
-		@moveVelocityController = MoveVelocityController(@this, controllerType);
+		@moveVelocityController = PlayerController(@this, controllerType);
 		SetWeapon(BasicSlashMeleeWeapon(@this));
 	}
 
@@ -51,7 +51,7 @@ class Character : IDamageable, ITeamMember
 		return characterEntity.GetPositionXY();
 	}
 
-	MoveVelocityController@ GetMoveVelocityController()
+	PlayerController@ GetPlayerController()
 	{
 		return @moveVelocityController;
 	}

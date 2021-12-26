@@ -1,4 +1,4 @@
-abstract class MovementController 
+abstract class PlayerInputController 
 {
 	protected float m_jumpImpulse = 18.0f;
 	protected int lastMovementDir = 1;

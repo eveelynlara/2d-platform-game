@@ -1,20 +1,20 @@
-class MoveVelocityController
+class PlayerController
 {
 	private Character@ m_character;
 	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
 	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-	private MovementController@ movementController;
+	private PlayerInputController@ playerInputController;
 	private bool canMoveFast = true;
 	private bool canFlip = true;
 	private PlayAnim@ playAnim;
 
-	MoveVelocityController(Character@ character, int controllerType = 0)
+	PlayerController(Character@ character, int playerInputType = 0)
 	{
 		@m_character = @character;
 		SetPhysicsController(character.GetEntity());
 		SetAnimationController(@this);
-		SetMovementController(controllerType);
+		SetPlayerInputController(playerInputType);
 		m_character.GetEntity().SetUInt("attacking", 0);
 	}
 
@@ -22,9 +22,9 @@ class MoveVelocityController
 	{
 		rigidbody2D.SetAwake(true);
 		playAnim.update();
-		movementController.update();
+		playerInputController.update();
 
-		ProcessAttack();
+		// ProcessAttack();
 		ProcessMovement();
 	}
 
@@ -33,18 +33,18 @@ class MoveVelocityController
 		return @m_character;
 	}
 
-	void SetMovementController(const int controllerType)
+	void SetPlayerInputController(const int controllerType)
 	{
 		if(controllerType == 0)
 		{
-			@movementController = MovementByKeysController();
+			@playerInputController = KeyInputController();
 		}
 		else
 		{
-			@movementController = MovementBubbleGumController();
+			@playerInputController = MovementBubbleGumController();
 		}
 	}
-	void SetAnimationController(MoveVelocityController@ movelocityController)
+	void SetAnimationController(PlayerController@ movelocityController)
 	{
 		@playAnim = PlayAnim(@movelocityController);
 	}
@@ -59,14 +59,14 @@ class MoveVelocityController
 		@rigidbody2D = @m_character.GetEntity().GetPhysicsController();
 	}
 
-	MovementController@ GetController()
+	PlayerInputController@ GetPlayerInputController()
 	{
-		return @movementController;
+		return @playerInputController;
 	}
 
 	int GetLastMovementDir()
 	{
-		return movementController.GetLastMovementDir();
+		return playerInputController.GetLastMovementDir();
 	}
 
 	bool isTouchingOnlyGround()
@@ -78,12 +78,12 @@ class MoveVelocityController
 	{
 		canMoveFast = false;
 		float slowDownParameter = 0.2f;
-		rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * movementController.GetDirection().x, GetSpeed().y));
+		rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
 	}
 
 	void ProcessAttack()
 	{
-		if(GetController().GetAttackHit() == 1)
+		if(GetPlayerInputController().GetAttackHit() == 1)
 		{
 			m_character.GetEntity().SetUInt("attacking", 1);
 			m_character.GetEquippedWeapon().Attack();
@@ -101,8 +101,8 @@ class MoveVelocityController
 
 	void ProcessMovement()
 	{
-		bool isJumping = (movementController.GetDirection().y < 0);
-		float newVelocityY = movementController.GetDirection().y;
+		bool isJumping = (playerInputController.GetDirection().y < 0);
+		float newVelocityY = playerInputController.GetDirection().y;
 
 		if(canMoveFast)
 		{
@@ -120,7 +120,7 @@ class MoveVelocityController
 				}
 			}
 
-			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * movementController.GetDirection().x, newVelocityY));
+			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * playerInputController.GetDirection().x, newVelocityY));
 		}
 	}
 }

@@ -21,7 +21,7 @@ class BasicSlashMeleeWeapon : IWeapon
 
 	void RunWeaponAttack()
 	{
-		const vector2 offset = vector2(64.0f * (owner.GetMoveVelocityController().GetLastMovementDir()), 10.0f);
+		const vector2 offset = vector2(64.0f * (owner.GetPlayerController().GetLastMovementDir()), 10.0f);
 
 		ETHEntity@ temporaryHitbox;
 		Character@ ownerCharacter = cast<Character@>(owner);

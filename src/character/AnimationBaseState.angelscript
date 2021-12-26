@@ -1,5 +1,7 @@
-class Anim
+abstract class AnimationBaseState
 {
+	protected int frameRow = 0;
+	protected int frameColumn = 0;
 	private string name;
 	private uint[] framesIndices;
 	private float stride;
@@ -9,7 +11,7 @@ class Anim
 	private uint frame;
 	private bool loop;
 
-	Anim(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+	AnimationBaseState(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
 	{
 		this.name = name;
 		this.framesIndices = framesIndices;
@@ -17,6 +19,10 @@ class Anim
 		this.priority = priority;
 		this.loop = loop;
 	}
+
+	void EnterState(PlayAnim@ playAnim){}
+	
+	void UpdateState(){}
 
 	float GetPriority()
 	{
