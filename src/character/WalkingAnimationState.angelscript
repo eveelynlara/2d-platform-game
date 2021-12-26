@@ -22,6 +22,11 @@ class WalkingAnimationState : AnimationBaseState
 
         m_entity.SetFlipX(lastMovementDir < 0);
 
+        if(m_playAnim.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
+		{
+            m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
+        }
+
         if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
         {
             m_entity.SetFrame(GetAnimationFrame());

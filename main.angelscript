@@ -6,6 +6,7 @@
 #include "src/GameState.angelscript"
 
 #include "src/character/AnimationBaseState.angelscript"
+#include "src/character/BasicSwordAttackState.angelscript"
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
 #include "src/character/IdleAnimationState.angelscript" 
@@ -16,6 +17,7 @@
 #include "src/character/PlayAnim.angelscript"
 #include "src/character/PlayerController.angelscript"
 #include "src/character/PlayerInputController.angelscript"
+#include "src/character/SecondComboState.angelscript"
 #include "src/character/WalkingAnimationState.angelscript"
 
 #include "src/gameplay/spawner.angelscript"

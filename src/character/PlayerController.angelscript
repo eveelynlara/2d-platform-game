@@ -24,7 +24,7 @@ class PlayerController
 		playAnim.update();
 		playerInputController.update();
 
-		// ProcessAttack();
+		ProcessAttack();
 		ProcessMovement();
 	}
 
@@ -86,6 +86,7 @@ class PlayerController
 		if(GetPlayerInputController().GetAttackHit() == 1)
 		{
 			m_character.GetEntity().SetUInt("attacking", 1);
+			SlowMovementSpeedDown();
 			m_character.GetEquippedWeapon().Attack();
 		}
 

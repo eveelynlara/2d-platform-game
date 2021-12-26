@@ -18,6 +18,12 @@ class IdleAnimationState : AnimationBaseState
     void UpdateState() override
     {
         bool isTouchingGround = m_playAnim.GetPlayerController().isTouchingOnlyGround();
+
+        if(m_playAnim.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
+		{
+            m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
+        }
+
         if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
         {
             m_entity.SetFrame(GetAnimationFrame());
