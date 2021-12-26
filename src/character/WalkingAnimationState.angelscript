@@ -26,25 +26,27 @@ class WalkingAnimationState : AnimationBaseState
 		{
             m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
         }
-
-        if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
+        else
         {
-            m_entity.SetFrame(GetAnimationFrame());
-        }
-        else if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
-        {
-            m_playAnim.SwitchState(@m_playAnim.idleState);
-        }
-        
-        if(!isTouchingGround)
-        {
-            if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
+            if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
             {
-                m_playAnim.SwitchState(@m_playAnim.jumpRiseState);
+                m_entity.SetFrame(GetAnimationFrame());
             }
-            else
+            else if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
             {
-                m_playAnim.SwitchState(@m_playAnim.jumpFallState);
+                m_playAnim.SwitchState(@m_playAnim.idleState);
+            }
+            
+            if(!isTouchingGround)
+            {
+                if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
+                {
+                    m_playAnim.SwitchState(@m_playAnim.jumpRiseState);
+                }
+                else
+                {
+                    m_playAnim.SwitchState(@m_playAnim.jumpFallState);
+                }
             }
         }
     }

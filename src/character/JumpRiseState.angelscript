@@ -30,7 +30,7 @@ class JumpRiseState : AnimationBaseState
             {
                 m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
             }    
-            if(m_playAnim.GetPlayerController().GetSpeed().y > 0)
+            else if(m_playAnim.GetPlayerController().GetSpeed().y > 0)
             {
                 m_playAnim.SwitchState(@m_playAnim.jumpFallState);
             }

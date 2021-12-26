@@ -23,14 +23,14 @@ class JumpFallState : AnimationBaseState
         m_entity.SetFlipX(lastMovementDir < 0);
 
         if(!isTouchingGround)
-        {  
+        { 
             m_entity.SetFrame(GetAnimationFrame());
 
             if(m_playAnim.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
             {
                 m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
             }
-            if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
+            else if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
             {
                 m_playAnim.SwitchState(@m_playAnim.jumpRiseState);
             }

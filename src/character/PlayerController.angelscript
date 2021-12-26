@@ -77,7 +77,7 @@ class PlayerController
 	void SlowMovementSpeedDown()
 	{
 		canMoveFast = false;
-		float slowDownParameter = 0.2f;
+		float slowDownParameter = 0.5f;
 		rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
 	}
 
