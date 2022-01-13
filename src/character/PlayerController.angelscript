@@ -85,9 +85,9 @@ class PlayerController
 	{
 		if(GetPlayerInputController().GetAttackHit() == 1)
 		{
+			m_character.GetEquippedWeapon().Attack();
 			m_character.GetEntity().SetUInt("attacking", 1);
 			SlowMovementSpeedDown();
-			m_character.GetEquippedWeapon().Attack();
 		}
 
 		if(m_character.GetEntity().GetUInt("attacking") == 1)

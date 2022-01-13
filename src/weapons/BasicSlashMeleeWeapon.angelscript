@@ -25,6 +25,7 @@ class BasicSlashMeleeWeapon : IWeapon
 
 		ETHEntity@ temporaryHitbox;
 		Character@ ownerCharacter = cast<Character@>(owner);
+		// AddEntity("warrior.ent", vector3(ownerCharacter.GetPositionXY() + offset, 0.0f), 0.0f, temporaryHitbox, "basicSlashMeleeHitbox", 1.3f);
 		AddEntity("sword_hit.ent", vector3(ownerCharacter.GetPositionXY() + offset, 0.0f), 0.0f, temporaryHitbox, "basicSlashMeleeHitbox", 1.3f);
         
 		owner.GetEntity().GetObject("currentTeam", @currentWeaponTeam);
