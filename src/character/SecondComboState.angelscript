@@ -1,6 +1,6 @@
 class SecondComboState : AnimationBaseState
 {
-    private PlayAnim@ m_playAnim;
+    private PlayerAnimationController@ m_playerAnimationController;
     private ETHEntity@ m_entity;
     private int lastMovementDir;
     private int combo = 0;
@@ -10,15 +10,15 @@ class SecondComboState : AnimationBaseState
         super(name, framesIndices, stride, loop, priority);
     }
 
-    void EnterState(PlayAnim@ playAnim) override
+    void EnterState(PlayerAnimationController@ playerAnimationController) override
     {
-        @m_playAnim = @playAnim;
-        @m_entity = @playAnim.GetPlayerController().GetCharacter().GetEntity();
+        @m_playerAnimationController = @playerAnimationController;
+        @m_entity = @playerAnimationController.GetPlayerController().GetCharacter().GetEntity();
     }
 
     void UpdateState() override
     {
-        bool isTouchingGround = m_playAnim.GetPlayerController().isTouchingOnlyGround();
+        bool isTouchingGround = m_playerAnimationController.GetPlayerController().isTouchingOnlyGround();
         m_entity.SetFrame(GetAnimationFrame());
 
         if(IsAnimationFisnished())
@@ -26,23 +26,23 @@ class SecondComboState : AnimationBaseState
             m_entity.SetUInt("attacking", 0);
             if(!isTouchingGround)
             {  
-                if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
+                if(m_playerAnimationController.GetPlayerController().GetSpeed().y < 0)
                 {
                     ResetAnimation();
-                    m_playAnim.SwitchState(@m_playAnim.jumpRiseState);
+                    m_playerAnimationController.SwitchState(@m_playerAnimationController.jumpRiseState);
                 }
             }
             else
             {
-                if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
+                if(m_playerAnimationController.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
                 {
                     ResetAnimation();
-                    m_playAnim.SwitchState(@m_playAnim.walkingState);
+                    m_playerAnimationController.SwitchState(@m_playerAnimationController.walkingState);
                 }
                 else
                 {
                     ResetAnimation();
-                    m_playAnim.SwitchState(@m_playAnim.idleState);
+                    m_playerAnimationController.SwitchState(@m_playerAnimationController.idleState);
                 }
             }
         }

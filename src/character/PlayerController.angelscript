@@ -7,7 +7,7 @@ class PlayerController
 	private PlayerInputController@ playerInputController;
 	private bool canMoveFast = true;
 	private bool canFlip = true;
-	private PlayAnim@ playAnim;
+	private PlayerAnimationController@ playerAnimationController;
 
 	PlayerController(Character@ character, int playerInputType = 0)
 	{
@@ -21,7 +21,7 @@ class PlayerController
 	void update()
 	{
 		rigidbody2D.SetAwake(true);
-		playAnim.update();
+		playerAnimationController.update();
 		playerInputController.update();
 
 		ProcessAttack();
@@ -46,7 +46,7 @@ class PlayerController
 	}
 	void SetAnimationController(PlayerController@ movelocityController)
 	{
-		@playAnim = PlayAnim(@movelocityController);
+		@playerAnimationController = PlayerAnimationController(@movelocityController);
 	}
 
 	vector2 GetSpeed()

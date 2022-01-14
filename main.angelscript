@@ -14,7 +14,7 @@
 #include "src/character/JumpRiseState.angelscript" 
 #include "src/character/KeyInputController.angelscript"
 #include "src/character/MovementBubbleGumController.angelscript" 
-#include "src/character/PlayAnim.angelscript"
+#include "src/character/PlayerAnimationController.angelscript"
 #include "src/character/PlayerController.angelscript"
 #include "src/character/PlayerInputController.angelscript"
 #include "src/character/SecondComboState.angelscript"

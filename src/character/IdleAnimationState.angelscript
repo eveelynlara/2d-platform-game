@@ -1,6 +1,6 @@
 class IdleAnimationState : AnimationBaseState
 {
-    private PlayAnim@ m_playAnim;
+    private PlayerAnimationController@ m_playerAnimationController;
     private ETHEntity@ m_entity;
 
     IdleAnimationState(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
@@ -8,40 +8,40 @@ class IdleAnimationState : AnimationBaseState
         super(name, framesIndices, stride, loop, priority);
     }
 
-    void EnterState(PlayAnim@ playAnim) override
+    void EnterState(PlayerAnimationController@ playerAnimationController) override
     {
-        @m_playAnim = @playAnim;
-        @m_entity = @playAnim.GetPlayerController().GetCharacter().GetEntity();
+        @m_playerAnimationController = @playerAnimationController;
+        @m_entity = @playerAnimationController.GetPlayerController().GetCharacter().GetEntity();
         m_entity.SetFrame(frameColumn, frameRow);
     }
 
     void UpdateState() override
     {
-        bool isTouchingGround = m_playAnim.GetPlayerController().isTouchingOnlyGround();
+        bool isTouchingGround = m_playerAnimationController.GetPlayerController().isTouchingOnlyGround();
 
-        if(m_playAnim.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
+        if(m_playerAnimationController.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
 		{
-            m_playAnim.SwitchState(@m_playAnim.basicSwordAttackState);
+            m_playerAnimationController.SwitchState(@m_playerAnimationController.basicSwordAttackState);
         }
 
-        if(m_playAnim.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
+        if(m_playerAnimationController.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
         {
             m_entity.SetFrame(GetAnimationFrame());
         }
         else
         {
-            m_playAnim.SwitchState(@m_playAnim.walkingState);
+            m_playerAnimationController.SwitchState(@m_playerAnimationController.walkingState);
         }
 
         if(!isTouchingGround)
         {
-            if(m_playAnim.GetPlayerController().GetSpeed().y < 0)
+            if(m_playerAnimationController.GetPlayerController().GetSpeed().y < 0)
             {
-                m_playAnim.SwitchState(@m_playAnim.jumpRiseState);
+                m_playerAnimationController.SwitchState(@m_playerAnimationController.jumpRiseState);
             }
             else
             {
-                m_playAnim.SwitchState(@m_playAnim.jumpFallState);
+                m_playerAnimationController.SwitchState(@m_playerAnimationController.jumpFallState);
             }
         }
     }

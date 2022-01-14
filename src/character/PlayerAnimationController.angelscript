@@ -1,4 +1,4 @@
-class PlayAnim 
+class PlayerAnimationController 
 {
 	private PlayerController@ moveVelocityController;
 	private ETHEntity@ m_entity;
@@ -21,7 +21,7 @@ class PlayAnim
 	SecondComboState@ secondComboState = SecondComboState("secondComboAttack", {31, 32, 33, 34}, stride_meleeAttack, !isLoop, 1);
 
 
-	PlayAnim(PlayerController@ moveVelocityController)
+	PlayerAnimationController(PlayerController@ moveVelocityController)
 	{
 		@this.moveVelocityController = @moveVelocityController;
 		@currentAnimationState = @idleState;

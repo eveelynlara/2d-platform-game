@@ -20,7 +20,7 @@ abstract class AnimationBaseState
 		this.loop = loop;
 	}
 
-	void EnterState(PlayAnim@ playAnim){}
+	void EnterState(PlayerAnimationController@ playerAnimationController){}
 	
 	void UpdateState(){}
 
