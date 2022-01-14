@@ -1,6 +1,6 @@
 class PlayerAnimationController 
 {
-	private PlayerController@ moveVelocityController;
+	private PlayerController@ playerController;
 	private ETHEntity@ m_entity;
 	private bool flipHorizontally = false;
 	private bool isLoop = true;
@@ -21,9 +21,9 @@ class PlayerAnimationController
 	SecondComboState@ secondComboState = SecondComboState("secondComboAttack", {31, 32, 33, 34}, stride_meleeAttack, !isLoop, 1);
 
 
-	PlayerAnimationController(PlayerController@ moveVelocityController)
+	PlayerAnimationController(PlayerController@ playerController)
 	{
-		@this.moveVelocityController = @moveVelocityController;
+		@this.playerController = @playerController;
 		@currentAnimationState = @idleState;
 		currentAnimationState.EnterState(@this);
 	}
@@ -41,6 +41,6 @@ class PlayerAnimationController
 
 	PlayerController@ GetPlayerController()
 	{
-		return @moveVelocityController;
+		return @playerController;
 	}
 }

@@ -1,7 +1,7 @@
 class Character : IDamageable, ITeamMember
 {
 	private ETHEntity@ characterEntity;
-	private PlayerController@ moveVelocityController;
+	private PlayerController@ playerController;
 	private Team@ currentTeam;
 	private IWeapon@ currentEquippedWeapon;
 
@@ -11,13 +11,13 @@ class Character : IDamageable, ITeamMember
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character",  1.0f /*scale*/);
-		@moveVelocityController = PlayerController(@this, controllerType);
+		@playerController = PlayerController(@this, controllerType);
 		SetWeapon(BasicSlashMeleeWeapon(@this));
 	}
 
 	void update()
 	{
-		moveVelocityController.update();
+		playerController.update();
 	}
 
 	void SetTeam(Team@ team)
@@ -53,7 +53,7 @@ class Character : IDamageable, ITeamMember
 
 	PlayerController@ GetPlayerController()
 	{
-		return @moveVelocityController;
+		return @playerController;
 	}
 
 	bool IsDead() const
