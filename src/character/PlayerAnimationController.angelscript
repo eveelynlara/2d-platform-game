@@ -20,7 +20,6 @@ class PlayerAnimationController
 	BasicSwordAttackState@ basicSwordAttackState = BasicSwordAttackState("basicSwordAttack", {27, 28, 29, 30}, stride_meleeAttack, !isLoop, 1);
 	SecondComboState@ secondComboState = SecondComboState("secondComboAttack", {31, 32, 33, 34}, stride_meleeAttack, !isLoop, 1);
 
-
 	PlayerAnimationController(PlayerController@ playerController)
 	{
 		@this.playerController = @playerController;
