@@ -20,6 +20,7 @@
 #include "src/character/State_Machine/PlayerGroundedState.angelscript"
 #include "src/character/State_Machine/PlayerIdleState.angelscript"
 #include "src/character/State_Machine/PlayerJumpState.angelscript"
+#include "src/character/State_Machine/PlayerWalkState.angelscript"
 #include "src/character/PlayerInputController.angelscript"
 #include "src/character/State_Machine/PlayerStateMachine.angelscript"
 #include "src/character/State_Machine/PlayerStateFactory.angelscript"

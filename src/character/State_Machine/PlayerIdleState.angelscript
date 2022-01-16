@@ -11,10 +11,15 @@ class PlayerIdleState : PlayerBaseState
 		CheckSwitchStates();
 	}
 	void ExitState() override {}
-	void CheckSwitchStates() override {}
+	void CheckSwitchStates() override {
+		if(m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
+		{
+			SetSubState(m_playerStateFactory.Walk());
+		}		
+	}
 	void InitializeSubState() override {}
 	void UpdateStates() override {}
 	void SwitchState(PlayerBaseState@ newState) override {}
-	void SetSuperState() override {}
-	void SetSubState() override {}
+	void SetSuperState(PlayerBaseState@ newSuperState) override {}
+	void SetSubState(PlayerBaseState@ newSubState) override {}
 }

@@ -6,23 +6,27 @@ class PlayerJumpState : PlayerBaseState
 	{
 		super(@currentContext, @playerStateFactory);
 		@m_rigidbody2D = currentContext.GetPlayerController().GetPhysicsController();
+		m_isRootState = true;
 	}
 	void EnterState() override {
-		ResetJumpCount();
+		// print("entrei no jump");
 		HandleJump();
 	}
 	void UpdateState() override {
 		CheckSwitchStates();
 	}
 	void ExitState() override {
+		ResetJumpCount();
 	}
 	void CheckSwitchStates() override {
 		HandleJump();
+
+		if(m_ctx.GetPlayerController().isTouchingOnlyGround()){
+			SwitchState(m_playerStateFactory.Grounded());
+		}
 	}
 	void InitializeSubState() override {}
 	void UpdateStates() override {}
-	void SetSuperState() override {}
-	void SetSubState() override {}
 
 	void ResetJumpCount()
 	{
@@ -35,7 +39,6 @@ class PlayerJumpState : PlayerBaseState
 		int currentJumpsInTheAir = m_ctx.GetJumpsInTheAir();
 		float movementSpeed = m_ctx.GetMovementSpeed();
 		float directionInputController = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x;
-		bool isTouchingGround = m_ctx.GetPlayerController().isTouchingOnlyGround();
 		float jumpImpulse = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().y;
 
 		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 1)
@@ -44,10 +47,5 @@ class PlayerJumpState : PlayerBaseState
 			currentJumpsInTheAir++;
 			m_ctx.SetJumpsInTheAir(currentJumpsInTheAir);
 		}	
-
-		if(isTouchingGround)
-		{
-			SwitchState(m_playerStateFactory.Grounded());
-		}
 	}
 }

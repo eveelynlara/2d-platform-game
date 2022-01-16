@@ -19,4 +19,9 @@ class PlayerStateFactory
 	{
 		return PlayerJumpState(@m_context, @this);
 	}
+
+	PlayerBaseState@ Walk()
+	{
+		return PlayerWalkState(@m_context, @this);
+	}
 }

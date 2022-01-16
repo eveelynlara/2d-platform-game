@@ -6,25 +6,33 @@ class PlayerGroundedState : PlayerBaseState
 	{
 		super(@currentContext, @playerStateFactory);
 		@m_rigidbody2D = currentContext.GetPlayerController().GetPhysicsController();
+		InitializeSubState();
+		m_isRootState = true;
 	}
 	void EnterState() override {
+		// print("entrei no grounded");
 	}
 	void UpdateState() override {
 		CheckSwitchStates();
 	}
 	void ExitState() override {}
-	void InitializeSubState() override {}
-	void CheckSwitchStates() override {
+	void InitializeSubState() override {
+		if(m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
+		{
+			SetSubState(m_playerStateFactory.Idle());
+		}
+		else if(m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x != 0)
+		{
+			SetSubState(m_playerStateFactory.Walk());
+		}
+	}
+	void CheckSwitchStates() override 
+	{
 		//if player is grounded and jump is pressed, switch to jump state
-
-		// float movementSpeed = m_ctx.GetMovementSpeed();
-		// float directionInputController = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x;
-
-		// m_rigidbody2D.SetLinearVelocity(vector2(movementSpeed * directionInputController, m_rigidbody2D.GetLinearVelocity().y));
-
 		if(m_ctx.IsJumpPressed())
 		{
 			SwitchState(m_playerStateFactory.Jump());
 		}
 	}
 }
+
