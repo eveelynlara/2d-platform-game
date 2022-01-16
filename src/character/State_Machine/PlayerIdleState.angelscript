@@ -7,7 +7,9 @@ class PlayerIdleState : PlayerBaseState
     void EnterState() override {
 		print("Oie! Estou no Enter State do Idle");
 	}
-	void UpdateState() override {}
+	void UpdateState() override {
+		CheckSwitchStates();
+	}
 	void ExitState() override {}
 	void CheckSwitchStates() override {}
 	void InitializeSubState() override {}

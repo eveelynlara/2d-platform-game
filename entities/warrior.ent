@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <Ethanon>
-    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="2" restitution="0" gravityScale="6" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0.1" density="2" restitution="0" gravityScale="6" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
         <SpriteCut x="12" y="7" />
         <Sprite>Warrior-centered-2px-diff.png</Sprite>
         <Particles />

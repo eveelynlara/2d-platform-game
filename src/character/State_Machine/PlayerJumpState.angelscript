@@ -8,66 +8,46 @@ class PlayerJumpState : PlayerBaseState
 		@m_rigidbody2D = currentContext.GetPlayerController().GetPhysicsController();
 	}
 	void EnterState() override {
-		print("Oie! Estou no Jump State!");
+		ResetJumpCount();
 		HandleJump();
 	}
 	void UpdateState() override {
-		HandleJump();
+		CheckSwitchStates();
 	}
 	void ExitState() override {
-		HandleJump();
 	}
 	void CheckSwitchStates() override {
-
+		HandleJump();
 	}
 	void InitializeSubState() override {}
 	void UpdateStates() override {}
-	void SwitchState(PlayerBaseState@ newState) override {}
 	void SetSuperState() override {}
 	void SetSubState() override {}
+
+	void ResetJumpCount()
+	{
+		m_ctx.SetJumpsInTheAir(0);
+	}
 
 	void HandleJump()
 	{
 		//TODO: animate character
-		// int currentJumpsInTheAir = m_ctx.GetJumpsInTheAir();
-		// float newVelocityY = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().y;
-
-		// if(m_ctx.GetJumpsInTheAir() < 1){
-		// 	m_ctx.SetJumpsInTheAir(currentJumpsInTheAir++);
-		// }
-		// else
-		// {
-		// 	m_ctx.SetVelocityY(m_rigidbody2D.GetLinearVelocity().y);
-		// 	newVelocityY = m_ctx.GetVelocityY();
-		// }
-
-		// float currentSpeed = m_ctx.GetMovementSpeed();
-		// float currentDirectionX = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x;
-
-		// m_rigidbody2D.SetLinearVelocity(vector2(currentSpeed * currentDirectionX, newVelocityY));
-
 		int currentJumpsInTheAir = m_ctx.GetJumpsInTheAir();
-		float newVelocityY = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().y;
+		float movementSpeed = m_ctx.GetMovementSpeed();
+		float directionInputController = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x;
+		bool isTouchingGround = m_ctx.GetPlayerController().isTouchingOnlyGround();
+		float jumpImpulse = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().y;
 
-		bool isJumping = m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().y < 0;
-
-		m_ctx.SetMovementSpeed(sef::TimeManager.unitsPerSecond(300.0f));
-
-		if(isJumping && m_ctx.GetJumpsInTheAir() < 1){
+		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 1)
+		{
+			m_rigidbody2D.SetLinearVelocity(vector2(m_rigidbody2D.GetLinearVelocity().x, jumpImpulse));
 			currentJumpsInTheAir++;
 			m_ctx.SetJumpsInTheAir(currentJumpsInTheAir);
-		}
-		else
-		{
-			newVelocityY = m_rigidbody2D.GetLinearVelocity().y;
-			
-			if (m_ctx.IsTouchingOnlyGround())
-			{
-				m_ctx.SetJumpsInTheAir(0);
-			}
-		}
+		}	
 
-		m_rigidbody2D.SetLinearVelocity(vector2(m_ctx.GetMovementSpeed() * m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x, newVelocityY));
-		
+		if(isTouchingGround)
+		{
+			SwitchState(m_playerStateFactory.Grounded());
+		}
 	}
 }

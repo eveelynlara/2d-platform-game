@@ -14,9 +14,9 @@ class PlayerStateMachine
 	private float m_currentMovementInput;
 	private bool m_isJumpPressed;
 	private bool m_IsMovementPressed;
-	private float m_movementSpeed;
+	private float m_movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
 	private float m_movementVelocityY;
-	private int m_jumpsInTheAir = 0;
+	private int m_jumpsInTheAir;
 	private bool m_isTouchingOnlyGround;
 
 	PlayerStateMachine(PlayerController@ currentContext)

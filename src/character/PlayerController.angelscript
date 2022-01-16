@@ -3,7 +3,6 @@ class PlayerController
 	private Character@ m_character;
 	private int jumpsInTheAir = 0;
 	private ETHPhysicsController@ rigidbody2D;
-	private float movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
 	private PlayerInputController@ playerInputController;
 	private bool canMoveFast = true;
 	private bool canFlip = true;
@@ -98,50 +97,50 @@ class PlayerController
 	{
 		canMoveFast = false;
 		float slowDownParameter = 0.5f;
-		rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
+		// rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
 	}
 
-	void ProcessAttack()
-	{
-		if(GetPlayerInputController().GetAttackHit() == 1)
-		{
-			m_character.GetEquippedWeapon().Attack();
-			m_character.GetEntity().SetUInt("attacking", 1);
-			SlowMovementSpeedDown();
-		}
+	// void ProcessAttack()
+	// {
+	// 	if(GetPlayerInputController().GetAttackHit() == 1)
+	// 	{
+	// 		m_character.GetEquippedWeapon().Attack();
+	// 		m_character.GetEntity().SetUInt("attacking", 1);
+	// 		SlowMovementSpeedDown();
+	// 	}
 
-		if(m_character.GetEntity().GetUInt("attacking") == 1)
-		{
-			SlowMovementSpeedDown();
-		}
-		else if(m_character.GetEntity().GetUInt("attacking") == 0)
-		{
-			canMoveFast = true;
-		}
-	}
+	// 	if(m_character.GetEntity().GetUInt("attacking") == 1)
+	// 	{
+	// 		SlowMovementSpeedDown();
+	// 	}
+	// 	else if(m_character.GetEntity().GetUInt("attacking") == 0)
+	// 	{
+	// 		canMoveFast = true;
+	// 	}
+	// }
 
-	void ProcessMovement()
-	{
-		bool isJumping = (playerInputController.GetDirection().y < 0);
-		float newVelocityY = playerInputController.GetDirection().y;
+	// void ProcessMovement()
+	// {
+	// 	bool isJumping = (playerInputController.GetDirection().y < 0);
+	// 	float newVelocityY = playerInputController.GetDirection().y;
 
-		if(canMoveFast)
-		{
-			movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-			if(isJumping && jumpsInTheAir < 1){
-				jumpsInTheAir++;
-			}
-			else
-			{
-				newVelocityY = rigidbody2D.GetLinearVelocity().y;
+	// 	if(canMoveFast)
+	// 	{
+	// 		movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
+	// 		if(isJumping && jumpsInTheAir < 1){
+	// 			jumpsInTheAir++;
+	// 		}
+	// 		else
+	// 		{
+	// 			newVelocityY = rigidbody2D.GetLinearVelocity().y;
 
-				if (isTouchingOnlyGround())
-				{
-					jumpsInTheAir = 0;
-				}
-			}
+	// 			if (isTouchingOnlyGround())
+	// 			{
+	// 				jumpsInTheAir = 0;
+	// 			}
+	// 		}
 
-			rigidbody2D.SetLinearVelocity(vector2(movementSpeed * playerInputController.GetDirection().x, newVelocityY));
-		}
-	}
+	// 		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * playerInputController.GetDirection().x, newVelocityY));
+	// 	}
+	// }
 }
