@@ -9,7 +9,6 @@ class PlayerJumpState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
-		// print("entrei no jump");
 		HandleJump();
 	}
 	void UpdateState() override {
@@ -21,12 +20,14 @@ class PlayerJumpState : PlayerBaseState
 	void CheckSwitchStates() override {
 		HandleJump();
 
-		if(m_ctx.GetPlayerController().isTouchingOnlyGround()){
+		if(m_ctx.IsTouchingOnlyGround()){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
 	}
 	void InitializeSubState() override {}
-	void UpdateStates() override {}
+	void UpdateStates() override {
+		
+	}
 
 	void ResetJumpCount()
 	{

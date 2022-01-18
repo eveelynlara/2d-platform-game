@@ -14,11 +14,14 @@ abstract class PlayerBaseState
 		@m_playerStateFactory = @factory;
 	}
 
+	/*-- abstract functions --*/
 	void EnterState(){}
 	void UpdateState(){}
 	void ExitState(){}
 	void CheckSwitchStates(){}
 	void InitializeSubState(){}
+	/*------------------------*/
+
 	void UpdateStates(){
 		UpdateState();
 		if(@m_subState != null)
@@ -26,7 +29,7 @@ abstract class PlayerBaseState
 			m_subState.UpdateState();
 		}
 	}
-	void SwitchState(PlayerBaseState@ newState){
+	protected void SwitchState(PlayerBaseState@ newState){
 		//exit from current state
 		ExitState();
 
@@ -43,10 +46,10 @@ abstract class PlayerBaseState
 			m_superState.SetSubState(@newState);
 		}
 	}
-	void SetSuperState(PlayerBaseState@ newSuperState){
+	protected void SetSuperState(PlayerBaseState@ newSuperState){
 		@m_superState = @newSuperState;
 	}
-	void SetSubState(PlayerBaseState@ newSubState){
+	protected void SetSubState(PlayerBaseState@ newSubState){
 		@m_subState = @newSubState;
 		newSubState.SetSuperState(@this);
 	}
