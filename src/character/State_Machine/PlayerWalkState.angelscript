@@ -1,4 +1,4 @@
-class PlayerWalkState : PlayerBaseState
+  class PlayerWalkState : PlayerBaseState
 {
 	private ETHPhysicsController@ m_rigidbody2D;
 

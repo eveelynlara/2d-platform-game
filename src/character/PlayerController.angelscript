@@ -100,47 +100,9 @@ class PlayerController
 		// rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
 	}
 
-	// void ProcessAttack()
-	// {
-	// 	if(GetPlayerInputController().GetAttackHit() == 1)
-	// 	{
-	// 		m_character.GetEquippedWeapon().Attack();
-	// 		m_character.GetEntity().SetUInt("attacking", 1);
-	// 		SlowMovementSpeedDown();
-	// 	}
-
-	// 	if(m_character.GetEntity().GetUInt("attacking") == 1)
-	// 	{
-	// 		SlowMovementSpeedDown();
-	// 	}
-	// 	else if(m_character.GetEntity().GetUInt("attacking") == 0)
-	// 	{
-	// 		canMoveFast = true;
-	// 	}
-	// }
-
-	// void ProcessMovement()
-	// {
-	// 	bool isJumping = (playerInputController.GetDirection().y < 0);
-	// 	float newVelocityY = playerInputController.GetDirection().y;
-
-	// 	if(canMoveFast)
-	// 	{
-	// 		movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-	// 		if(isJumping && jumpsInTheAir < 1){
-	// 			jumpsInTheAir++;
-	// 		}
-	// 		else
-	// 		{
-	// 			newVelocityY = rigidbody2D.GetLinearVelocity().y;
-
-	// 			if (isTouchingOnlyGround())
-	// 			{
-	// 				jumpsInTheAir = 0;
-	// 			}
-	// 		}
-
-	// 		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * playerInputController.GetDirection().x, newVelocityY));
-	// 	}
-	// }
+	void Move(float characterMovementSpeed)
+	{
+		float movementSpeed = sef::TimeManager.unitsPerSecond(characterMovementSpeed);
+		rigidbody2D.SetLinearVelocity(vector2(movementSpeed * playerInputController.GetDirection().x, rigidbody2D.GetLinearVelocity().y));
+	}
 }
