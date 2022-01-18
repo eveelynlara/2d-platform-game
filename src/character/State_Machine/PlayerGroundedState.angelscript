@@ -10,7 +10,6 @@ class PlayerGroundedState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
-		// print("entrei no grounded");
 	}
 	void UpdateState() override {
 		CheckSwitchStates();
@@ -29,7 +28,7 @@ class PlayerGroundedState : PlayerBaseState
 	void CheckSwitchStates() override 
 	{
 		//if player is grounded and jump is pressed, switch to jump state
-		if(m_ctx.IsJumpPressed())
+		if(m_ctx.IsJumpPressed() && m_ctx.GetJumpsInTheAir() == 0)
 		{
 			SwitchState(m_playerStateFactory.Jump());
 		}
