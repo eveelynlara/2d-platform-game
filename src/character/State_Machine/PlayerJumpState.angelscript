@@ -14,6 +14,7 @@ class PlayerJumpState : PlayerBaseState
 		HandleJump();
 	}
 	void UpdateState() override {
+		// print(GetStateName());
 		HandleJump();
 		CheckSwitchStates();
 	}
@@ -22,7 +23,7 @@ class PlayerJumpState : PlayerBaseState
 	}
 	void CheckSwitchStates() override {
 		
-		if(m_ctx.IsTouchingOnlyGround()){
+		if(m_ctx.IsTouchingOnlyGround() && m_jumpElapsedTime > 160.0f){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
 	}
@@ -47,7 +48,7 @@ class PlayerJumpState : PlayerBaseState
 
 		m_jumpElapsedTime += sef::TimeManager.getLastFrameElapsedTimeF();
 
-		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 1)
+		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 2)
 		{
 			m_rigidbody2D.SetLinearVelocity(vector2(m_rigidbody2D.GetLinearVelocity().x, jumpImpulse));
 			currentJumpsInTheAir++;
