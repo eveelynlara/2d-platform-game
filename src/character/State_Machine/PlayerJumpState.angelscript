@@ -10,6 +10,7 @@ class PlayerJumpState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
+		InitializeSubState();
 		HandleJump();
 	}
 	void UpdateState() override {
@@ -20,18 +21,20 @@ class PlayerJumpState : PlayerBaseState
 		ResetJumpCount();
 	}
 	void CheckSwitchStates() override {
-		if(m_ctx.IsTouchingOnlyGround() && m_jumpElapsedTime > 150.0f){
+		
+		if(m_ctx.IsTouchingOnlyGround()){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
 	}
 	void InitializeSubState() override {}
-	void UpdateStates() override {
-
-	}
 
 	void ResetJumpCount()
 	{
 		m_ctx.SetJumpsInTheAir(0);
+	}
+	string GetStateName() override
+	{
+		return "state name is: Jump";
 	}
 
 	void HandleJump()
@@ -44,7 +47,7 @@ class PlayerJumpState : PlayerBaseState
 
 		m_jumpElapsedTime += sef::TimeManager.getLastFrameElapsedTimeF();
 
-		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 2)
+		if (jumpImpulse != 0.0f && currentJumpsInTheAir < 1)
 		{
 			m_rigidbody2D.SetLinearVelocity(vector2(m_rigidbody2D.GetLinearVelocity().x, jumpImpulse));
 			currentJumpsInTheAir++;

@@ -20,6 +20,7 @@ abstract class PlayerBaseState
 	void ExitState(){}
 	void CheckSwitchStates(){}
 	void InitializeSubState(){}
+	string GetStateName(){ return "name from base state";}	
 	/*------------------------*/
 
 	void UpdateStates(){
@@ -36,12 +37,12 @@ abstract class PlayerBaseState
 		//enter new state
 		newState.EnterState();
 
-		//switch current state of context if it's at the top lvel of the sate chain
+		//switch current state of context if it's at the top lvel of the state chain
 		if(m_isRootState)
-		{			
+		{	
 			m_ctx.SetCurrentState(@newState);
 		}
-		else if(@m_superState != null)
+		else if(m_superState !is null)
 		{
 			m_superState.SetSubState(@newState);
 		}

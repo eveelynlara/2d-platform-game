@@ -33,7 +33,7 @@ class PlayerStateMachine
 
 	void Update()
 	{
-		m_currentState.UpdateState();
+		m_currentState.UpdateStates();
 		m_playerController.Move(300.0f);
 	}
 

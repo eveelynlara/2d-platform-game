@@ -6,16 +6,17 @@ class PlayerGroundedState : PlayerBaseState
 	{
 		super(@currentContext, @playerStateFactory);
 		@m_rigidbody2D = currentContext.GetPlayerController().GetPhysicsController();
-		InitializeSubState();
 		m_isRootState = true;
 	}
 	void EnterState() override {
+		InitializeSubState();
 	}
 	void UpdateState() override {
 		CheckSwitchStates();
 	}
 	void ExitState() override {}
 	void InitializeSubState() override {
+
 		if(m_ctx.GetPlayerController().GetPlayerInputController().GetDirection().x == 0)
 		{
 			SetSubState(m_playerStateFactory.Idle());
@@ -33,5 +34,9 @@ class PlayerGroundedState : PlayerBaseState
 			SwitchState(m_playerStateFactory.Jump());
 		}
 	}
+	string GetStateName()
+	{
+		return "Grounded";
+	}	
 }
 
