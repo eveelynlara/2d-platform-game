@@ -7,6 +7,7 @@ class PlayerIdleState : PlayerBaseState
     void EnterState() override {
 	}
 	void UpdateState() override {
+		// print(GetStateName());
 		CheckSwitchStates();
 	}
 	void ExitState() override {}
@@ -18,7 +19,7 @@ class PlayerIdleState : PlayerBaseState
 	}
 	string GetStateName() override
 	{
-		return "Idle";
+		return "state name is: Idle";
 	}
 	void InitializeSubState() override {}
 }

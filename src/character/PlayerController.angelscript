@@ -21,15 +21,12 @@ class PlayerController
 		m_character.GetEntity().SetUInt("attacking", 0);
 	}
 
-	void update()
+	void Update()
 	{
 		rigidbody2D.SetAwake(true);
 		// playerAnimationController.update();
 		playerStateMachine.Update();
-		playerInputController.update();
-
-		// ProcessAttack();
-		// ProcessMovement();
+		playerInputController.Update();
 	}
 
 	Character@ GetCharacter()
@@ -91,13 +88,6 @@ class PlayerController
 	bool isTouchingOnlyGround()
 	{
 		return (GetTime() - m_character.GetEntity().GetUInt("touchingOnlyGroundTime")) < 120;
-	}
-
-	void SlowMovementSpeedDown()
-	{
-		canMoveFast = false;
-		float slowDownParameter = 0.5f;
-		// rigidbody2D.SetLinearVelocity(vector2(slowDownParameter * movementSpeed * playerInputController.GetDirection().x, GetSpeed().y));
 	}
 
 	void Move(float characterMovementSpeed)

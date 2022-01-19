@@ -7,6 +7,7 @@
 	void EnterState() override {
 	}
 	void UpdateState() override {
+		// print(GetStateName());
 		CheckSwitchStates();
 	}
 	void ExitState() override {
@@ -19,6 +20,6 @@
 	}
 	string GetStateName() override
 	{
-		return "Walk";
+		return "state name is: Walk";
 	}	
 }

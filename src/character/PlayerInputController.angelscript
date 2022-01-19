@@ -6,7 +6,7 @@ abstract class PlayerInputController
 	protected bool changeDir = false;
 	protected int attack = 0;
 
-	void update()
+	void Update()
 	{
 		HandleMovement();
 	}

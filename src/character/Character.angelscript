@@ -17,7 +17,7 @@ class Character : IDamageable, ITeamMember
 
 	void update()
 	{
-		playerController.update();
+		playerController.Update();
 	}
 
 	void SetTeam(Team@ team)
