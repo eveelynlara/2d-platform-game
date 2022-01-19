@@ -5,6 +5,8 @@
 		super(@currentContext, @playerStateFactory);
 	}
 	void EnterState() override {
+		float walkingMovementSpeed = 300.0f;
+		m_ctx.SetMovementSpeed(walkingMovementSpeed);
 	}
 	void UpdateState() override {
 		// print(GetStateName());

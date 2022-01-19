@@ -14,7 +14,7 @@ class PlayerStateMachine
 	private float m_currentMovementInput;
 	private bool m_isJumpPressed;
 	private bool m_IsMovementPressed;
-	private float m_movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
+	private float m_movementSpeed;
 	private float m_movementVelocityY;
 	private int m_jumpsInTheAir;
 	private bool m_isTouchingOnlyGround;
@@ -34,20 +34,7 @@ class PlayerStateMachine
 	void Update()
 	{
 		m_currentState.UpdateStates();
-		m_playerController.Move(300.0f);
-	}
-
-	void HandleMovement()
-	{
-		m_movementSpeed = sef::TimeManager.unitsPerSecond(300.0f);
-		@m_rigidbody2D = m_playerController.GetPhysicsController();
-		m_rigidbody2D.SetLinearVelocity(vector2(m_movementSpeed * m_playerInputController.GetDirection().x, m_rigidbody2D.GetLinearVelocity().y));
-	}
-
-	void OnMovement()
-	{
-		m_currentMovementInput = m_playerInputController.GetDirection().x;
-		m_IsMovementPressed = m_currentMovementInput != 0 || !m_isJumpPressed;
+		m_playerController.Move(m_movementSpeed);
 	}
 
 	void SetCurrentState(PlayerBaseState@ newState)
