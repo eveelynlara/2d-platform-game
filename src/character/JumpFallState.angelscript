@@ -17,7 +17,7 @@ class JumpFallState : AnimationBaseState
 
     void UpdateState() override
     { 
-        bool isTouchingGround = m_playerAnimationController.GetPlayerController().isTouchingOnlyGround();
+        bool isTouchingGround = m_playerAnimationController.GetPlayerController().IsTouchingOnlyGround();
 
         lastMovementDir = m_playerAnimationController.GetPlayerController().GetLastMovementDir();
         m_entity.SetFlipX(lastMovementDir < 0);

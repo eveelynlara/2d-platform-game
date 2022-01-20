@@ -17,7 +17,7 @@ class IdleAnimationState : AnimationBaseState
 
     void UpdateState() override
     {
-        bool isTouchingGround = m_playerAnimationController.GetPlayerController().isTouchingOnlyGround();
+        bool isTouchingGround = m_playerAnimationController.GetPlayerController().IsTouchingOnlyGround();
 
         if(m_playerAnimationController.GetPlayerController().GetPlayerInputController().GetAttackHit() == 1)
 		{

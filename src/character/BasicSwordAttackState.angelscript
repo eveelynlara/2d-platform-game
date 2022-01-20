@@ -18,7 +18,7 @@ class BasicSwordAttackState : AnimationBaseState
 
     void UpdateState() override
     {
-        bool isTouchingGround = m_playerAnimationController.GetPlayerController().isTouchingOnlyGround();
+        bool isTouchingGround = m_playerAnimationController.GetPlayerController().IsTouchingOnlyGround();
         m_entity.SetFrame(GetAnimationFrame());
 
 

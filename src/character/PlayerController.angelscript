@@ -24,7 +24,7 @@ class PlayerController
 	void Update()
 	{
 		rigidbody2D.SetAwake(true);
-		// playerAnimationController.update();
+		playerAnimationController.update();
 		playerStateMachine.Update();
 		playerInputController.Update();
 	}
@@ -50,9 +50,9 @@ class PlayerController
 			@playerInputController = MovementBubbleGumController();
 		}
 	}
-	void SetAnimationController(PlayerController@ movelocityController)
+	void SetAnimationController(PlayerController@ playerController)
 	{
-		@playerAnimationController = PlayerAnimationController(@movelocityController);
+		@playerAnimationController = PlayerAnimationController(@playerController);
 	}
 
 	PlayerAnimationController@ GetAnimationController()
@@ -85,7 +85,7 @@ class PlayerController
 		return playerInputController.GetLastMovementDir();
 	}
 
-	bool isTouchingOnlyGround()
+	bool IsTouchingOnlyGround()
 	{
 		return (GetTime() - m_character.GetEntity().GetUInt("touchingOnlyGroundTime")) < 120;
 	}

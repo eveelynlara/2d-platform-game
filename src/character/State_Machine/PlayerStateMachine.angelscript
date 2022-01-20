@@ -89,6 +89,6 @@ class PlayerStateMachine
 
 	bool IsTouchingOnlyGround()
 	{
-		return m_isTouchingOnlyGround = m_playerController.isTouchingOnlyGround();
+		return m_isTouchingOnlyGround = m_playerController.IsTouchingOnlyGround();
 	}
 }
