@@ -6,7 +6,7 @@ class PlayerController
 	private PlayerInputController@ playerInputController;
 	private bool canMoveFast = true;
 	private bool canFlip = true;
-	private PlayerAnimationController@ playerAnimationController;
+	// private PlayerAnimationController@ playerAnimationController;
 
 	//state machine
 	private PlayerStateMachine@ playerStateMachine;
@@ -15,7 +15,6 @@ class PlayerController
 	{
 		@m_character = @character;
 		SetPhysicsController(character.GetEntity());
-		SetAnimationController(@this);
 		SetPlayerInputController(playerInputType);
 		SetPlayerStateMachine(@this);
 		m_character.GetEntity().SetUInt("attacking", 0);
@@ -24,7 +23,6 @@ class PlayerController
 	void Update()
 	{
 		rigidbody2D.SetAwake(true);
-		playerAnimationController.update();
 		playerStateMachine.Update();
 		playerInputController.Update();
 	}
@@ -49,15 +47,6 @@ class PlayerController
 		{
 			@playerInputController = MovementBubbleGumController();
 		}
-	}
-	void SetAnimationController(PlayerController@ playerController)
-	{
-		@playerAnimationController = PlayerAnimationController(@playerController);
-	}
-
-	PlayerAnimationController@ GetAnimationController()
-	{
-		return @playerAnimationController;
 	}
 
 	vector2 GetSpeed()

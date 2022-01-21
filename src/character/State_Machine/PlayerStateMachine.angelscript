@@ -3,12 +3,14 @@ class PlayerStateMachine
 	//references variables
 	private PlayerController@ m_playerController;
 	private PlayerInputController@ m_playerInputController;
-	private PlayerAnimationController@ m_playerAnimationController;
 	private ETHPhysicsController@ m_rigidbody2D;
 
 	//state variables
 	PlayerBaseState@ m_currentState;
 	PlayerStateFactory@ m_states;
+
+	//animation variables
+	private PlayerAnimationController@ m_playerAnimationController;
 
 	//player control variables
 	private float m_currentMovementInput;
@@ -23,17 +25,20 @@ class PlayerStateMachine
 	{
 		@m_playerController = @currentContext;
 		@m_playerInputController = m_playerController.GetPlayerInputController();
-		@m_playerAnimationController = m_playerController.GetAnimationController();
 
 		//setup state
 		@m_states = PlayerStateFactory(@this);
 		@m_currentState = m_states.Grounded();
 		m_currentState.EnterState();
+
+		//setup animation controller
+		@m_playerAnimationController = PlayerAnimationController(@currentContext);
 	}
 
 	void Update()
 	{
 		m_currentState.UpdateStates();
+		m_playerAnimationController.update();
 		m_playerController.Move(m_movementSpeed);
 	}
 
