@@ -10,7 +10,9 @@
 	}
 	void UpdateState() override {
 		// print(GetStateName());
+		HandleWalkingAnimation();
 		CheckSwitchStates();
+		
 	}
 	void ExitState() override {
 	}
@@ -24,4 +26,8 @@
 	{
 		return "state name is: Walk";
 	}	
+	void HandleWalkingAnimation()
+	{
+		m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().walkingState);
+	}
 }

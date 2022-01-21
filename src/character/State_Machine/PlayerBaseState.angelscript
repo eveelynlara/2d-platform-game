@@ -1,5 +1,6 @@
 abstract class PlayerBaseState
 {
+	//context and state machine
 	protected PlayerStateMachine@ m_ctx;
 	protected PlayerStateFactory@ m_playerStateFactory;
 

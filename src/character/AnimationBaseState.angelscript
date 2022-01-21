@@ -1,7 +1,5 @@
 abstract class AnimationBaseState
 {
-	protected int frameRow = 0;
-	protected int frameColumn = 0;
 	private string name;
 	private uint[] framesIndices;
 	private float stride;
@@ -10,6 +8,12 @@ abstract class AnimationBaseState
 	private sef::FrameTimer frameTimer;
 	private uint frame;
 	private bool loop;
+	private PlayerAnimationController@ m_playerAnimationController;
+
+	protected ETHEntity@ m_entity;
+	protected int frameRow = 0;
+	protected int frameColumn = 0;
+	protected int _lastMovementDir;
 
 	AnimationBaseState(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
 	{
@@ -20,9 +24,13 @@ abstract class AnimationBaseState
 		this.loop = loop;
 	}
 
-	void EnterState(PlayerAnimationController@ playerAnimationController){}
+	void EnterState(PlayerAnimationController@ playerAnimationController){
+		@m_entity = @playerAnimationController.GetPlayerController().GetCharacter().GetEntity();
+	}
 	
-	void UpdateState(){}
+	void UpdateState(){
+		_lastMovementDir = m_playerAnimationController.GetPlayerController().GetLastMovementDir();
+	}
 
 	float GetPriority()
 	{

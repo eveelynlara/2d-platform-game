@@ -7,7 +7,7 @@ class PlayerIdleState : PlayerBaseState
     void EnterState() override {
 	}
 	void UpdateState() override {
-		// print(GetStateName());
+		HandleIdleAnimation();
 		CheckSwitchStates();
 	}
 	void ExitState() override {}
@@ -22,4 +22,8 @@ class PlayerIdleState : PlayerBaseState
 		return "state name is: Idle";
 	}
 	void InitializeSubState() override {}
+	void HandleIdleAnimation()
+	{
+		m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().idleState);
+	}
 }

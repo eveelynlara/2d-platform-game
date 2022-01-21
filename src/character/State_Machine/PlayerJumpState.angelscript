@@ -54,5 +54,14 @@ class PlayerJumpState : PlayerBaseState
 			currentJumpsInTheAir++;
 			m_ctx.SetJumpsInTheAir(currentJumpsInTheAir);
 		}
+
+		if(m_rigidbody2D.GetLinearVelocity().y < 0)
+		{
+			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().jumpRiseState);
+		}
+		else
+		{
+			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().jumpFallState);
+		}	
 	}
 }

@@ -61,6 +61,11 @@ class PlayerStateMachine
 	{
 		return @m_playerController;
 	}
+	
+	PlayerAnimationController@ GetAnimationController() 
+	{	
+		return @m_playerAnimationController;
+	}
 
 	float GetVelocityY()
 	{
