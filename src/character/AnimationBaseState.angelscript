@@ -30,8 +30,6 @@ abstract class AnimationBaseState
 	}
 	
 	void UpdateState(){
-		_lastMovementDir = m_playerController.GetLastMovementDir();
-		m_entity.SetFlipX(_lastMovementDir < 0);
 	}
 
 	float GetPriority()
@@ -57,6 +55,12 @@ abstract class AnimationBaseState
 	string GetAnimationName()
 	{
 		return name;
+	}
+
+	void CheckIfShouldFlip()
+	{
+		_lastMovementDir = m_playerController.GetLastMovementDir();
+		m_entity.SetFlipX(_lastMovementDir < 0);
 	}
 
 	bool IsAnimationFisnished()

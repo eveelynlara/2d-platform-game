@@ -11,7 +11,7 @@ class JumpFallState : AnimationBaseState
 
     void UpdateState() override
     { 
-        AnimationBaseState::UpdateState();
+        CheckIfShouldFlip();
         m_entity.SetFrame(GetAnimationFrame());
     }
 }
