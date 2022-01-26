@@ -1,8 +1,8 @@
 class IdleAnimationState : AnimationBaseState
 {
-    IdleAnimationState(const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+    IdleAnimationState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
     {
-        super(name, framesIndices, stride, loop, priority);
+        super(@playerController, name, framesIndices, stride, loop, priority);
     }
 
     void EnterState()
@@ -11,6 +11,7 @@ class IdleAnimationState : AnimationBaseState
 
     void UpdateState() override
     {
+        AnimationBaseState::UpdateState();
         m_entity.SetFrame(GetAnimationFrame());
     }
 }

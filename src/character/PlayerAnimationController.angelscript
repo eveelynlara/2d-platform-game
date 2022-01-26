@@ -13,12 +13,12 @@ class PlayerAnimationController
 
 	private AnimationBaseState@ currentAnimationState;
 	
-	IdleAnimationState@ idleState = IdleAnimationState("idle", {0, 1, 2, 3, 4, 5, 6}, stride_idle, isLoop, 0);
-	WalkingAnimationState@ walkingState = WalkingAnimationState("walking", {12, 13, 14, 15, 16, 17, 18, 19}, stride_walk, isLoop, 0);
-	JumpRiseState@ jumpRiseState = JumpRiseState("jumpRising", {36, 37, 38, 39}, stride_jumpRise, !isLoop, 1.5);
-	JumpFallState@ jumpFallState = JumpFallState("jumpFalling", {48, 49, 50}, stride_jumpFall, !isLoop, 1.5);
-	BasicSwordAttackState@ basicSwordAttackState = BasicSwordAttackState("basicSwordAttack", {27, 28, 29, 30}, stride_meleeAttack, !isLoop, 1);
-	SecondComboState@ secondComboState = SecondComboState("secondComboAttack", {31, 32, 33, 34}, stride_meleeAttack, !isLoop, 1);
+	IdleAnimationState@ idleState = IdleAnimationState(@playerController, "idle", {0, 1, 2, 3, 4, 5, 6}, stride_idle, isLoop, 0);
+	WalkingAnimationState@ walkingState = WalkingAnimationState(@playerController,"walking", {12, 13, 14, 15, 16, 17, 18, 19}, stride_walk, isLoop, 0);
+	JumpRiseState@ jumpRiseState = JumpRiseState(@playerController,"jumpRising", {36, 37, 38, 39}, stride_jumpRise, !isLoop, 1.5);
+	JumpFallState@ jumpFallState = JumpFallState(@playerController,"jumpFalling", {48, 49, 50}, stride_jumpFall, !isLoop, 1.5);
+	BasicSwordAttackState@ basicSwordAttackState = BasicSwordAttackState(@playerController,"basicSwordAttack", {27, 28, 29, 30}, stride_meleeAttack, !isLoop, 1);
+	SecondComboState@ secondComboState = SecondComboState(@playerController,"secondComboAttack", {31, 32, 33, 34}, stride_meleeAttack, !isLoop, 1);
 
 	PlayerAnimationController(PlayerController@ playerController)
 	{
