@@ -1,7 +1,7 @@
 class PlayerAttackState : PlayerBaseState
 {
 	private ETHPhysicsController@ m_rigidbody2D;
-	private bool m_isAttacking;
+	private bool m_combo;
 
 	PlayerAttackState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory)
 	{
@@ -10,18 +10,33 @@ class PlayerAttackState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
-		m_isAttacking = true;
 		InitializeSubState();
 	}
 	void UpdateState() override {
-		CheckSwitchStates();
+		HandleAttack();
 	}
 	void ExitState() override {
-		m_isAttacking = false;
 	}
 	void InitializeSubState() override {
 
 	}
+
+	void HandleAttack()
+	{
+		HandleAttacknimation();
+		
+		if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
+		{
+			m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
+			CheckSwitchStates();
+		}
+	}
+
+	void HandleAttacknimation()
+	{
+		m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
+	}
+
 	void CheckSwitchStates() override 
 	{
 		if(m_ctx.IsTouchingOnlyGround()){
@@ -32,6 +47,7 @@ class PlayerAttackState : PlayerBaseState
 			SwitchState(m_playerStateFactory.Jump());
 		}
 	}
+	
 	string GetStateName()
 	{
 		return "Attack";

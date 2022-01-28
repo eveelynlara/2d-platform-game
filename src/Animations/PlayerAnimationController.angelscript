@@ -38,6 +38,11 @@ class PlayerAnimationController
 		animationBaseState.EnterState(@this);
 	}
 
+	AnimationBaseState@ GetCurrentAnimationState()
+	{
+		return @currentAnimationState;
+	}
+
 	PlayerController@ GetPlayerController()
 	{
 		return @playerController;
