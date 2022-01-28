@@ -15,4 +15,9 @@ class BasicSwordAttackAnimationState : AnimationBaseState
     {
         m_entity.SetFrame(GetAnimationFrame());
     }
+
+    string GetName()
+    {
+        return "basic";
+    }
 }

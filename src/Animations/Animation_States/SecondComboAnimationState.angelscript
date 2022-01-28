@@ -15,4 +15,9 @@ class SecondComboAnimationState : AnimationBaseState
     {
         m_entity.SetFrame(GetAnimationFrame());
     }
+
+    string GetName()
+    {
+        return "second";
+    }
 }

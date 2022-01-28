@@ -1,7 +1,8 @@
 class PlayerAttackState : PlayerBaseState
 {
 	private ETHPhysicsController@ m_rigidbody2D;
-	private bool m_combo;
+	private int m_combo;
+	private bool m_firstHit;
 
 	PlayerAttackState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory)
 	{
@@ -10,6 +11,7 @@ class PlayerAttackState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
+		m_firstHit = true;
 		InitializeSubState();
 	}
 	void UpdateState() override {
@@ -23,18 +25,39 @@ class PlayerAttackState : PlayerBaseState
 
 	void HandleAttack()
 	{
-		HandleAttacknimation();
-		
-		if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
+		if(m_ctx.IsAttackPressed())
 		{
-			m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
-			CheckSwitchStates();
+			m_combo++;
 		}
+
+		HandleAttackAnimation();
 	}
 
-	void HandleAttacknimation()
+	void HandleAttackAnimation()
 	{
-		m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
+		if(m_firstHit)
+		{	
+			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
+			m_firstHit = false;
+		}
+		else if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
+		{
+			if(m_combo >= 1)
+			{
+				m_combo = 0;
+				m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
+				m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().secondComboState);			
+			}
+			else
+			{				
+				if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
+				{
+					m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
+					CheckSwitchStates();
+				}
+			}
+		}
+		
 	}
 
 	void CheckSwitchStates() override 
@@ -47,7 +70,7 @@ class PlayerAttackState : PlayerBaseState
 			SwitchState(m_playerStateFactory.Jump());
 		}
 	}
-	
+
 	string GetStateName()
 	{
 		return "Attack";
