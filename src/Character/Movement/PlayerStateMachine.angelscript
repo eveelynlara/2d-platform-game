@@ -15,6 +15,7 @@ class PlayerStateMachine
 	//player control variables
 	private float m_currentMovementInput;
 	private bool m_isJumpPressed;
+	private bool m_isAttackPressed;
 	private bool m_IsMovementPressed;
 	private float m_movementSpeed;
 	private float m_movementVelocityY;
@@ -55,6 +56,11 @@ class PlayerStateMachine
 	bool IsJumpPressed()
 	{
 		return m_isJumpPressed = m_playerInputController.GetDirection().y < 0;
+	}
+
+	bool IsAttackPressed()
+	{
+		return m_isAttackPressed = m_playerInputController.GetAttackHit() > 0;
 	}
 
 	PlayerController@ GetPlayerController()

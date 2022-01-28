@@ -33,6 +33,10 @@ class PlayerGroundedState : PlayerBaseState
 		{
 			SwitchState(m_playerStateFactory.Jump());
 		}
+		if(m_ctx.IsAttackPressed())
+		{
+			SwitchState(m_playerStateFactory.Attack());
+		}
 	}
 	string GetStateName()
 	{

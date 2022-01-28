@@ -14,7 +14,6 @@ class PlayerJumpState : PlayerBaseState
 		HandleJump();
 	}
 	void UpdateState() override {
-		// print(GetStateName());
 		HandleJump();
 		CheckSwitchStates();
 	}

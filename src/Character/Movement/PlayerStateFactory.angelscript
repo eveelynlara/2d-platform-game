@@ -19,13 +19,14 @@ class PlayerStateFactory
 	{
 		return PlayerJumpState(@m_context, @this);
 	}
-	string GetStateName()
-	{
-		return "Walk";
-	}
 
 	PlayerBaseState@ Walk()
 	{
 		return PlayerWalkState(@m_context, @this);
+	}
+
+	PlayerBaseState@ Attack()
+	{
+		return PlayerAttackState(@m_context, @this);
 	}
 }

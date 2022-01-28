@@ -33,6 +33,7 @@
 #include "src/Character/Movement/PlayerStateFactory.angelscript"
 #include "src/Character/Movement/PlayerStateMachine.angelscript"
 
+#include "src/Character/Movement/Movement_States/PlayerAttackState.angelscript"
 #include "src/Character/Movement/Movement_States/PlayerGroundedState.angelscript"
 #include "src/Character/Movement/Movement_States/PlayerIdleState.angelscript"
 #include "src/Character/Movement/Movement_States/PlayerJumpState.angelscript"
