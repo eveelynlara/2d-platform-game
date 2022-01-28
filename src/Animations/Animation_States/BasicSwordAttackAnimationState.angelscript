@@ -1,8 +1,8 @@
-class BasicSwordAttackState : AnimationBaseState
+class BasicSwordAttackAnimationState : AnimationBaseState
 {
     private int combo = 0;
 
-    BasicSwordAttackState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+    BasicSwordAttackAnimationState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
     {
         super(@playerController, name, framesIndices, stride, loop, priority);
     }

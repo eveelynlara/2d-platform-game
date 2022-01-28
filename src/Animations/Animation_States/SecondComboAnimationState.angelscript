@@ -1,8 +1,8 @@
-class SecondComboState : AnimationBaseState
+class SecondComboAnimationState : AnimationBaseState
 {
     private int combo = 0;
 
-    SecondComboState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+    SecondComboAnimationState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
     {
         super(@playerController, name, framesIndices, stride, loop, priority);
     }
