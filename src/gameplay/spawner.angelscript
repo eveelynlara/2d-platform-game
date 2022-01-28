@@ -1,4 +1,4 @@
-void ETHCallback_spawner(ETHEntity@ thisEntity)
+void ETHCallback_Spawner(ETHEntity@ thisEntity)
 {
 	if (sef::math::isWorldSpacePointInScreenWithTolerance(thisEntity.GetPositionXY(), vector2(128.0f, 64.0f)))
     {   

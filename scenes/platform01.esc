@@ -142,10 +142,10 @@
             </Entity>
         </Entity>
         <Entity id="83" spriteFrame="0">
-            <EntityName>spawner.ent</EntityName>
+            <EntityName>Spawner.ent</EntityName>
             <Position x="48" y="550" z="0" angle="0" />
             <Entity>
-                <FileName>spawner.ent</FileName>
+                <FileName>Spawner.ent</FileName>
                 <CustomData>
                     <Variable>
                         <Type>string</Type>

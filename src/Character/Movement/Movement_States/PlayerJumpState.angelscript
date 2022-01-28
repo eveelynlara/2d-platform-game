@@ -55,13 +55,18 @@ class PlayerJumpState : PlayerBaseState
 			m_ctx.SetJumpsInTheAir(currentJumpsInTheAir);
 		}
 
+		HandleJumpAnimation();
+	}
+
+	void HandleJumpAnimation()
+	{
 		if(m_rigidbody2D.GetLinearVelocity().y < 0)
 		{
-			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().jumpRiseState);
+			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().jumpingState);
 		}
 		else
 		{
-			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().jumpFallState);
+			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().fallingState);
 		}	
 	}
 }

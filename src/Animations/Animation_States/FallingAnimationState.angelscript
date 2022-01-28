@@ -1,6 +1,6 @@
-class JumpRiseState : AnimationBaseState
+class FallingAnimationState : AnimationBaseState
 {
-    JumpRiseState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+    FallingAnimationState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
     {
         super(@playerController, name, framesIndices, stride, loop, priority);
     }
@@ -10,7 +10,7 @@ class JumpRiseState : AnimationBaseState
     }
 
     void UpdateState() override
-    {
+    { 
         CheckIfShouldFlip();
         m_entity.SetFrame(GetAnimationFrame());
     }

@@ -1,6 +1,6 @@
-class JumpFallState : AnimationBaseState
+class JumpingAnimationState : AnimationBaseState
 {
-    JumpFallState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
+    JumpingAnimationState(PlayerController@ playerController, const string &in name, uint[] framesIndices, float stride, bool loop, float priority)
     {
         super(@playerController, name, framesIndices, stride, loop, priority);
     }
