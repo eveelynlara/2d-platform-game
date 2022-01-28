@@ -3,6 +3,7 @@ class PlayerAttackState : PlayerBaseState
 	private ETHPhysicsController@ m_rigidbody2D;
 	private int m_combo;
 	private bool m_firstHit;
+	private bool m_canDoCombo;
 
 	PlayerAttackState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory)
 	{
@@ -12,6 +13,7 @@ class PlayerAttackState : PlayerBaseState
 	}
 	void EnterState() override {
 		m_firstHit = true;
+		m_canDoCombo = true;
 		InitializeSubState();
 	}
 	void UpdateState() override {
@@ -42,11 +44,12 @@ class PlayerAttackState : PlayerBaseState
 		}
 		else if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
 		{
-			if(m_combo >= 1)
+			if(m_combo >= 1 && m_canDoCombo)
 			{
 				m_combo = 0;
 				m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
-				m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().secondComboState);			
+				m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().secondComboState);	
+				m_canDoCombo = false;		
 			}
 			else
 			{				
