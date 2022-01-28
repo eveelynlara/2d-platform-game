@@ -12,6 +12,7 @@ class PlayerAnimationController
 	private float stride_meleeAttack = 80;
 
 	private AnimationBaseState@ currentAnimationState;
+	private AnimationBaseState@ oldAnimationState;
 	
 	IdleAnimationState@ idleState = IdleAnimationState(@playerController, "idle", {0, 1, 2, 3, 4, 5, 6}, stride_idle, isLoop, 0);
 	WalkingAnimationState@ walkingState = WalkingAnimationState(@playerController,"walking", {12, 13, 14, 15, 16, 17, 18, 19}, stride_walk, isLoop, 0);
@@ -24,6 +25,7 @@ class PlayerAnimationController
 	{
 		@this.playerController = @playerController;
 		@currentAnimationState = @idleState;
+		@oldAnimationState = @currentAnimationState;
 		currentAnimationState.EnterState(@this);
 	}
 
@@ -34,6 +36,12 @@ class PlayerAnimationController
 
 	void SwitchState(AnimationBaseState@ animationBaseState)
 	{
+		if(@animationBaseState !is @oldAnimationState)
+		{
+			oldAnimationState.ResetAnimation();
+			@oldAnimationState = @animationBaseState;
+		}
+		
 		@currentAnimationState = @animationBaseState;
 		animationBaseState.EnterState(@this);
 	}

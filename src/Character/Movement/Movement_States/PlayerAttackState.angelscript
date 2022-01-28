@@ -47,7 +47,6 @@ class PlayerAttackState : PlayerBaseState
 			if(m_combo >= 1 && m_canDoCombo)
 			{
 				m_combo = 0;
-				m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
 				m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().secondComboState);	
 				m_canDoCombo = false;		
 			}
@@ -55,7 +54,6 @@ class PlayerAttackState : PlayerBaseState
 			{				
 				if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
 				{
-					m_ctx.GetAnimationController().GetCurrentAnimationState().ResetAnimation();
 					CheckSwitchStates();
 				}
 			}
