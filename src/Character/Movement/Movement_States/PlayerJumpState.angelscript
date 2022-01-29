@@ -10,6 +10,7 @@ class PlayerJumpState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
+		
 		InitializeSubState();
 		HandleJump();
 	}

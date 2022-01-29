@@ -2,9 +2,11 @@ class PlayerIdleState : PlayerBaseState
 {
     PlayerIdleState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory){
         super(@currentContext, @playerStateFactory);
+		m_isRootState = false;
     }
     
     void EnterState() override {
+		
 	}
 	void UpdateState() override {
 		HandleIdleAnimation();

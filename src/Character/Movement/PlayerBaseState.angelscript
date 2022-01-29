@@ -35,12 +35,10 @@ abstract class PlayerBaseState
 		//exit from current state
 		ExitState();
 
-		//enter new state
-		newState.EnterState();
-
 		//switch current state of context if it's at the top lvel of the state chain
 		if(m_isRootState)
 		{	
+			newState.EnterState();
 			m_ctx.SetCurrentState(@newState);
 		}
 		else if(m_superState !is null)
@@ -52,6 +50,10 @@ abstract class PlayerBaseState
 		@m_superState = @newSuperState;
 	}
 	protected void SetSubState(PlayerBaseState@ newSubState){
+		if(m_superState is null && m_isRootState)
+		{
+			newSubState.EnterState();
+		}
 		@m_subState = @newSubState;
 		newSubState.SetSuperState(@this);
 	}

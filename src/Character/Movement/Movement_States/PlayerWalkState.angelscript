@@ -3,6 +3,7 @@
 	PlayerWalkState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory)
 	{
 		super(@currentContext, @playerStateFactory);
+		m_isRootState = false;
 	}
 	void EnterState() override {
 		float walkingMovementSpeed = 300.0f;
