@@ -49,6 +49,10 @@ class PlayerAttackState : PlayerBaseState
 		if(m_firstHitAnimation)
 		{	
 			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
+			if(!isMidAir)
+			{
+				m_ctx.SetMovementSpeed(100.0f);
+			}
 			m_firstHitAnimation = false;
 		}
 		else if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
