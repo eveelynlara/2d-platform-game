@@ -4,6 +4,7 @@ class PlayerAttackState : PlayerBaseState
 
 	//hitbox
 	private bool m_canPerformAttack;
+	private IWeapon@ characterEquippedWeapon;
 
 	//animation
 	private int m_comboAnimation;
@@ -14,6 +15,7 @@ class PlayerAttackState : PlayerBaseState
 	{
 		super(@currentContext, @playerStateFactory);
 		@m_rigidbody2D = currentContext.GetPlayerController().GetPhysicsController();
+		@characterEquippedWeapon = m_ctx.GetPlayerController().GetCharacter().GetEquippedWeapon();
 		m_isRootState = true;
 	}
 	void EnterState() override {
@@ -23,7 +25,14 @@ class PlayerAttackState : PlayerBaseState
 		InitializeSubState();
 	}
 	void UpdateState() override {
-		HandleAttack();
+		if(@characterEquippedWeapon is null)
+		{
+			CheckSwitchStates();
+		}
+		else
+		{
+			HandleAttack();
+		}
 	}
 	void ExitState() override {
 	}
@@ -77,8 +86,6 @@ class PlayerAttackState : PlayerBaseState
 
 	void HandleHitbox()
 	{
-		IWeapon@ characterEquippedWeapon = m_ctx.GetPlayerController().GetCharacter().GetEquippedWeapon();
-		
 		if(m_canPerformAttack)
 		{
 			characterEquippedWeapon.Attack();
