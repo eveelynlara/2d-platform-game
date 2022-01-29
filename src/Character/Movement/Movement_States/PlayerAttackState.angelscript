@@ -17,9 +17,14 @@ class PlayerAttackState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
+		
 		m_canPerformAttack = true;
 		m_firstHitAnimation = true;
 		m_canDoComboAnimation = true;
+
+		float attackingMovementSpeed = 100.0f;
+		m_ctx.SetMovementSpeed(walkingMovementSpeed);
+
 		InitializeSubState();
 	}
 	void UpdateState() override {
