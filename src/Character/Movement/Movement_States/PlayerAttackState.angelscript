@@ -23,7 +23,7 @@ class PlayerAttackState : PlayerBaseState
 		m_canDoComboAnimation = true;
 
 		float attackingMovementSpeed = 100.0f;
-		m_ctx.SetMovementSpeed(walkingMovementSpeed);
+		m_ctx.SetMovementSpeed(attackingMovementSpeed);
 
 		InitializeSubState();
 	}
