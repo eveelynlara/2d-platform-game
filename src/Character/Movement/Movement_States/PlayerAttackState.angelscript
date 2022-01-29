@@ -1,9 +1,14 @@
 class PlayerAttackState : PlayerBaseState
 {
 	private ETHPhysicsController@ m_rigidbody2D;
-	private int m_combo;
-	private bool m_firstHit;
-	private bool m_canDoCombo;
+
+	//hitbox
+	private bool m_canPerformAttack;
+
+	//animation
+	private int m_comboAnimation;
+	private bool m_firstHitAnimation;
+	private bool m_canDoComboAnimation;
 
 	PlayerAttackState(PlayerStateMachine@ currentContext, PlayerStateFactory@ playerStateFactory)
 	{
@@ -12,8 +17,9 @@ class PlayerAttackState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
-		m_firstHit = true;
-		m_canDoCombo = true;
+		m_canPerformAttack = true;
+		m_firstHitAnimation = true;
+		m_canDoComboAnimation = true;
 		InitializeSubState();
 	}
 	void UpdateState() override {
@@ -29,26 +35,28 @@ class PlayerAttackState : PlayerBaseState
 	{
 		if(m_ctx.IsAttackPressed())
 		{
-			m_combo++;
+			m_comboAnimation++;
 		}
 
+		HandleHitbox();
 		HandleAttackAnimation();
 	}
 
 	void HandleAttackAnimation()
 	{
-		if(m_firstHit)
+		if(m_firstHitAnimation)
 		{	
 			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
-			m_firstHit = false;
+			m_firstHitAnimation = false;
 		}
 		else if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
 		{
-			if(m_combo >= 1 && m_canDoCombo)
+			if(m_comboAnimation >= 1 && m_canDoComboAnimation)
 			{
-				m_combo = 0;
+				m_canPerformAttack = true;
+				m_comboAnimation = 0;
 				m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().secondComboState);	
-				m_canDoCombo = false;		
+				m_canDoComboAnimation = false;		
 			}
 			else
 			{				
@@ -59,6 +67,17 @@ class PlayerAttackState : PlayerBaseState
 			}
 		}
 		
+	}
+
+	void HandleHitbox()
+	{
+		IWeapon@ characterEquippedWeapon = m_ctx.GetPlayerController().GetCharacter().GetEquippedWeapon();
+		
+		if(m_canPerformAttack)
+		{
+			characterEquippedWeapon.Attack();
+			m_canPerformAttack = false;
+		}
 	}
 
 	void CheckSwitchStates() override 

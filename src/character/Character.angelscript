@@ -12,7 +12,7 @@ class Character : IDamageable, ITeamMember
 		LoadSoundEffect("soundfx/explosion_small.mp3");
 		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character",  1.0f /*scale*/);
 		@playerController = PlayerController(@this, controllerType);
-		SetWeapon(BasicSlashMeleeWeapon(@this));
+		@currentEquippedWeapon = BasicSlashMeleeWeapon(@this);
 	}
 
 	void update()

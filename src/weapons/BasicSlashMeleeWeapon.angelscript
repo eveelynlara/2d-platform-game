@@ -67,7 +67,7 @@ void ETHConstructorCallback_basicSlashMeleeHitbox(ETHEntity@ thisEntity)
 void ETHCallback_basicSlashMeleeHitbox(ETHEntity@ thisEntity)
 {
     const float elapsedTime = thisEntity.AddToFloat("elapsedTime", sef::TimeManager.getLastFrameElapsedTimeF());
-    if(elapsedTime >= 100.0f)
+    if(elapsedTime >= 160.0f)
     {
         DeleteEntity(thisEntity);
     }
@@ -84,7 +84,7 @@ void ETHPreSolveContactCallback_basicSlashMeleeHitbox(
 	Team@ attackerTeam;
 
 	thisEntity.GetObject("currentTeam", @attackerTeam);
-	thisEntity.GetObject("currentTeam", @damagedObjectTeam);
+	other.GetObject("currentTeam", @damagedObjectTeam);
 
 	if (damagedObjectTeam is attackerTeam)
 	{
