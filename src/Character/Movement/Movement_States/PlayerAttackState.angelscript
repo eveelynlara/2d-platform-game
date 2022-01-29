@@ -98,7 +98,7 @@ class PlayerAttackState : PlayerBaseState
 		if(m_ctx.IsTouchingOnlyGround()){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
-		else if(abs(m_rigidbody2D.GetLinearVelocity().y) > 0.5f)
+		else if(abs(m_rigidbody2D.GetLinearVelocity().y) > 0.5f	&& !m_ctx.IsTouchingOnlyGround())
 		{
 			SwitchState(m_playerStateFactory.Jump());
 		}
