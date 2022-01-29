@@ -26,6 +26,10 @@ class PlayerJumpState : PlayerBaseState
 		if(m_ctx.IsTouchingOnlyGround() && m_jumpElapsedTime > 160.0f){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
+		if(m_ctx.IsAttackPressed())
+		{
+			SwitchState(m_playerStateFactory.Attack());
+		}
 	}
 	void InitializeSubState() override {}
 
