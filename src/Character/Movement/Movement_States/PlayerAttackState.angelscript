@@ -17,14 +17,9 @@ class PlayerAttackState : PlayerBaseState
 		m_isRootState = true;
 	}
 	void EnterState() override {
-		
 		m_canPerformAttack = true;
 		m_firstHitAnimation = true;
 		m_canDoComboAnimation = true;
-
-		float attackingMovementSpeed = 100.0f;
-		m_ctx.SetMovementSpeed(attackingMovementSpeed);
-
 		InitializeSubState();
 	}
 	void UpdateState() override {
@@ -49,6 +44,8 @@ class PlayerAttackState : PlayerBaseState
 
 	void HandleAttackAnimation()
 	{
+		bool isMidAir = abs(m_rigidbody2D.GetLinearVelocity().y) > 0.5f;
+		
 		if(m_firstHitAnimation)
 		{	
 			m_ctx.GetAnimationController().SwitchState(m_ctx.GetAnimationController().basicSwordAttackState);
@@ -56,7 +53,7 @@ class PlayerAttackState : PlayerBaseState
 		}
 		else if(m_ctx.GetAnimationController().GetCurrentAnimationState().IsAnimationFisnished())
 		{
-			if(m_comboAnimation >= 1 && m_canDoComboAnimation)
+			if(m_comboAnimation >= 1 && m_canDoComboAnimation && !isMidAir)
 			{
 				m_canPerformAttack = true;
 				m_comboAnimation = 0;
@@ -90,7 +87,7 @@ class PlayerAttackState : PlayerBaseState
 		if(m_ctx.IsTouchingOnlyGround()){
 			SwitchState(m_playerStateFactory.Grounded());
 		}
-		else if(m_ctx.IsJumpPressed() && m_ctx.GetJumpsInTheAir() == 0)
+		else if(abs(m_rigidbody2D.GetLinearVelocity().y) > 0.5f)
 		{
 			SwitchState(m_playerStateFactory.Jump());
 		}
