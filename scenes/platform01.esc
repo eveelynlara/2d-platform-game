@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <Ethanon>
     <SceneProperties lightIntensity="2" parallaxIntensity="0">
-        <Ambient r="1" g="1" b="1" />
+        <Ambient r="0.8" g="0.7" b="0.6" />
         <ZAxisDirection x="0" y="-1" />
     </SceneProperties>
     <EntitiesInScene>
@@ -1197,6 +1197,126 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="819" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="64" y="448" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="820" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="64" y="320" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="821" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="64" y="192" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="823" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="192" y="448" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="826" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="320" y="192" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="827" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="320" y="320" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="828" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="320" y="448" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="831" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="448" y="448" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="832" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="448" y="320" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="833" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="448" y="192" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="847" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="192" y="320" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="850" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="339.5" y="86" z="-16" angle="180" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="851" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="72.5" y="100" z="-16" angle="180" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="853" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="192" y="192" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="854" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="487.5" y="263" z="-16" angle="180" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="327" spriteFrame="3">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="528" y="304" z="0" angle="0" />
@@ -1661,6 +1781,46 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="834" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="576" y="320" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="835" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="576" y="448" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="837" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="640" y="256" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="840" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="610" y="408" z="0" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="852" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="643.5" y="191" z="-16" angle="180" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="1" spriteFrame="0">
             <EntityName>collision_box_128x.ent</EntityName>
             <Position x="-64" y="64" z="0" angle="0" />
@@ -1702,7 +1862,7 @@
                     <Variable>
                         <Type>string</Type>
                         <Name>EntityType</Name>
-                        <Value>character</Value>
+                        <Value>none</Value>
                     </Variable>
                     <Variable>
                         <Type>string</Type>
@@ -2384,6 +2544,54 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="815" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="432" y="634" z="-16" angle="0" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="816" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="144" y="634" z="-16" angle="0" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="818" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="64" y="576" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="822" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="192" y="576" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="829" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="320" y="576" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="830" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="448" y="576" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="108" spriteFrame="0">
             <EntityName>single_piece_grey.ent</EntityName>
             <Position x="592" y="624" z="0" angle="0" />
@@ -2609,6 +2817,38 @@
             <Position x="624" y="688" z="0" angle="0" />
             <Entity>
                 <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="817" spriteFrame="0">
+            <EntityName>candle.ent</EntityName>
+            <Position x="595" y="634" z="-16" angle="0" />
+            <Entity>
+                <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="836" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="576" y="576" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="844" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="640" y="512" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="845" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="626" y="640" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>

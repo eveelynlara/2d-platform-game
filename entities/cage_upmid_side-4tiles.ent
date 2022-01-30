@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <Ethanon>
-    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+    <Entity shape="0" applyLight="1" castShadow="0" type="0" static="1" blendMode="0">
         <SpriteCut x="2" y="2" />
         <Sprite>cage_upmid_side-4tiles.png</Sprite>
         <Particles />

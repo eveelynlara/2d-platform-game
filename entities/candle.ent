@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="1" specularPower="50" specularBrightness="1" castShadow="0" type="0" static="1" blendMode="0">
+        <Sprite>candles.png</Sprite>
+        <Normal>candles_normal.png</Normal>
+        <Particles />
+        <Light active="1" static="1" castShadows="0" range="256" haloBrightness="1" haloSize="116">
+            <Position x="0" y="0" z="30" />
+            <Color r="1" g="0.8" b="0.4" />
+            <HaloBitmap>halo.bmp</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>
