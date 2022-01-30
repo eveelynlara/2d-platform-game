@@ -1805,19 +1805,19 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="840" spriteFrame="0">
-            <EntityName>wall_bg_01.ent</EntityName>
-            <Position x="610" y="408" z="0" angle="0" />
-            <Entity>
-                <FileName>wall_bg_01.ent</FileName>
-                <CustomData />
-            </Entity>
-        </Entity>
         <Entity id="852" spriteFrame="0">
             <EntityName>candle.ent</EntityName>
             <Position x="643.5" y="191" z="-16" angle="180" />
             <Entity>
                 <FileName>candle.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1046" spriteFrame="0">
+            <EntityName>wall_bg_01.ent</EntityName>
+            <Position x="704" y="384" z="-24" angle="0" />
+            <Entity>
+                <FileName>wall_bg_01.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
@@ -1862,12 +1862,12 @@
                     <Variable>
                         <Type>string</Type>
                         <Name>EntityType</Name>
-                        <Value>none</Value>
+                        <Value>character</Value>
                     </Variable>
                     <Variable>
                         <Type>string</Type>
                         <Name>Team</Name>
-                        <Value>none</Value>
+                        <Value>main</Value>
                     </Variable>
                 </CustomData>
             </Entity>
@@ -2844,9 +2844,9 @@
                 <CustomData />
             </Entity>
         </Entity>
-        <Entity id="845" spriteFrame="0">
+        <Entity id="1047" spriteFrame="0">
             <EntityName>wall_bg_01.ent</EntityName>
-            <Position x="626" y="640" z="-24" angle="0" />
+            <Position x="704" y="640" z="-24" angle="0" />
             <Entity>
                 <FileName>wall_bg_01.ent</FileName>
                 <CustomData />
