@@ -517,6 +517,686 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="523" spriteFrame="4">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="80" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="524" spriteFrame="2">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="80" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="525" spriteFrame="1">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="80" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="526" spriteFrame="3">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="80" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="527" spriteFrame="0">
+            <EntityName>single_piece_grey.ent</EntityName>
+            <Position x="80" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_grey.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="528" spriteFrame="0">
+            <EntityName>beam_LR_corners_2tiles.ent</EntityName>
+            <Position x="48" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_LR_corners_2tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="530" spriteFrame="1">
+            <EntityName>beam_LR_corners_2tiles.ent</EntityName>
+            <Position x="112" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_LR_corners_2tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="531" spriteFrame="0">
+            <EntityName>single_piece_dark.ent</EntityName>
+            <Position x="48" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_dark.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="532" spriteFrame="0">
+            <EntityName>single_piece_dark.ent</EntityName>
+            <Position x="112" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_dark.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="534" spriteFrame="0">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="16" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="535" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="16" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="536" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="144" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="537" spriteFrame="1">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="144" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="538" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="48" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="539" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="48" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="541" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="112" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="542" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="112" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="543" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="144" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="544" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="176" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="545" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="144" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="546" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="176" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="548" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="144" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="549" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="176" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="550" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="176" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="551" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="176" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="552" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="16" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="553" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="16" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="554" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="48" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="557" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="16" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="558" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="112" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="561" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="176" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="563" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="208" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="564" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="240" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="565" spriteFrame="3">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="208" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="566" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="208" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="567" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="208" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="568" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="208" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="569" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="208" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="570" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="240" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="571" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="240" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="572" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="240" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="573" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="240" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="574" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="272" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="578" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="272" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="580" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="272" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="581" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="304" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="582" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="272" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="583" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="304" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="584" spriteFrame="4">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="336" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="585" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="304" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="586" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="304" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="587" spriteFrame="1">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="336" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="588" spriteFrame="3">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="336" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="589" spriteFrame="1">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="336" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="590" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="368" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="591" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="368" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="592" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="368" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="593" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="368" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="594" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="400" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="595" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="432" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="596" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="432" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="597" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="598" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="496" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="599" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="400" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="600" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="400" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="601" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="400" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="602" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="432" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="603" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="432" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="604" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="432" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="605" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="606" spriteFrame="2">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="607" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="608" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="496" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="609" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="496" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="610" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="496" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="611" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="612" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="496" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="627" spriteFrame="0">
+            <EntityName>single_piece_dark.ent</EntityName>
+            <Position x="496" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_dark.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="628" spriteFrame="3">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="496" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="629" spriteFrame="4">
+            <EntityName>beam_up_to_top_8tiles.ent</EntityName>
+            <Position x="496" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>beam_up_to_top_8tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="631" spriteFrame="2">
+            <EntityName>bricks_left_trans_4tiles.ent</EntityName>
+            <Position x="464" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_left_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="632" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="464" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="636" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="464" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="637" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="464" y="272" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="638" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="496" y="272" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="327" spriteFrame="3">
             <EntityName>roof-4tiles.ent</EntityName>
             <Position x="528" y="304" z="0" angle="0" />
@@ -658,6 +1338,326 @@
             <Position x="528" y="416" z="-8" angle="0" />
             <Entity>
                 <FileName>cage_down_side_2tiles.png.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="613" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="614" spriteFrame="1">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="615" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="616" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="617" spriteFrame="3">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="618" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="560" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="619" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="560" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="620" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="560" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="621" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="560" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="622" spriteFrame="3">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="560" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="623" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="592" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="624" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="624" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="625" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="656" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="633" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="528" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="634" spriteFrame="2">
+            <EntityName>bricks_right_trans_4tiles.ent</EntityName>
+            <Position x="560" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_right_trans_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="635" spriteFrame="1">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="528" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="639" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="528" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="640" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="560" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="641" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="560" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="642" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="592" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="643" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="592" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="644" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="592" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="645" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="624" y="240" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="646" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="624" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="647" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="624" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="648" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="624" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="649" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="656" y="144" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="650" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="656" y="176" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="651" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="656" y="208" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="652" spriteFrame="0">
+            <EntityName>single_piece_brown.ent</EntityName>
+            <Position x="656" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_brown.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="653" spriteFrame="0">
+            <EntityName>single_piece_dark.ent</EntityName>
+            <Position x="592" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>single_piece_dark.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="654" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="592" y="112" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="655" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="592" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="656" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="624" y="80" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="657" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="624" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="658" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="656" y="48" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="659" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="656" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="660" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="624" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="661" spriteFrame="0">
+            <EntityName>bricks_mid_4tiles.ent</EntityName>
+            <Position x="592" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>bricks_mid_4tiles.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="662" spriteFrame="1">
+            <EntityName>wall-LR-middle-2tiles.ent</EntityName>
+            <Position x="688" y="16" z="0" angle="0" />
+            <Entity>
+                <FileName>wall-LR-middle-2tiles.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
