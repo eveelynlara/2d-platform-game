@@ -2,7 +2,7 @@
 <Ethanon>
     <SceneProperties lightIntensity="2" parallaxIntensity="0">
         <Ambient r="0.8" g="0.7" b="0.6" />
-        <ZAxisDirection x="0" y="-1" />
+        <ZAxisDirection x="0" y="0" />
     </SceneProperties>
     <EntitiesInScene>
         <Entity id="8" spriteFrame="0">
