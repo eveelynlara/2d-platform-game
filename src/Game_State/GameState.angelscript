@@ -20,7 +20,7 @@ class GameState : sef::BaseState
 
 		curtain::fadeIn(500, 0);
 
-		SetParallaxIntensity(6.0f);
+		SetParallaxIntensity(0.0f);
 
 		addController(@m_cameraController);
 
