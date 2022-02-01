@@ -61,7 +61,7 @@ class GameState : sef::BaseState
 		for (uint t = 0; t < 80; t++)
 		{
 			ETHEntity@ ship;
-			const vector3 pos(randF(GetScreenSize().x), randF(GetScreenSize().y), randF(-20.0f, -80.0f));
+			const vector3 pos(randF(GetScreenSize().x), randF(GetScreenSize().y), randF(-25.0f, -80.0f));
 			AddEntity("space_ship.ent", pos, 0.0f, ship, "decor_space_ship", 0.9f);
 			ship.SetColor(vector3(randF(1.5f), randF(1.5f), randF(1.5f)) * 0.3f);
 		}
