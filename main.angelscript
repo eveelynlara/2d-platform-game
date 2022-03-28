@@ -5,17 +5,40 @@
 #include "src/OptionsLayer.angelscript"
 #include "src/GameState.angelscript"
 
+#include "src/character/AnimationBaseState.angelscript"
+#include "src/character/BasicSwordAttackState.angelscript"
 #include "src/character/Character.angelscript"
 #include "src/character/CharactersManager.angelscript" 
-#include "src/character/Movement.angelscript"
-#include "src/character/MovementByKeys.angelscript"
-#include "src/character/MovementBubbleGum.angelscript" 
-#include "src/character/MoveVelocity.angelscript"
-#include "src/character/PlayAnim.angelscript"
+#include "src/character/IdleAnimationState.angelscript" 
+#include "src/character/JumpFallState.angelscript" 
+#include "src/character/JumpRiseState.angelscript" 
+#include "src/character/KeyInputController.angelscript"
+#include "src/character/MovementBubbleGumController.angelscript" 
+#include "src/character/PlayerAnimationController.angelscript"
+#include "src/character/State_Machine/PlayerBaseState.angelscript"
+#include "src/character/PlayerController.angelscript"
+#include "src/character/State_Machine/PlayerGroundedState.angelscript"
+#include "src/character/State_Machine/PlayerIdleState.angelscript"
+#include "src/character/State_Machine/PlayerJumpState.angelscript"
+#include "src/character/State_Machine/PlayerWalkState.angelscript"
+#include "src/character/PlayerInputController.angelscript"
+#include "src/character/State_Machine/PlayerStateMachine.angelscript"
+#include "src/character/State_Machine/PlayerStateFactory.angelscript"
+#include "src/character/SecondComboState.angelscript"
+#include "src/character/WalkingAnimationState.angelscript"
 
+#include "src/gameplay/spawner.angelscript"
 
 #include "src/Curtain.angelscript"
 #include "src/CameraController.angelscript"
+
+#include "src/weapons/IWeapon.angelscript"
+#include "src/weapons/BasicSlashMeleeWeapon.angelscript"
+#include "src/weapons/ScheduleAttackEvent.angelscript" 
+
+#include "src/attack/IDamageable.angelscript"
+#include "src/attack/ITeamMember.angelscript"
+#include "src/attack/Team.angelscript"
 
 void main()
 {

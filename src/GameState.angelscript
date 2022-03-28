@@ -3,14 +3,14 @@ class GameState : sef::BaseState
 	sef::UISchedulerLayer@ m_hudLayer;
 
 	CameraController m_cameraController;
-	private Character@ m_character;
+
 	private CharactersManager m_charactersManager;
 
 	ETHEntity@ m_spaceShip;
 
 	GameState()
 	{
-		super("scenes/level1.esc", vector2(sef::getFixedHeight() / 2.0f) /*bucketSize*/);
+		super("scenes/platform01.esc", vector2(sef::getFixedHeight() / 2.0f) /*bucketSize*/);
 		sef::state::backgroundColor = 0xFF000000;
 	}
 
@@ -39,7 +39,7 @@ class GameState : sef::BaseState
 			vector2(0.5f, 0.053f) /*position*/,
 			vector2(0.5f, 0.0f) /*origin*/,
 			sef::StaticFont("Verdana24_shadow.fnt"),
-			"Hello World!",
+			"",
 			2.5f /*scale*/, 
 			true /*centered*/,
 			sef::uieffects::createBounceAppearEffect(200, 1.1f, 500 /*delay*/, 15 /*repeats*/),
@@ -76,7 +76,7 @@ class GameState : sef::BaseState
 	{
 		BaseState::onUpdate();
 		m_charactersManager.update();
-		m_cameraController.setDest(m_character.GetPositionXY());
+		// m_cameraController.setDest(m_character.GetPositionXY());
 
 		// check back request
 		if (m_hudLayer.isButtonPressed("back") || sef::input::global.getBackState() == KS_HIT)
@@ -89,5 +89,10 @@ class GameState : sef::BaseState
 		{
 			sef::StateManager.setState(StartScreenState());
 		}
+	}
+
+	CharactersManager@ GetCharactersManager()
+	{
+		return @m_charactersManager;
 	}
 }

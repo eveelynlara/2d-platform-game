@@ -1,44 +1,94 @@
-class Character
+class Character : IDamageable, ITeamMember
 {
-	private PlayAnim@ playAnim;
+	private ETHEntity@ characterEntity;
+	private PlayerController@ playerController;
+	private Team@ currentTeam;
+	private IWeapon@ currentEquippedWeapon;
 
-	Character(const string &in entityName, const vector2 pos, int movementType = 0)
+	Character(const string &in characterEntityName, const vector2 pos, int controllerType = 0)
 	{
 		// add character entity and rename it to "Character" for matching character-
 		// specific entity callback functions
 		LoadSoundEffect("soundfx/explosion_small.mp3");
-		@playAnim = PlayAnim(entityName, pos, movementType);
+		AddEntity(characterEntityName, vector3(pos, -2.0f), 0.0f /*rotation*/, characterEntity, "Character",  1.0f /*scale*/);
+		@playerController = PlayerController(@this, controllerType);
+		SetWeapon(BasicSlashMeleeWeapon(@this));
 	}
 
-	void update ()
+	void update()
 	{
-		playAnim.update();
+		playerController.Update();
+	}
+
+	void SetTeam(Team@ team)
+	{
+		@currentTeam = @team;
+		characterEntity.SetObject("currentTeam", @currentTeam);
+	}
+
+	Team@ GetTeam()
+	{
+		return @currentTeam;
+	}
+
+	void SetWeapon(IWeapon@ weapon)
+	{
+		@currentEquippedWeapon = @weapon;
+	}
+
+	IWeapon@ GetEquippedWeapon()
+	{
+		return @currentEquippedWeapon;
+	}
+
+	ETHEntity@ GetEntity()
+	{
+		return @characterEntity;
 	}
 
 	vector2 GetPositionXY()
 	{
-		return playAnim.GetMoveVelocity().GetEntity().GetPositionXY();
+		return characterEntity.GetPositionXY();
 	}
 
-	PlayAnim@ GetPlayAnim()
+	PlayerController@ GetPlayerController()
 	{
-		return @playAnim;
+		return @playerController;
 	}
 
 	bool IsDead() const
 	{
-		return (playAnim.GetMoveVelocity().GetEntity().GetInt("hp") <= 0);
+		return (characterEntity.GetInt("hp") <= 0);
 	}
 
 	void DestroyCharacterEntity()
 	{
-		if(playAnim.GetMoveVelocity().GetEntity()
-			.GetInt("hp") <= 0)
+		if(characterEntity.GetInt("hp") <= 0)
 		{
-			DeleteEntity(playAnim.GetMoveVelocity().GetEntity());
+			DeleteEntity(characterEntity);
 		}
 	}
+
+	bool CanBeDamagedBy(IDamageable@ other, IWeapon@ otherWeapon)
+	{
+		return !currentTeam.IsInTeam(cast<ITeamMember@>(other));
+	}
 }	
+
+int calcIsTouchingWall(vector2 normalForce)
+{
+	return abs(sef::math::dot(normalForce, vector2(1,0))) > 0.1 ? 1 : 0;
+}
+
+void ETHConstructorCallback_Character(
+	ETHEntity@ body,
+	ETHEntity@ other,
+	vector2 contactPointA,
+	vector2 contactPointB,
+	vector2 contactNormal)
+{
+	body.SetInt("hp", 100);
+}
 
 void ETHPreSolveContactCallback_Character(
 	ETHEntity@ body,
@@ -47,13 +97,15 @@ void ETHPreSolveContactCallback_Character(
 	vector2 contactPointB,
 	vector2 contactNormal)
 {
+	//quando inicia a colisao
 	const float charBodyHeight = body.GetCollisionBox().size.y * body.GetScale().y;
 	const float halfCharBodyHeight = charBodyHeight / 2.0f;
+	float halfCharBodyHeightWithTolerance = body.GetPositionY() + (halfCharBodyHeight * 0.8f);
 
-	// if the contact is near the bottom of the character's body,
-	// we can assume it's their feet so he might be touching ground
-	if (contactPointA.y > body.GetPositionY() + (halfCharBodyHeight * 0.8f))
+	abs(contactNormal.x) > 0.1 ? body.SetUInt("isTouchingWall", calcIsTouchingWall(contactNormal)) : body.SetUInt("isTouchingWall", 0);
+
+	if (contactPointA.y > halfCharBodyHeightWithTolerance && body.GetUInt("isTouchingWall") == 0)
 	{
-		body.SetUInt("touchingGroundTime", GetTime());
+		body.SetUInt("touchingOnlyGroundTime", GetTime());
 	}
 }
