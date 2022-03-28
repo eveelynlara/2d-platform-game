@@ -17,7 +17,7 @@ class GameState : sef::BaseState
 	void onCreated() override
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
-		@m_character = Character("witch.ent", screenMiddle, 0);
+		@m_character = Character("adventurer.ent", screenMiddle + 20.0f, 0);
 		m_character.GetPlayAnim().GetMoveVelocity().GetEntity().SetInt("hp", 100);
 		m_charactersManager.addCharacter(@m_character);
 

@@ -4,7 +4,7 @@ class PlayAnim
 	private int frameRow = 2;
 	private int frameColumn = 0;
 	private sef::FrameTimer frameTimer;
-	private int secondIndexRow = 2;
+	private int firstIndexRow = 1;
 	private bool flipHorizontally = false;
 
 	PlayAnim(const string &in entityName, const vector2 pos, int movementType)
@@ -20,6 +20,7 @@ class PlayAnim
 
 	void update()
 	{
+
 		moveVelocity.update(); 
 
 		float movementVelocityX = moveVelocity.GetMovement().GetDirection().x;
@@ -30,7 +31,7 @@ class PlayAnim
 
 		if(movementVelocityX != 0)
 		{
-			frameRow = secondIndexRow;
+			frameRow = firstIndexRow;
 			
 			if(moveVelocity.GetMovement().GetChangeDir())
 			{
@@ -39,9 +40,15 @@ class PlayAnim
 
 			if(isTouchingGround)
 			{
-				frameColumn = frameTimer.set(0, 3, 150);
+				frameColumn = frameTimer.set(0, 5, 90);
 			}
 		}
+		else
+		{
+			frameRow = 0;
+			frameColumn = frameTimer.set(0, 5, 90);			
+		}
+
 		moveVelocity.GetEntity().SetFrame(frameColumn, frameRow);
 	}
 }
